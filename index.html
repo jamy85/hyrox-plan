@@ -1,0 +1,783 @@
+<style>
+  :root {
+    --font-sans: "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+    --bg: #EDF0F4;
+    --surface: #FFFFFF;
+    --surface-2: #F5F7FA;
+    --ink: #161B22;
+    --ink-soft: #56606F;
+    --ink-faint: #8A94A2;
+    --line: #E0E5EC;
+    --line-strong: #CDd4dd;
+
+    --accent: #2450D6;
+    --accent-bg: #E6ECFC;
+
+    --easy: #0F7A6E;   --easy-bg: #DBF2EE;
+    --mod:  #B06600;   --mod-bg:  #FAEBD6;
+    --hard: #C23A3A;   --hard-bg: #F9D9D9;
+
+    --shadow: 0 1px 2px rgba(20,27,34,.06), 0 4px 16px rgba(20,27,34,.05);
+    --radius: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0E1218; --surface: #161C25; --surface-2: #1D2531;
+      --ink: #E8EDF3; --ink-soft: #9AA5B4; --ink-faint: #6C7787;
+      --line: #28313D; --line-strong: #37424f;
+      --accent: #6C92FF; --accent-bg: #182339;
+      --easy: #3ACFBA; --easy-bg: #12332E;
+      --mod:  #F2A93D; --mod-bg:  #33280F;
+      --hard: #FF6E6E; --hard-bg: #3A1E1E;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #EDF0F4; --surface: #FFFFFF; --surface-2: #F5F7FA;
+    --ink: #161B22; --ink-soft: #56606F; --ink-faint: #8A94A2;
+    --line: #E0E5EC; --line-strong: #CDD4DD;
+    --accent: #2450D6; --accent-bg: #E6ECFC;
+    --easy: #0F7A6E; --easy-bg: #DBF2EE;
+    --mod:  #B06600; --mod-bg:  #FAEBD6;
+    --hard: #C23A3A; --hard-bg: #F9D9D9;
+    --shadow: 0 1px 2px rgba(20,27,34,.06), 0 4px 16px rgba(20,27,34,.05);
+  }
+  :root[data-theme="dark"] {
+    --bg: #0E1218; --surface: #161C25; --surface-2: #1D2531;
+    --ink: #E8EDF3; --ink-soft: #9AA5B4; --ink-faint: #6C7787;
+    --line: #28313D; --line-strong: #37424F;
+    --accent: #6C92FF; --accent-bg: #182339;
+    --easy: #3ACFBA; --easy-bg: #12332E;
+    --mod:  #F2A93D; --mod-bg:  #33280F;
+    --hard: #FF6E6E; --hard-bg: #3A1E1E;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 20px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: var(--font-sans); line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 22px 16px 120px; }
+
+  /* ---- Header / hero ---- */
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 8px;
+  }
+  h1 {
+    font-size: clamp(30px, 8vw, 42px); font-weight: 800; letter-spacing: -.02em;
+    line-height: 1.02; margin: 0 0 14px; text-wrap: balance;
+  }
+  .facts {
+    display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0 0 18px;
+    font-size: 13px; color: var(--ink-soft);
+  }
+  .facts span {
+    background: var(--surface); border: 1px solid var(--line);
+    padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .facts b { color: var(--ink); font-weight: 700; }
+
+  .clock {
+    display: flex; align-items: baseline; gap: 12px;
+    background: var(--surface); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 16px 18px; box-shadow: var(--shadow);
+    margin-bottom: 26px;
+  }
+  .clock .num {
+    font-family: var(--font-mono); font-size: clamp(38px, 12vw, 58px);
+    font-weight: 700; letter-spacing: -.03em; color: var(--accent);
+    line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .clock .lbl { font-size: 13px; color: var(--ink-soft); }
+  .clock .lbl b { display:block; color: var(--ink); font-size: 15px; font-weight: 700; }
+
+  /* ---- Section ---- */
+  section { margin-bottom: 30px; }
+  .sec-head {
+    display: flex; align-items: center; gap: 10px; margin: 0 0 12px;
+  }
+  .sec-head h2 {
+    font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    margin: 0; color: var(--ink-soft);
+  }
+  .sec-head .rule { flex: 1; height: 1px; background: var(--line); }
+
+  /* ---- Week tabs ---- */
+  .tabs {
+    display: flex; gap: 8px; overflow-x: auto; padding: 8px 4px 10px; margin: 0 -4px 2px;
+    position: sticky; top: 0; z-index: 40; background: var(--bg);
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tab {
+    flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 2px;
+    min-width: 66px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 12px;
+    background: var(--surface); cursor: pointer; font-family: var(--font-sans);
+    box-shadow: var(--shadow); transition: background .12s, border-color .12s, transform .1s;
+  }
+  .tab:active { transform: scale(.97); }
+  .tab .tw {
+    font-family: var(--font-mono); font-weight: 800; font-size: 15px; letter-spacing: -.01em; color: var(--ink);
+  }
+  .tab .tdate { font-family: var(--font-mono); font-size: 10px; color: var(--ink-faint); white-space: nowrap; }
+  .tab.active { background: var(--accent); border-color: var(--accent); }
+  .tab.active .tw, .tab.active .tdate { color: #fff; }
+  .tab.race.active { background: var(--hard); border-color: var(--hard); }
+  .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .tab:active { transform: none; } }
+
+  .weekpanel { display: none; }
+  .weekpanel.active { display: block; }
+  .weekhead { margin: 8px 2px 16px; }
+  .weekhead .wtitle { display: flex; align-items: baseline; gap: 10px 12px; flex-wrap: wrap; }
+  .weekhead h3 { font-size: 21px; font-weight: 800; margin: 0; letter-spacing: -.015em; }
+  .weekhead .wdates { font-family: var(--font-mono); font-size: 12px; color: var(--ink-faint); }
+  .weekhead .phase {
+    font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-bg); padding: 3px 9px; border-radius: 999px;
+  }
+  .weekhead .focus { margin: 8px 0 0; font-size: 13.5px; color: var(--ink-soft); }
+
+  /* ---- Legend ---- */
+  .legend {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 14px 16px; box-shadow: var(--shadow); font-size: 14px;
+  }
+  .legend p { margin: 0 0 10px; color: var(--ink-soft); }
+  .legend p:last-child { margin-bottom: 0; }
+  .legend .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .legend b { color: var(--ink); }
+  code.k {
+    font-family: var(--font-mono); font-size: 12.5px; background: var(--surface-2);
+    border: 1px solid var(--line); padding: 1px 6px; border-radius: 6px; color: var(--ink);
+  }
+
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700;
+    padding: 4px 10px; border-radius: 999px; letter-spacing: .02em;
+  }
+  .chip::before { content:""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .chip.easy { color: var(--easy); background: var(--easy-bg); }
+  .chip.mod  { color: var(--mod);  background: var(--mod-bg); }
+  .chip.hard { color: var(--hard); background: var(--hard-bg); }
+
+  /* ---- Session card ---- */
+  .day {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); overflow: hidden; margin-bottom: 16px;
+  }
+  .day > header {
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 15px 16px; border-bottom: 1px solid var(--line); background: var(--surface-2);
+  }
+  .day .dtitle { display: flex; align-items: baseline; gap: 10px; min-width: 0; }
+  .day .dow {
+    font-family: var(--font-mono); font-size: 12px; font-weight: 700; letter-spacing: .08em;
+    color: var(--accent); text-transform: uppercase; white-space: nowrap;
+  }
+  .day h3 { font-size: 17px; font-weight: 800; margin: 0; letter-spacing: -.01em; }
+  .day .sub { padding: 10px 16px 2px; font-size: 13px; color: var(--ink-soft); }
+
+  .ex { padding: 12px 16px; border-top: 1px solid var(--line); }
+  .ex:first-of-type { border-top: 0; }
+  .ex-top { display: flex; align-items: flex-start; gap: 11px; }
+  .ex-top label { font-weight: 700; font-size: 15px; cursor: pointer; flex: 1; }
+  .extag { font-weight: 400; font-size: .9em; color: var(--ink-faint); }
+  .ex .cue { margin: 5px 0 0 27px; font-size: 12.5px; color: var(--ink-soft); }
+  .ex .cue::before { content: "\25B8 "; color: var(--ink-faint); }
+
+  input[type="checkbox"] {
+    appearance: none; -webkit-appearance: none; flex: 0 0 auto;
+    width: 18px; height: 18px; margin: 2px 0 0; border: 2px solid var(--line-strong);
+    border-radius: 5px; background: var(--surface); cursor: pointer; position: relative;
+    transition: background .12s, border-color .12s;
+  }
+  input[type="checkbox"]:checked { background: var(--accent); border-color: var(--accent); }
+  input[type="checkbox"]:checked::after {
+    content: ""; position: absolute; left: 4px; top: 1px; width: 5px; height: 9px;
+    border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(43deg);
+  }
+  input[type="checkbox"]:checked + label { color: var(--ink-faint); text-decoration: line-through; }
+  input[type="checkbox"]:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .stats { display: flex; gap: 8px; margin: 9px 0 0 27px; flex-wrap: wrap; }
+  .stat {
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: 8px;
+    padding: 5px 9px; min-width: 0;
+  }
+  .stat .sl {
+    display: block; font-size: 9.5px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-faint); margin-bottom: 1px;
+  }
+  .stat .sv {
+    font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--ink);
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  .stat.rest .sv { color: var(--accent); }
+
+  .resetbtn {
+    font-family: var(--font-sans); font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    color: var(--ink-soft); background: transparent; border: 1px solid var(--line);
+    border-radius: 8px; padding: 5px 9px; cursor: pointer; white-space: nowrap;
+  }
+  .resetbtn:hover { color: var(--ink); border-color: var(--line-strong); }
+  .resetbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* ---- Progression table ---- */
+  .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+  table { border-collapse: collapse; width: 100%; min-width: 520px; background: var(--surface); font-size: 13px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th {
+    font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+    color: var(--ink-soft); background: var(--surface-2); position: sticky; top: 0;
+  }
+  tbody th {
+    font-family: var(--font-mono); font-weight: 700; color: var(--accent); white-space: nowrap;
+    font-size: 12.5px;
+  }
+  td .wk-date { display:block; font-family: var(--font-mono); font-size: 11px; color: var(--ink-faint); font-weight: 400; }
+  tr.peak td, tr.peak th { background: var(--accent-bg); }
+  tr.race td, tr.race th { background: var(--hard-bg); }
+  td b { color: var(--ink); }
+  tbody tr:last-child td, tbody tr:last-child th { border-bottom: 0; }
+
+  /* ---- Callout / playbook ---- */
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 16px 18px; box-shadow: var(--shadow);
+  }
+  .card + .card { margin-top: 14px; }
+  .card h3 { margin: 0 0 10px; font-size: 16px; font-weight: 800; letter-spacing: -.01em; }
+  .card ul { margin: 0; padding-left: 20px; }
+  .card li { margin-bottom: 7px; font-size: 14px; color: var(--ink-soft); }
+  .card li:last-child { margin-bottom: 0; }
+  .card li b { color: var(--ink); }
+  .card.warn { border-left: 3px solid var(--mod); }
+  .card.race { border-left: 3px solid var(--hard); }
+
+  .note { font-size: 12.5px; color: var(--ink-faint); margin-top: 22px; line-height: 1.55; }
+  .note b { color: var(--ink-soft); }
+
+  /* ---- Sticky rest timer ---- */
+  .timer {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    background: var(--surface); border-top: 1px solid var(--line-strong);
+    box-shadow: 0 -4px 20px rgba(0,0,0,.12);
+    padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+    display: flex; align-items: center; gap: 9px;
+  }
+  .timer .tdisplay {
+    font-family: var(--font-mono); font-size: 26px; font-weight: 700; letter-spacing: -.02em;
+    color: var(--ink); font-variant-numeric: tabular-nums; min-width: 78px; text-align: center;
+  }
+  .timer.running .tdisplay { color: var(--accent); }
+  .timer.done .tdisplay { color: var(--hard); }
+  .timer .tlabel { font-size: 9.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); }
+  .timer .presets { display: flex; gap: 6px; flex: 1; }
+  .tbtn {
+    flex: 1; font-family: var(--font-mono); font-size: 14px; font-weight: 700;
+    background: var(--surface-2); color: var(--ink); border: 1px solid var(--line);
+    border-radius: 9px; padding: 9px 0; cursor: pointer; min-width: 44px;
+  }
+  .tbtn:active { transform: scale(.96); }
+  .tbtn.stop { background: var(--accent-bg); color: var(--accent); border-color: transparent; }
+  .tbtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .tbtn:active { transform: none; } }
+  @keyframes flash { 0%,100%{ background: var(--surface);} 50%{ background: var(--hard-bg);} }
+  .timer.done { animation: flash .5s ease 3; }
+  @media (prefers-reduced-motion: reduce) { .timer.done { animation: none; } }
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">6-Week Training Block</p>
+  <h1>Hyrox-Style Race Plan</h1>
+  <div class="facts">
+    <span><b>Format:</b> 5&times;800&nbsp;m + 5 stations</span>
+    <span><b>Stations:</b> ski &middot; sled &middot; row &middot; lunge &middot; wall&nbsp;ball</span>
+    <span>Mon/Wed/Fri gym &middot; Sun run</span>
+  </div>
+
+  <div class="clock">
+    <div class="num" id="countdown">&mdash;</div>
+    <div class="lbl">days until<br><b>Race &middot; Sat 29 Aug</b></div>
+  </div>
+
+  <!-- WEEKLY PROGRAMME (tabs) -->
+  <section>
+    <div class="sec-head"><h2>This week&rsquo;s programme</h2><div class="rule"></div></div>
+    <p class="note" style="margin-top:0;margin-bottom:2px">Tap a week for that week&rsquo;s exact loads, reps &amp; rest. Numbers are <b>starting points</b> &mdash; autoregulate to <code class="k">RIR 2&ndash;3</code> and nudge up when a weight feels easy. Opens on the current week.</p>
+    <div class="tabs" id="tabbar" role="tablist"></div>
+    <div id="weeks"></div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section>
+    <div class="sec-head"><h2>Whole block at a glance</h2><div class="rule"></div></div>
+    <div class="tablewrap">
+      <table>
+        <thead>
+          <tr><th>Week</th><th>Mon &middot; Row + Strength</th><th>Wed &middot; Brick</th><th>Fri &middot; Engine</th><th>Sun &middot; Run</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>W1<span class="wk-date">20&ndash;26 Jul</span></th>
+            <td>Row 6&times;250 m + full-body, <b>RIR 3</b></td>
+            <td>Circuit, <b>no runs</b>: 4 rounds (bike subs row)</td>
+            <td>Bike 5&times;250 m + pull</td>
+            <td>5&times;800, jog 400 &mdash; <b>find pace</b></td>
+          </tr>
+          <tr>
+            <th>W2<span class="wk-date">27 Jul&ndash;2 Aug</span></th>
+            <td>Row 6&times;250 m + strength (load up)</td>
+            <td><b>First brick:</b> 3 rounds w/ 800s (bike for row)</td>
+            <td>Row 6&times;250 m + pull</td>
+            <td>6&times;800, jog 300</td>
+          </tr>
+          <tr>
+            <th>W3<span class="wk-date">3&ndash;9 Aug</span></th>
+            <td>Row 5&times;400 m + strength (RIR 2)</td>
+            <td>4 rounds + incline push (bike for row)</td>
+            <td>Bike 4&times;500 m + pull</td>
+            <td>5&times;800 @ goal, jog 200</td>
+          </tr>
+          <tr>
+            <th>W4<span class="wk-date">10&ndash;16 Aug</span></th>
+            <td>Row 4&times;500 m + maintain</td>
+            <td>4&ndash;5 rounds @ goal (bike for row)</td>
+            <td>Row intervals, light</td>
+            <td><b>Easy long</b> 50&ndash;60 min <i>(recovery)</i></td>
+          </tr>
+          <tr class="peak">
+            <th>W5<span class="wk-date">17&ndash;23 Aug</span></th>
+            <td><b>Mon 17: FULL 5&times; SIM (rower &#10003;) &mdash; time it</b></td>
+            <td>Easy 30 min + mobility</td>
+            <td>Easy bike + mobility</td>
+            <td>Easy 30&ndash;40 min + strides</td>
+          </tr>
+          <tr class="race">
+            <th>W6<span class="wk-date">24&ndash;29 Aug</span></th>
+            <td>Mon 24: rest / 20 min + strides</td>
+            <td>Wed 26: 3&times;800 @ race pace (sharpener)</td>
+            <td>Fri 28: 10&ndash;15 min jog + strides</td>
+            <td><b>Sat 29 &mdash; RACE</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- LEGEND -->
+  <section>
+    <div class="sec-head"><h2>How to read this</h2><div class="rule"></div></div>
+    <div class="legend">
+      <div class="chips">
+        <span class="chip easy">Easy</span>
+        <span class="chip mod">Moderate</span>
+        <span class="chip hard">Hard / Race</span>
+      </div>
+      <p><b>Effort</b> &mdash; Easy = conversational (Zone&nbsp;2). Moderate = comfortably hard, could speak in short sentences. Hard = race effort, repeatable but no chatting.</p>
+      <p><b>Load rule (autoregulate)</b> &mdash; pick a weight where the last 2&ndash;3 reps are genuinely hard but clean (<code class="k">RIR 2&ndash;3</code>, "reps in reserve"). Weeks 1&ndash;2 stay conservative &mdash; DOMS will otherwise wreck your Sunday run. When a load feels easy at target reps, add ~2&nbsp;kg.</p>
+      <p><b>Substitutions built in</b> &mdash; <b>ski &rarr; cable/DB pulling</b>, <b>sled &rarr; incline-treadmill or ramp/stairs push</b>, <b>wall ball &rarr; DB thrusters</b>. <b>Rower on Mondays + even-week Fridays (W2, W4)</b>, so rowing lives there: Wednesday's brick swaps the row for the <b>seated bike (or burpees)</b>, and odd-week Fridays use seated-bike/hard-run intervals &mdash; same engine hit.</p>
+      <p><b>Tap an exercise</b> to check it off (saved on this device, per week). Use the <b>rest timer</b> pinned at the bottom between sets.</p>
+    </div>
+  </section>
+
+  <!-- RACE DAY -->
+  <section>
+    <div class="sec-head"><h2>Race-day playbook &middot; Sat 29 Aug</h2><div class="rule"></div></div>
+    <div class="card race">
+      <h3>Pacing &amp; execution</h3>
+      <ul>
+        <li><b>Don't blow the first 800.</b> It'll feel easy &mdash; that's the trap. Bank nothing; run it at goal, not below.</li>
+        <li><b>Expect the leg tax.</b> After sled, lunges and wall balls your legs turn over slower &mdash; accept ~20&ndash;40 s/km on the next run and just keep the cadence up.</li>
+        <li><b>Thrusters &amp; wall balls: unbroken if you can.</b> A steady rhythm beats fast-then-stalling. Breathe at the top.</li>
+        <li><b>Row legs-first</b>, strong but not redlined &mdash; it's easy to overcook and wreck the next run.</li>
+        <li><b>Sled / incline push:</b> short powerful steps, low body angle, keep moving.</li>
+        <li><b>Negative-split mindset:</b> aim to finish the back half no slower than the front.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Logistics</h3>
+      <ul>
+        <li><b>Warm-up:</b> 10 min easy jog, dynamic legs, 3&ndash;4 strides, a few thrusters + 100 m row to prime &mdash; finish ~10 min before start.</li>
+        <li><b>Fuel:</b> normal breakfast 2&ndash;3 h prior; it's a short event, no mid-race fuel needed. Hydrate to pale-yellow, don't over-drink.</li>
+        <li><b>Nothing new on race day</b> &mdash; shoes, kit, breakfast all pre-tested in week 5.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section>
+    <div class="sec-head"><h2>Guardrails</h2><div class="rule"></div></div>
+    <div class="card warn">
+      <ul>
+        <li><b>Moderate loads weeks 1&ndash;2</b> &mdash; reintroducing gym work; DOMS will otherwise eat your Sunday quality.</li>
+        <li><b>Never two hard days back-to-back</b> without a rest day between (that pattern caused the early-July efficiency drift).</li>
+        <li><b>Watch HR &amp; EF</b> on easy + interval runs in the tracker &mdash; a creeping HR-at-pace means under-recovered; back off.</li>
+        <li><b>Taper is training too.</b> Week 6 volume drops ~50%; you gain freshness and lose nothing. Resist adding "one more" session.</li>
+        <li><b>Being light helps everywhere except the sled</b> &mdash; that's your relative weak point, so the incline-push sub and leg strength-endurance earn their keep.</li>
+      </ul>
+    </div>
+  </section>
+
+  <p class="note">
+    <b>Loads are starting points</b>, not prescriptions &mdash; autoregulate to RIR 2&ndash;3 and progress when a weight feels easy at the target reps.
+    Rower is available <b>every Monday + on even weeks' Fridays</b> (W2, W4); odd-week Fridays use the <b>seated bike</b> (or hard runs) &mdash; same effort. The week-5 dress rehearsal sits on <b>Mon 17 Aug</b> so it includes a real row.
+    Pace targets firm up once you log your first 800s set.
+    <button class="resetbtn" id="resetAll" style="margin-top:12px">Reset all check-marks</button>
+  </p>
+
+</div>
+
+<!-- STICKY REST TIMER -->
+<div class="timer" id="timer">
+  <div>
+    <div class="tdisplay" id="tdisplay">0:00</div>
+    <div class="tlabel" style="text-align:center">Rest</div>
+  </div>
+  <div class="presets">
+    <button class="tbtn" data-sec="45">0:45</button>
+    <button class="tbtn" data-sec="60">1:00</button>
+    <button class="tbtn" data-sec="90">1:30</button>
+    <button class="tbtn" data-sec="120">2:00</button>
+    <button class="tbtn" data-sec="180">3:00</button>
+    <button class="tbtn stop" id="tstop">Stop</button>
+  </div>
+</div>
+
+<script>
+  // ============================================================
+  //  WEEKLY PROGRAMME DATA  (edit loads here as you progress)
+  // ============================================================
+  // Per-week load table for the Mon strength day + Fri engine piece.
+  var LOADS = {
+    1: { row:'6&times;250 m', squat:'20 kg', lunge:'2&times;10 kg', rdl:'30 kg', thr:'2&times;8 kg',  rir:'RIR 3',   fri:'5&times;250 m',        rowFri:false },
+    2: { row:'6&times;250 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg', rir:'RIR 3',   fri:'6&times;250 m',        rowFri:true  },
+    3: { row:'5&times;400 m', squat:'26 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg', rir:'RIR 2',   fri:'4&times;500 m',        rowFri:false },
+    4: { row:'4&times;500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'50 kg', thr:'2&times;14 kg', rir:'maintain',fri:'intervals, light',rowFri:true  }
+  };
+  // Per-week brick (Wed) config.
+  var WED = {
+    1: { rounds:'4',   runs:false, push:false, label:'Round = bike &rarr; thruster &rarr; lunge',                          note:'Grooving the movements &mdash; no runs yet this week.' },
+    2: { rounds:'3',   runs:true,  push:false, label:'Round = 800 m run &rarr; bike &rarr; thruster &rarr; lunge',              note:'First real brick &mdash; the 800 s go in.' },
+    3: { rounds:'4',   runs:true,  push:true,  label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Incline push (sled sub) joins from this week.' },
+    4: { rounds:'4&ndash;5', runs:true,  push:true,  label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Runs at goal pace; add the 5th round only if fresh.' }
+  };
+
+  function monStrength(w) {
+    var L = LOADS[w];
+    return { dow:'Mon', title:'Row + Strength', chip:'mod',
+      sub:'Guaranteed <b>row day</b> + full-body strength (your biggest gap). Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.',
+      ex:[
+        { n:'Row intervals', tag:'rower here every Mon',
+          stats:[{l:'Sets&times;Reps',v:L.row},{l:'Effort',v:'hard &middot; 24&ndash;28 spm'},{l:'Rest',v:'90 s',rest:true}],
+          cue:'Legs-drive first, then hinge, then arms &mdash; your main row-station work.' },
+        { n:'Goblet squat (KB/DB)',
+          stats:[{l:'Sets&times;Reps',v:'4 &times; 12'},{l:'Load',v:L.squat},{l:'Rest',v:'90 s',rest:true}],
+          cue:'Chest tall, sit between the knees, control the descent.' },
+        { n:'Walking lunge (DBs / front KB)',
+          stats:[{l:'Sets&times;Reps',v:'4 &times; 20 steps'},{l:'Load',v:L.lunge},{l:'Rest',v:'90 s',rest:true}],
+          cue:'Long step, vertical front shin &mdash; this <i>is</i> the lunge station.' },
+        { n:'Romanian deadlift (BB/DB)',
+          stats:[{l:'Sets&times;Reps',v:'3 &times; 12'},{l:'Load',v:L.rdl},{l:'Rest',v:'90 s',rest:true}],
+          cue:'Hinge from the hips, flat back, feel the hamstrings &mdash; protects the run.' },
+        { n:'DB thruster', tag:'wall-ball sub',
+          stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.thr},{l:'Rest',v:'75 s',rest:true}],
+          cue:'One fluid squat-to-press, drive from the legs. Practise <b>unbroken</b> sets.' },
+        { n:'Cable pulldown / DB bent row', tag:'ski sub',
+          stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.rir},{l:'Rest',v:'75 s',rest:true}],
+          cue:'Pull with the lats, not the arms &mdash; mimics the ski catch.' },
+        { n:'Core finisher &mdash; plank + mountain climbers',
+          stats:[{l:'Sets&times;Reps',v:'3 &times; (40 s + 12)'},{l:'Load',v:'bodyweight'},{l:'Rest',v:'45 s',rest:true}],
+          cue:'Ribs down, no sag. Cool down 5 min easy.' }
+      ]};
+  }
+
+  function wedBrick(w) {
+    var C = WED[w];
+    var ex = [
+      { n:C.label,
+        stats:[{l:'Rounds',v:C.rounds},{l:'Between exercises',v:'30&ndash;60 s'},{l:'Between rounds',v:'2&ndash;3 min',rest:true}],
+        cue:C.note + ' Reduce round-rest as the weeks progress.' }
+    ];
+    if (C.runs) ex.push({ n:'800 m treadmill @ goal pace',
+      stats:[{l:'Distance',v:'800 m'},{l:'Effort',v:'goal race pace'}],
+      cue:'Same target as Sunday&rsquo;s 800s &mdash; hold it on tired legs.' });
+    ex.push({ n:'Seated bike / burpees', tag:'row sub &mdash; no rower Wed',
+      stats:[{l:'Bike',v:'250&ndash;500 m'},{l:'or Burpees',v:'12'},{l:'Effort',v:'hard'}],
+      cue:'Seated bike hard, or bang out burpees. The row <i>skill</i> is trained Monday.' });
+    ex.push({ n:'DB thruster', tag:'wall-ball sub',
+      stats:[{l:'Reps',v:'15'},{l:'Load',v:'2&times;8&ndash;10 kg'}],
+      cue:'Lighter than Monday &mdash; go for speed and unbroken.' });
+    // Walking lunge: cue depends on what follows it this week.
+    var lungeCue = C.push
+        ? 'No rest &mdash; flow straight into the incline push.'
+        : (C.runs ? 'Straight into the next run &mdash; this is the jelly-legs rehearsal.'
+                  : 'Controlled reps &mdash; grooving the pattern (no run this week).');
+    ex.push({ n:'Walking lunge',
+      stats:[{l:'Reps',v:'20 steps'},{l:'Load',v:'BW &rarr; 2&times;6 kg'}],
+      cue:lungeCue });
+    if (C.push) ex.push({ n:'Incline push', tag:'sled sub',
+      stats:[{l:'Time',v:'30 s'},{l:'Incline',v:'10&ndash;12%'},{l:'Effort',v:'hard march/run'}],
+      cue:'Powerful short steps, then <b>straight into the next run</b> &mdash; the jelly-legs rehearsal. No treadmill incline? Car-park ramp or stairwell.' });
+    return { dow:'Wed', title:'Brick / Simulation', chip:'hard',
+      sub:'The money session &mdash; trains <b>compromised running</b> (fast legs after trashed legs). Warm-up: 8&ndash;10 min easy run + 3 strides. Keep transitions short like the race.',
+      ex:ex };
+  }
+
+  function friEngine(w) {
+    var L = LOADS[w];
+    var engine = L.rowFri
+      ? { n:'Row intervals', tag:'rower available this Fri',
+          cue:'Rower&rsquo;s here &mdash; row it. Legs-drive first, strong but not redlined.' }
+      : { n:'Seated bike / hard-run intervals', tag:'no rower this Fri &mdash; same effort',
+          cue:'No rower today &mdash; same intervals on the seated bike or as hard runs. Identical effort.' };
+    engine.stats = [{l:'Sets',v:L.fri},{l:'Effort',v:'hard'},{l:'Rest',v:'90 s&ndash;2 min',rest:true}];
+    return { dow:'Fri', title:'Engine + Pull', chip:'mod',
+      sub:'Legs kept deliberately light so Sunday runs well. Warm-up: 5 min easy. ~40 min.',
+      ex:[
+        engine,
+        { n:'Straight-arm pulldown', tag:'ski sub',
+          stats:[{l:'Sets&times;Reps',v:'3 &times; 15'},{l:'Load',v:'RIR 2&ndash;3'},{l:'Rest',v:'60 s',rest:true}],
+          cue:'Superset with the band pull-aparts below.' },
+        { n:'Band pull-apart',
+          stats:[{l:'Sets&times;Reps',v:'3 &times; 20'},{l:'Load',v:'light band'},{l:'Rest',v:'60 s',rest:true}],
+          cue:'Upper-back endurance for the ski + row catch.' },
+        { n:'Core &mdash; Pallof press + hollow hold',
+          stats:[{l:'Sets&times;Reps',v:'3 &times; (12/side + 30 s)'},{l:'Rest',v:'45 s',rest:true}],
+          cue:'Anti-rotation carries over to carries + running posture.' }
+      ]};
+  }
+
+  function sunRun(w) {
+    if (w === 4) return { dow:'Sun', title:'Easy Long Run', chip:'easy',
+      sub:'Recovery week &mdash; deliberately easy. Outdoors, usual route. Cool down / stretch after.',
+      ex:[ { n:'Easy long run',
+        stats:[{l:'Duration',v:'50&ndash;60 min'},{l:'Effort',v:'Zone 2, conversational'}],
+        cue:'No 800 s this week. Keep HR low &mdash; this <i>is</i> the session, not a soft version of a hard one.' } ]};
+    var reps = w === 2 ? '6 &times; 800 m' : '5 &times; 800 m';
+    var jog  = w === 1 ? 'jog 400 m' : (w === 2 ? 'jog 300 m' : 'jog 200 m');
+    var cue  = w === 1 ? '"Hard but I could definitely do 5." <b>Find &amp; log your real pace</b> so we can watch it sharpen.'
+                       : 'Same pace as your Wed brick 800s. <b>Log it in the tracker.</b>';
+    return { dow:'Sun', title:'Run Quality &mdash; 800s', chip:'hard',
+      sub:'Your purest running session, outdoors. Warm-up: 10 min easy + 3&ndash;4 strides. Cool down 5&ndash;10 min.',
+      ex:[ { n:'800 m repeats @ goal pace',
+        stats:[{l:'Reps',v:reps},{l:'Pace',v:'~4:45&ndash;5:15/km'},{l:'Recovery',v:jog,rest:true}],
+        cue:cue } ]};
+  }
+
+  // Weeks 1&ndash;4 are built from the tables; 5&ndash;6 are hand-authored (peak + taper).
+  var WEEKS = {
+    1: { dates:'20&ndash;26 Jul', phase:'Build', focus:'Reintroduce strength (moderate loads &mdash; expect DOMS) and find your 800 m pace.',
+         sessions:[ monStrength(1), wedBrick(1), friEngine(1), sunRun(1) ] },
+    2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Load up the lifts; run your first true brick with the 800 s in.',
+         sessions:[ monStrength(2), wedBrick(2), friEngine(2), sunRun(2) ] },
+    3: { dates:'3&ndash;9 Aug', phase:'Specificity', focus:'Race-specific: incline push joins the brick, 800 s at goal pace.',
+         sessions:[ monStrength(3), wedBrick(3), friEngine(3), sunRun(3) ] },
+    4: { dates:'10&ndash;16 Aug', phase:'Specificity', focus:'Hold intensity; Sunday drops to an easy long recovery run.',
+         sessions:[ monStrength(4), wedBrick(4), friEngine(4), sunRun(4) ] },
+    5: { dates:'17&ndash;23 Aug', phase:'Peak', focus:'Dress rehearsal Monday (timed, with a real row) &mdash; then easy all week to absorb it.',
+         sessions:[
+           { dow:'Mon 17', title:'Dress Rehearsal &mdash; Full 5&times; Sim', chip:'hard',
+             sub:'The whole thing, <b>with a real row</b> (rower available today). Warm up as if racing. <b>Time it and log the total.</b>',
+             ex:[
+               { n:'Full simulation &mdash; 5 rounds, timed',
+                 stats:[{l:'Rounds',v:'5'},{l:'Transitions',v:'short'},{l:'Total',v:'TIME IT',rest:true}],
+                 cue:'Race order &mdash; each 800 m run is followed by one station. This is your benchmark.' },
+               { n:'800 m run &times; 5', stats:[{l:'Distance',v:'5 &times; 800 m'},{l:'Pace',v:'goal'}],
+                 cue:'Run, then straight to the station. Expect the leg tax after each station.' },
+               { n:'Stations &mdash; ski &rarr; sled &rarr; row &rarr; lunge &rarr; wall ball', stats:[{l:'Per round',v:'1 station'}],
+                 cue:'Your kit: cable pulldown &rarr; incline push &rarr; <b>REAL ROW 500 m</b> &rarr; walking lunge &rarr; DB thrusters.' },
+               { n:'Record your total time', stats:[{l:'Benchmark',v:'log it',rest:true}],
+                 cue:'This is the number the whole taper protects. Note how each run felt.' }
+             ]},
+           { dow:'Wed', title:'Easy Shake-out', chip:'easy',
+             sub:'Absorb Monday. Nothing hard this week after the sim.',
+             ex:[ { n:'Easy 30 min + mobility', stats:[{l:'Duration',v:'30 min'},{l:'Effort',v:'Zone 2'}],
+                   cue:'Loosen up, mobilise hips + ankles. No intervals.' } ]},
+           { dow:'Fri', title:'Easy Engine', chip:'easy',
+             sub:'Keep the blood moving, stay fresh.',
+             ex:[ { n:'Easy seated bike + mobility', stats:[{l:'Duration',v:'20&ndash;25 min'},{l:'Effort',v:'easy'}],
+                   cue:'Conversational only (no rower this week). Full-body mobility to finish.' } ]},
+           { dow:'Sun', title:'Primer Run', chip:'easy',
+             sub:'Legs turning over, not tired.',
+             ex:[ { n:'Easy 30&ndash;40 min + strides', stats:[{l:'Duration',v:'30&ndash;40 min'},{l:'Strides',v:'4&ndash;6 &times; 20 s'}],
+                   cue:'Easy pace with a few relaxed strides &mdash; feel springy, bank nothing.' } ]}
+         ]},
+    6: { dates:'24&ndash;29 Aug', phase:'Taper &rarr; Race', focus:'~50% volume, stay sharp. One short sharpener midweek, then race Saturday.',
+         sessions:[
+           { dow:'Mon 24', title:'Rest / Optional Shake-out', chip:'easy',
+             sub:'Freshness is the goal now. Rest, or the lightest possible movement.',
+             ex:[ { n:'Rest or 20 min easy + strides', stats:[{l:'Duration',v:'0&ndash;20 min'},{l:'Effort',v:'very easy'}],
+                   cue:'If you move at all, keep it tiny. Sleep and food do the work this week.' } ]},
+           { dow:'Wed 26', title:'Race-Pace Sharpener', chip:'hard',
+             sub:'A short, sharp reminder of race pace &mdash; <b>not</b> a workout you finish tired.',
+             ex:[ { n:'3 &times; 800 m @ race pace', stats:[{l:'Reps',v:'3 &times; 800 m'},{l:'Pace',v:'goal'},{l:'Recovery',v:'jog 400 m',rest:true}],
+                   cue:'Feel fast and smooth. Stop with plenty left &mdash; quality, not quantity.' } ]},
+           { dow:'Fri 28', title:'Pre-Race Primer', chip:'easy',
+             sub:'The day-before opener. Wake the legs up, nothing more.',
+             ex:[ { n:'10&ndash;15 min jog + strides', stats:[{l:'Duration',v:'10&ndash;15 min'},{l:'Strides',v:'3&ndash;4 &times; 15 s'}],
+                   cue:'Nothing new. Lay out kit, shoes and breakfast tonight.' } ]},
+           { dow:'Sat 29', title:'RACE DAY', chip:'hard', chipLabel:'Race',
+             sub:'This is it. Follow the <b>race-day playbook</b> below for pacing, warm-up and fuel.',
+             ex:[ { n:'Race &mdash; 5 &times; 800 m + 5 stations', stats:[{l:'Format',v:'5&times;800 + 5'},{l:'First 800',v:'at goal &mdash; no faster',rest:true}],
+                   cue:'Don&rsquo;t blow the first run. Unbroken on thrusters/wall balls. Negative-split mindset.' } ]}
+         ]}
+  };
+
+  // ---- Render tabs + week panels ----
+  (function () {
+    var TAB_META = {
+      1:{lbl:'W1',date:'20 Jul'}, 2:{lbl:'W2',date:'27 Jul'}, 3:{lbl:'W3',date:'3 Aug'},
+      4:{lbl:'W4',date:'10 Aug'}, 5:{lbl:'W5',date:'17 Aug'}, 6:{lbl:'W6',date:'24 Aug'}
+    };
+    var chipLabels = { easy:'Easy', mod:'Moderate', hard:'Hard' };
+
+    function renderStats(stats) {
+      if (!stats || !stats.length) return '';
+      return '<div class="stats">' + stats.map(function (s) {
+        return '<div class="stat' + (s.rest ? ' rest' : '') + '"><span class="sl">' + s.l +
+               '</span><span class="sv">' + s.v + '</span></div>';
+      }).join('') + '</div>';
+    }
+    function renderSession(wk, s) {
+      var chip = s.chipLabel || chipLabels[s.chip] || '';
+      var domId = s.dow.toLowerCase().replace(/[^a-z0-9]/g, '');
+      var exs = s.ex.map(function (e, i) {
+        var id = 'w' + wk + '-' + domId + '-' + i;
+        var tag = e.tag ? ' <span class="extag">(' + e.tag + ')</span>' : '';
+        return '<div class="ex"><div class="ex-top"><input type="checkbox" id="' + id + '">' +
+               '<label for="' + id + '">' + e.n + tag + '</label></div>' +
+               renderStats(e.stats) +
+               (e.cue ? '<p class="cue">' + e.cue + '</p>' : '') + '</div>';
+      }).join('');
+      return '<div class="day"><header><div class="dtitle"><span class="dow">' + s.dow +
+             '</span><h3>' + s.title + '</h3></div><span class="chip ' + s.chip + '">' + chip +
+             '</span></header><p class="sub">' + s.sub + '</p>' + exs + '</div>';
+    }
+
+    var tabbar = document.getElementById('tabbar');
+    var weeksEl = document.getElementById('weeks');
+    var tabsHtml = '', panelsHtml = '';
+    for (var w = 1; w <= 6; w++) {
+      var meta = TAB_META[w], data = WEEKS[w];
+      var raceClass = w === 6 ? ' race' : '';
+      tabsHtml += '<button class="tab' + raceClass + '" data-week="' + w + '" role="tab">' +
+                  '<span class="tw">' + meta.lbl + '</span><span class="tdate">' + meta.date + '</span></button>';
+      var sessions = data.sessions.map(function (s) { return renderSession(w, s); }).join('');
+      panelsHtml += '<div class="weekpanel" data-week="' + w + '">' +
+        '<div class="weekhead"><div class="wtitle"><h3>Week ' + w + '</h3>' +
+        '<span class="wdates">' + data.dates + '</span>' +
+        '<span class="phase">' + data.phase + '</span></div>' +
+        '<p class="focus">' + data.focus + '</p></div>' + sessions + '</div>';
+    }
+    tabbar.innerHTML = tabsHtml;
+    weeksEl.innerHTML = panelsHtml;
+
+    var tabs = tabbar.querySelectorAll('.tab');
+    var panels = weeksEl.querySelectorAll('.weekpanel');
+    function select(w) {
+      tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.week === String(w)); });
+      panels.forEach(function (p) { p.classList.toggle('active', p.dataset.week === String(w)); });
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { select(t.dataset.week); });
+    });
+
+    // Default to the current week by date (auto-advances week to week).
+    var ENDS = [ [1,2026,6,26],[2,2026,7,2],[3,2026,7,9],[4,2026,7,16],[5,2026,7,23],[6,2026,7,29] ];
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var current = 1;
+    for (var i = 0; i < ENDS.length; i++) {
+      var end = new Date(ENDS[i][1], ENDS[i][2], ENDS[i][3]);
+      if (today <= end) { current = ENDS[i][0]; break; }
+      current = 6; // past all week-ends -> stay on race week
+    }
+    select(current);
+    // Bring the active tab into view within the scroller.
+    var activeTab = tabbar.querySelector('.tab.active');
+    if (activeTab && activeTab.scrollIntoView) {
+      try { activeTab.scrollIntoView({ inline: 'center', block: 'nearest' }); } catch (e) {}
+    }
+  })();
+
+  // ---- Countdown to race ----
+  (function () {
+    var race = new Date(2026, 7, 29); // 29 Aug 2026 (month is 0-indexed)
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.round((race - today) / 86400000);
+    var el = document.getElementById('countdown');
+    el.textContent = days > 0 ? days : (days === 0 ? '0' : '\u2014');
+    if (days <= 0) {
+      document.querySelector('.clock .lbl b').textContent = days === 0 ? 'Race day \u2014 go!' : 'Race \u00b7 Sat 29 Aug';
+    }
+  })();
+
+  // ---- Checkbox persistence ----
+  (function () {
+    var KEY = 'hyrox-plan-checks-v2';
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) {}
+    var boxes = document.querySelectorAll('input[type="checkbox"]');
+    boxes.forEach(function (b) {
+      if (saved[b.id]) b.checked = true;
+      b.addEventListener('change', function () {
+        saved[b.id] = b.checked;
+        try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      });
+    });
+    document.getElementById('resetAll').addEventListener('click', function () {
+      boxes.forEach(function (b) { b.checked = false; });
+      saved = {};
+      try { localStorage.removeItem(KEY); } catch (e) {}
+    });
+  })();
+
+  // ---- Rest timer ----
+  (function () {
+    var timer = document.getElementById('timer');
+    var disp = document.getElementById('tdisplay');
+    var remaining = 0, iv = null;
+
+    function fmt(s) {
+      var m = Math.floor(s / 60), r = s % 60;
+      return m + ':' + (r < 10 ? '0' : '') + r;
+    }
+    function render() { disp.textContent = fmt(Math.max(0, remaining)); }
+    function stop() {
+      if (iv) { clearInterval(iv); iv = null; }
+      timer.classList.remove('running');
+    }
+    function done() {
+      stop();
+      timer.classList.add('done');
+      if (navigator.vibrate) { try { navigator.vibrate([200, 100, 200]); } catch (e) {} }
+      setTimeout(function () { timer.classList.remove('done'); }, 1600);
+    }
+    function start(sec) {
+      stop();
+      timer.classList.remove('done');
+      remaining = sec; render();
+      timer.classList.add('running');
+      iv = setInterval(function () {
+        remaining -= 1; render();
+        if (remaining <= 0) done();
+      }, 1000);
+    }
+    document.querySelectorAll('.tbtn[data-sec]').forEach(function (btn) {
+      btn.addEventListener('click', function () { start(parseInt(btn.dataset.sec, 10)); });
+    });
+    document.getElementById('tstop').addEventListener('click', function () {
+      stop(); timer.classList.remove('done'); remaining = 0; render();
+    });
+    render();
+  })();
+</script>
