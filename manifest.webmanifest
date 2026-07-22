@@ -1,0 +1,12 @@
+{
+  "name": "Hyrox Plan",
+  "short_name": "Hyrox",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#EDF0F4",
+  "theme_color": "#EDF0F4",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
