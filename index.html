@@ -305,6 +305,9 @@
   .card li b { color: var(--ink); }
   .card.warn { border-left: 3px solid var(--mod); }
   .card.race { border-left: 3px solid var(--hard); }
+  .card .moreBtn { margin-left: 0; }
+  .card .details { margin-left: 0; }
+  .tune { margin: 12px 4px 0; font-size: 12px; font-style: italic; color: var(--ink-faint); }
 
   .note { font-size: 12.5px; color: var(--ink-faint); margin-top: 22px; line-height: 1.55; }
   .note b { color: var(--ink-soft); }
@@ -416,6 +419,78 @@
         </tbody>
       </table>
     </div>
+  </section>
+
+  <!-- NUTRITION -->
+  <section>
+    <div class="sec-head"><h2>Fuel &amp; recovery</h2><div class="rule"></div></div>
+
+    <div class="card">
+      <h3>Daily targets</h3>
+      <ul>
+        <li><b>Protein</b> &mdash; ~150 g/day (1.6&ndash;2.2 g/kg), split into 3&ndash;4 feeds of ~35&ndash;40 g. Your #1 recovery lever.</li>
+        <li><b>Carbs</b> &mdash; 300&ndash;450 g on training days; top end on hard days (Wed/Sun), lower on easy/rest.</li>
+        <li><b>Fat</b> &mdash; ~60&ndash;90 g; fill the rest of your energy here, don&rsquo;t go too low.</li>
+        <li><b>Fluid</b> &mdash; 2.5&ndash;3.5 L+/day, more in the heat; add sodium on sweaty morning runs.</li>
+        <li><b>Eat enough</b> &mdash; you&rsquo;re fuelling performance, not cutting; don&rsquo;t let bodyweight drift down.</li>
+      </ul>
+      <button type="button" class="moreBtn" aria-expanded="false">Why &amp; how <span class="mchev">&#9656;</span></button>
+      <div class="details" hidden>
+        <div class="dh">Protein</div>
+        <ul class="dul">
+          <li>Repairs the muscle you&rsquo;re re-loading (what clears DOMS faster) and builds the strength-endurance gap.</li>
+          <li>Spread beats one big hit &mdash; one dose within ~2 h after training, one before bed (yogurt/casein).</li>
+          <li>Sources: eggs, chicken/fish, Greek yogurt, dairy, tofu/tempeh, legumes, whey.</li>
+        </ul>
+        <div class="dh">Carbs &mdash; periodise</div>
+        <ul class="dul">
+          <li>800s + brick run on glycogen &mdash; don&rsquo;t low-carb while doing intervals.</li>
+          <li>More on Wed/Sun, fewer on easy/rest days.</li>
+        </ul>
+        <div class="dh">Energy</div>
+        <p class="dp">Under-eating is a classic hidden cause of the fatigue / EF-drift pattern you had. Load goes up &rarr; food goes up. Bodyweight holding steady = about right.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Around your sessions</h3>
+      <ul>
+        <li><b>Before hard AM sessions</b> &mdash; a small easy carb (banana, toast + honey, oats). Easy runs are fine fasted.</li>
+        <li><b>After hard sessions</b> &mdash; carbs + protein together to refill glycogen and start repair.</li>
+        <li><b>Sweaty runs</b> &mdash; ~400&ndash;500 ml fluid beforehand; electrolytes/sodium for the longer, hotter ones.</li>
+      </ul>
+      <button type="button" class="moreBtn" aria-expanded="false">Hydration check <span class="mchev">&#9656;</span></button>
+      <div class="details" hidden>
+        <ul class="dul">
+          <li>Weigh before/after a run; drink ~1.25&ndash;1.5&times; the weight lost afterward.</li>
+          <li>Pale-yellow urine = about right. Dark = behind; clear-and-frequent = over-drinking.</li>
+          <li>SG heat means more sweat + sodium loss than the numbers suggest &mdash; salt your food, don&rsquo;t fear it.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card warn">
+      <h3>Recovery &amp; DOMS (right now)</h3>
+      <ul>
+        <li><b>Hit protein every day</b> &mdash; the single best thing for clearing this week&rsquo;s DOMS.</li>
+        <li><b>Don&rsquo;t skimp on calories</b> &mdash; give your body materials to repair.</li>
+        <li><b>Omega-3s</b> (oily fish 2&times;/week or a supplement) + colourful whole foods help the inflammatory load.</li>
+        <li><b>Go easy on routine NSAIDs</b> (ibuprofen) for DOMS &mdash; regular use can blunt strength adaptation; occasional is fine.</li>
+        <li><b>Sleep</b> is the multiplier on all of it. Tart cherry juice is a minor, optional extra.</li>
+      </ul>
+    </div>
+
+    <div class="card race">
+      <h3>Race week &amp; morning</h3>
+      <ul>
+        <li><b>Taper</b> &mdash; light carb emphasis the last 2&ndash;3 days (volume is down, so don&rsquo;t overeat &mdash; just favour carbs).</li>
+        <li><b>Race morning</b> &mdash; tested breakfast 2&ndash;3 h before (carbs + a little protein, low fibre/fat) + fluid &amp; sodium.</li>
+        <li><b>Caffeine</b> ~45&ndash;60 min before is a legit boost if you tolerate it.</li>
+        <li><b>Nothing new</b> &mdash; rehearse breakfast + hydration on a W5 hard session. Full pacing in the Race-day playbook below.</li>
+      </ul>
+    </div>
+
+    <p class="tune">Set for ~75 kg holding weight, no dietary restrictions &mdash; tell me your preferences (veg/vegan, halal, allergies) or if you want to lean out, and I&rsquo;ll retune the numbers.</p>
   </section>
 
   <!-- LEGEND -->
@@ -780,8 +855,8 @@
     tabbar.innerHTML = tabsHtml;
     weeksEl.innerHTML = panelsHtml;
 
-    // Tap-to-expand "How to" detail panels.
-    weeksEl.querySelectorAll('.moreBtn').forEach(function (btn) {
+    // Tap-to-expand "How to" detail panels (across the whole page).
+    document.querySelectorAll('.moreBtn').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var panel = btn.nextElementSibling;
         var opening = panel.hasAttribute('hidden');
