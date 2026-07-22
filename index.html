@@ -206,6 +206,30 @@
   .ex .cue { margin: 5px 0 0 27px; font-size: 12.5px; color: var(--ink-soft); }
   .ex .cue::before { content: "\25B8 "; color: var(--ink-faint); }
 
+  .moreBtn {
+    margin: 8px 0 0 27px; padding: 4px 10px; font: inherit; font-size: 12px;
+    font-weight: 700; color: var(--ink-soft); background: var(--surface-2);
+    border: 1px solid var(--line); border-radius: 8px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .moreBtn:hover { color: var(--ink); border-color: var(--line-strong); }
+  .moreBtn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .moreBtn .mchev { font-size: 9px; transition: transform .15s; }
+  .moreBtn.open .mchev { transform: rotate(90deg); }
+  .details {
+    margin: 8px 0 2px 27px; padding: 11px 14px; font-size: 12.5px; color: var(--ink-soft);
+    background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px;
+  }
+  .details .dh {
+    font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-faint); margin: 11px 0 4px;
+  }
+  .details .dh:first-child { margin-top: 0; }
+  .details .dp { margin: 0 0 7px; }
+  .details .dp:last-child { margin-bottom: 0; }
+  .details .dul { margin: 0; padding-left: 18px; }
+  .details .dul li { margin: 3px 0; }
+
   input[type="checkbox"] {
     appearance: none; -webkit-appearance: none; flex: 0 0 auto;
     width: 18px; height: 18px; margin: 2px 0 0; border: 2px solid var(--line-strong);
@@ -595,7 +619,23 @@
              sub:'Swapped 22 Jul: strong DOMS (7&ndash;8/10 across quads, glutes &amp; hamstrings) from the first gym session &mdash; brick skipped to protect Fri + Sun. Normal brick resumes W2.',
              ex:[ { n:'Easy bike + mobility (or full rest)',
                     stats:[{l:'Bike',v:'20&ndash;30 min easy'},{l:'Mobility',v:'10&ndash;15 min'},{l:'Effort',v:'very easy flush'}],
-                    cue:'Blood flow only, not training &mdash; if it feels rough in the first 5 min, make it a full rest day. Protein + sleep do the real recovery.' } ]},
+                    cue:'Blood flow only, not training &mdash; if it feels rough in the first 5 min, make it a full rest day. Protein + sleep do the real recovery.',
+                    details:[
+                      { p:'Gentle, pain-free movement to pump blood through the sore legs &mdash; not hard stretching. A mild stretch is fine; sharp pain is not. Aim to finish looser than you started.' },
+                      { h:'Dynamic &mdash; slow, small range first', li:[
+                        'Leg swings: 10 front-to-back + 10 side-to-side per leg (hold a wall)',
+                        'Bodyweight squats: 10 slow, only as deep as comfortable',
+                        'Glute bridges: 10 slow, squeeze at the top',
+                        'World&rsquo;s greatest stretch / hip circles: a few easy reps per side',
+                        'Cat-cow: 8 slow rounds' ] },
+                      { h:'Foam roll &mdash; if you have one', li:[
+                        '30&ndash;60 s slow passes each: quads, glutes, hamstrings, calves',
+                        'Firm pressure, not agony &mdash; ease off the very tender spots' ] },
+                      { h:'Finish &mdash; easy static holds', li:[
+                        'Quad stretch, figure-4 glute stretch, standing hamstring',
+                        '20&ndash;30 s each, no forcing' ] },
+                      { p:'Drop anything that aggravates the soreness. This is recovery, not a session.' }
+                    ] } ]},
            friEngine(1), sunRun(1) ] },
     2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Load up the lifts; run your first true brick with the 800 s in.',
          sessions:[ monStrength(2), wedBrick(2), friEngine(2), sunRun(2) ] },
@@ -667,6 +707,18 @@
                '</span><span class="sv">' + s.v + '</span></div>';
       }).join('') + '</div>';
     }
+    function renderDetails(d) {
+      if (!d || !d.length) return '';
+      var body = d.map(function (sec) {
+        var h  = sec.h ? '<div class="dh">' + sec.h + '</div>' : '';
+        var p  = sec.p ? '<p class="dp">' + sec.p + '</p>' : '';
+        var li = (sec.li || []).map(function (x) { return '<li>' + x + '</li>'; }).join('');
+        return h + p + (li ? '<ul class="dul">' + li + '</ul>' : '');
+      }).join('');
+      return '<button type="button" class="moreBtn" aria-expanded="false">' +
+             'How to <span class="mchev">&#9656;</span></button>' +
+             '<div class="details" hidden>' + body + '</div>';
+    }
     function renderSession(wk, s) {
       var chip = s.chipLabel || chipLabels[s.chip] || '';
       var domId = s.dow.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -676,7 +728,8 @@
         return '<div class="ex"><div class="ex-top"><input type="checkbox" id="' + id + '">' +
                '<label for="' + id + '">' + e.n + tag + '</label></div>' +
                renderStats(e.stats) +
-               (e.cue ? '<p class="cue">' + e.cue + '</p>' : '') + '</div>';
+               (e.cue ? '<p class="cue">' + e.cue + '</p>' : '') +
+               renderDetails(e.details) + '</div>';
       }).join('');
       return '<div class="day"><header><div class="dtitle"><span class="dow">' + s.dow +
              '</span><h3>' + s.title + '</h3></div><span class="chip ' + s.chip + '">' + chip +
@@ -700,6 +753,17 @@
     }
     tabbar.innerHTML = tabsHtml;
     weeksEl.innerHTML = panelsHtml;
+
+    // Tap-to-expand "How to" detail panels.
+    weeksEl.querySelectorAll('.moreBtn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var panel = btn.nextElementSibling;
+        var opening = panel.hasAttribute('hidden');
+        if (opening) panel.removeAttribute('hidden'); else panel.setAttribute('hidden', '');
+        btn.classList.toggle('open', opening);
+        btn.setAttribute('aria-expanded', opening ? 'true' : 'false');
+      });
+    });
 
     var tabs = tabbar.querySelectorAll('.tab');
     var panels = weeksEl.querySelectorAll('.weekpanel');
