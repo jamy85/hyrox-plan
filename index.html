@@ -157,6 +157,13 @@
     color: var(--accent); background: var(--accent-bg); padding: 3px 9px; border-radius: 999px;
   }
   .weekhead .focus { margin: 8px 0 0; font-size: 13.5px; color: var(--ink-soft); }
+  .weeknote {
+    margin: 12px 0 0; padding: 11px 13px; font-size: 12.5px; line-height: 1.5;
+    color: var(--ink); background: var(--surface-2);
+    border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: 10px;
+  }
+  .weeknote .moreBtn { margin: 9px 0 0; }
+  .weeknote .details { margin-left: 0; }
 
   /* ---- Legend ---- */
   .legend {
@@ -511,8 +518,11 @@
 
   function monStrength(w) {
     var L = LOADS[w];
+    var monSub = (w <= 2)
+      ? '<b>Moderate reintroduction</b> &mdash; leave 3 reps in the tank (RIR 3) and <b>don&rsquo;t chase the loads on the card</b>; you&rsquo;re coming off pure Zone 2. Guaranteed row day + full-body strength (your biggest gap). Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.'
+      : 'Guaranteed <b>row day</b> + full-body strength (your biggest gap). Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.';
     return { dow:'Mon', title:'Row + Strength', chip:'mod',
-      sub:'Guaranteed <b>row day</b> + full-body strength (your biggest gap). Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.',
+      sub:monSub,
       ex:[
         { n:'Row intervals', tag:'rower here every Mon',
           stats:[{l:'Sets&times;Reps',v:L.row},{l:'Effort',v:'hard &middot; 24&ndash;28 spm'},{l:'Rest',v:'90 s',rest:true}],
@@ -614,6 +624,7 @@
   // Weeks 1&ndash;4 are built from the tables; 5&ndash;6 are hand-authored (peak + taper).
   var WEEKS = {
     1: { dates:'20&ndash;26 Jul', phase:'Build', focus:'Reintroduce strength (moderate loads &mdash; expect DOMS) and find your 800 m pace.',
+         note:'<b>Onramp.</b> You&rsquo;re stepping up from pure Zone 2 running, so ease in: <b>only two hard days</b> (Wed brick + Sun 800s), Monday stays moderate. Expect DOMS &mdash; don&rsquo;t chase loads.', rampGuide:true,
          sessions:[ monStrength(1),
            { dow:'Wed', title:'Recovery Swap &mdash; DOMS', chip:'easy',
              sub:'Swapped 22 Jul: strong DOMS (7&ndash;8/10 across quads, glutes &amp; hamstrings) from the first gym session &mdash; brick skipped to protect Fri + Sun. Normal brick resumes W2.',
@@ -638,6 +649,7 @@
                     ] } ]},
            friEngine(1), sunRun(1) ] },
     2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Load up the lifts; run your first true brick with the 800 s in.',
+         note:'<b>Still ramping.</b> Add a little load <b>only if last week recovered well</b>. Two hard days max; keep the easy parts genuinely easy.', rampGuide:true,
          sessions:[ monStrength(2), wedBrick(2), friEngine(2), sunRun(2) ] },
     3: { dates:'3&ndash;9 Aug', phase:'Specificity', focus:'Race-specific: incline push joins the brick, 800 s at goal pace.',
          sessions:[ monStrength(3), wedBrick(3), friEngine(3), sunRun(3) ] },
@@ -739,6 +751,17 @@
     var tabbar = document.getElementById('tabbar');
     var weeksEl = document.getElementById('weeks');
     var tabsHtml = '', panelsHtml = '';
+    var RAMP_GUIDE = [
+      { h:'Two hard days, not three', li:[
+        'Hard sessions: Wed brick + Sun 800s.',
+        'Monday strength stays moderate (RIR 3). Friday works the engine hard but <b>spares the legs</b>, so Sunday stays fresh.',
+        'Never two hard days back-to-back.' ] },
+      { h:'How hard should it feel?', li:[
+        'Strength: stop ~3 reps short of failure. No grinding, no chasing the kg on the card.',
+        '800s in W1: "hard but I could definitely do 5" &mdash; find your pace, not a time trial.',
+        'Easy parts: conversational / nose-breathing. In doubt, go slower.' ] },
+      { p:'You&rsquo;re coming off pure Zone 2, so W1&ndash;2 is a <b>ramp, not a cliff</b>. If DOMS keeps stacking or your HR-at-pace creeps up, turn one hard session easy that week. Consistency beats hero weeks.' }
+    ];
     for (var w = 1; w <= 6; w++) {
       var meta = TAB_META[w], data = WEEKS[w];
       var raceClass = w === 6 ? ' race' : '';
@@ -749,7 +772,10 @@
         '<div class="weekhead"><div class="wtitle"><h3>Week ' + w + '</h3>' +
         '<span class="wdates">' + data.dates + '</span>' +
         '<span class="phase">' + data.phase + '</span></div>' +
-        '<p class="focus">' + data.focus + '</p></div>' + sessions + '</div>';
+        '<p class="focus">' + data.focus + '</p>' +
+        (data.note ? '<div class="weeknote">' + data.note +
+          (data.rampGuide ? renderDetails(RAMP_GUIDE) : '') + '</div>' : '') +
+        '</div>' + sessions + '</div>';
     }
     tabbar.innerHTML = tabsHtml;
     weeksEl.innerHTML = panelsHtml;
