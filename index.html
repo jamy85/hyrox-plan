@@ -590,7 +590,13 @@
   // Weeks 1&ndash;4 are built from the tables; 5&ndash;6 are hand-authored (peak + taper).
   var WEEKS = {
     1: { dates:'20&ndash;26 Jul', phase:'Build', focus:'Reintroduce strength (moderate loads &mdash; expect DOMS) and find your 800 m pace.',
-         sessions:[ monStrength(1), wedBrick(1), friEngine(1), sunRun(1) ] },
+         sessions:[ monStrength(1),
+           { dow:'Wed', title:'Recovery Swap &mdash; DOMS', chip:'easy',
+             sub:'Swapped 22 Jul: strong DOMS (7&ndash;8/10 across quads, glutes &amp; hamstrings) from the first gym session &mdash; brick skipped to protect Fri + Sun. Normal brick resumes W2.',
+             ex:[ { n:'Easy bike + mobility (or full rest)',
+                    stats:[{l:'Bike',v:'20&ndash;30 min easy'},{l:'Mobility',v:'10&ndash;15 min'},{l:'Effort',v:'very easy flush'}],
+                    cue:'Blood flow only, not training &mdash; if it feels rough in the first 5 min, make it a full rest day. Protein + sleep do the real recovery.' } ]},
+           friEngine(1), sunRun(1) ] },
     2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Load up the lifts; run your first true brick with the 800 s in.',
          sessions:[ monStrength(2), wedBrick(2), friEngine(2), sunRun(2) ] },
     3: { dates:'3&ndash;9 Aug', phase:'Specificity', focus:'Race-specific: incline push joins the brick, 800 s at goal pace.',
