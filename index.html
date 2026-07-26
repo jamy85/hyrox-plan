@@ -1,18 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hyrox Plan</title>
-<meta name="theme-color" content="#EDF0F4">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icon.svg">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Hyrox Plan">
-</head>
-<body>
 <style>
   :root {
     --font-sans: "Helvetica Neue", "Segoe UI", Arial, system-ui, sans-serif;
@@ -360,9 +345,94 @@
   <!-- WEEKLY PROGRAMME (tabs) -->
   <section>
     <div class="sec-head"><h2>This week&rsquo;s programme</h2><div class="rule"></div></div>
-    <p class="note" style="margin-top:0;margin-bottom:2px">Tap a week for that week&rsquo;s exact loads, reps &amp; rest. Numbers are <b>starting points</b> &mdash; autoregulate to <code class="k">RIR 2&ndash;3</code> and nudge up when a weight feels easy. Opens on the current week.</p>
+    <p class="note" style="margin-top:0;margin-bottom:2px">Tap a week for that week&rsquo;s exact loads, reps &amp; rest. Paces and heart rates are <b>your measured numbers</b> (see <b>Your numbers</b> below); weights are gated on how sore the last session left you, not on the calendar. Opens on the current week.</p>
     <div class="tabs" id="tabbar" role="tablist"></div>
     <div id="weeks"></div>
+  </section>
+
+  <!-- YOUR NUMBERS -->
+  <section>
+    <div class="sec-head"><h2>Your numbers</h2><div class="rule"></div></div>
+    <p class="note" style="margin-top:0">Measured, not estimated. Every &ldquo;hard&rdquo;, &ldquo;goal pace&rdquo; and &ldquo;easy&rdquo; in this plan resolves to one of these.</p>
+
+    <div class="card">
+      <h3>Benchmarks</h3>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Anchor</th><th>Value</th><th>Measured</th></tr></thead>
+          <tbody>
+            <tr><th>Max heart rate</th><td><b>170 bpm</b></td><td>rep 5 of the 800s, 26 Jul</td></tr>
+            <tr><th>800 m goal split</th><td><b>3:56</b> (4:56/km)</td><td>track-timed, 26 Jul</td></tr>
+            <tr><th>Rep-to-rep spread</th><td>6 s over 5 reps</td><td>3:55&ndash;4:01, no fade</td></tr>
+            <tr><th>Last-rep HR <i>(the one to beat)</i></th><td><b>166 avg</b> / 170 max</td><td>26 Jul baseline</td></tr>
+            <tr><th>Sprint belt speed</th><td><b>15.0 km/h</b> (4:00/km)</td><td>5&times;250 m treadmill, 24 Jul</td></tr>
+            <tr><th>Easy-run HR</th><td>~133 bpm</td><td>outdoor steady runs</td></tr>
+            <tr><th>Efficiency factor</th><td>~0.019</td><td>recovering from a 10% dip</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="moreBtn" aria-expanded="false">Which numbers to distrust <span class="mchev">&#9656;</span></button>
+      <div class="details" hidden>
+        <p class="dp">Your watch lies in two specific places, in opposite directions. Both matter because they change what the plan tells you to do.</p>
+        <div class="dh">On a 400 m track &mdash; GPS reads too FAST</div>
+        <ul class="dul">
+          <li>Tight curves make the GPS wander, so it logs extra distance: 7.6 km recorded for ~6.9 km actually run on 26 Jul.</li>
+          <li>It showed 4:25&ndash;4:36/km. You really ran 4:56/km. <b>Use a stopwatch on the lap.</b></li>
+        </ul>
+        <div class="dh">On a treadmill &mdash; the footpod reads too SLOW or too fast, unpredictably</div>
+        <ul class="dul">
+          <li>Distance comes from an uncalibrated accelerometer. <b>Trust the belt speed you set</b>, ignore the watch entirely.</li>
+          <li>15.0 km/h means 4:00/km because the belt says so &mdash; that is why Friday is prescribed in km/h.</li>
+        </ul>
+        <p class="dp">Heart rate is trustworthy everywhere. That is a large part of why this plan now steers by HR.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Heart-rate zones &mdash; rebuilt off max 170</h3>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Zone</th><th>bpm</th><th>Where it appears</th></tr></thead>
+          <tbody>
+            <tr><th>Recovery</th><td>under 120</td><td>rest between row reps &mdash; get here before starting the next</td></tr>
+            <tr><th>Easy (Z2)</th><td>120&ndash;136</td><td>W4 long run, all shake-outs and primers</td></tr>
+            <tr><th>Steady</th><td>137&ndash;146</td><td>bike pieces in the brick; Friday sprint peaks land here</td></tr>
+            <tr><th>Threshold</th><td>147&ndash;158</td><td>Monday row intervals; where you want the 800s to end up</td></tr>
+            <tr><th>VO2 / race</th><td>159&ndash;170</td><td>the back half of Sunday&rsquo;s 800s &mdash; and race day</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-bottom:0">Your previous known high was 160, so these zones were all about 6% too low before 26 Jul. If you ever see above 170 in a session, tell me and they get rebuilt again.</p>
+    </div>
+
+    <div class="card race">
+      <h3>The single progress marker</h3>
+      <p style="margin-top:0">Goal pace is <b>fixed at 3:56</b> for the whole block. You will never be asked to run the 800s faster. What should change is what that split <i>costs</i> you:</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>When</th><th>Last-rep HR at 3:56</th></tr></thead>
+          <tbody>
+            <tr><th>26 Jul (baseline)</th><td><b>166</b> avg, 170 max &mdash; near-maximal</td></tr>
+            <tr><th>W2 &middot; 2 Aug</th><td>166 or below</td></tr>
+            <tr><th>W3 &middot; 9 Aug</th><td>163 or below</td></tr>
+            <tr><th>W5 &middot; sim</th><td><b>~158</b> &mdash; a full zone cheaper</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-bottom:0">When 3:56 costs you 158 instead of 166, race pace has gone from &ldquo;survivable five times&rdquo; to &ldquo;sustainable&rdquo; &mdash; and that is what wins on 29 Aug. Chasing a faster split before then just buys a bigger blow-up on run 4.</p>
+    </div>
+
+    <div class="card warn">
+      <h3>Load rule &mdash; what replaced &ldquo;RIR 3&rdquo;</h3>
+      <p style="margin-top:0">Mon 20 Jul at 20 kg goblet / 2&times;10 kg lunge / 30 kg RDL produced <b>7&ndash;8/10 DOMS</b> across quads, glutes and hams, and cost you the Wednesday brick. That is the calibration point, so the kilos are now decided by the previous week&rsquo;s soreness:</p>
+      <ul>
+        <li><b>0&ndash;4/10, gone by Wednesday</b> &rarr; add ~2 kg lower body.</li>
+        <li><b>5&ndash;6/10, or still stiff Wednesday</b> &rarr; repeat the same load.</li>
+        <li><b>7&ndash;8/10, or it cost you a session</b> &rarr; drop ~2 kg.</li>
+        <li><b>Missed last Wednesday</b> &rarr; never add load this week, whatever the soreness.</li>
+      </ul>
+      <p style="margin-bottom:0">Within a given load, still stop ~3 reps short of failure. The gym exists so your legs hold up at the stations &mdash; a Monday that costs you Wednesday is a net loss no matter how good the lift felt.</p>
+    </div>
   </section>
 
   <!-- OVERVIEW -->
@@ -376,31 +446,31 @@
         <tbody>
           <tr>
             <th>W1<span class="wk-date">20&ndash;26 Jul</span></th>
-            <td>Row 6&times;250 m + full-body, <b>RIR 3</b></td>
-            <td>Circuit, <b>no runs</b>: 4 rounds (bike subs row)</td>
-            <td>Bike 5&times;250 m + pull</td>
-            <td>5&times;800, jog 400 &mdash; <b>find pace</b></td>
+            <td>Row 6&times;250 m + full-body @ 20 kg <i>(&rarr; 7&ndash;8/10 DOMS)</i></td>
+            <td><b>Lost to DOMS</b> &mdash; easy bike + mobility instead</td>
+            <td>Belt 5&times;250 m @ 15.0 km/h + pull</td>
+            <td><b>5&times;800 @ 3:56 &#10003;</b> pace found</td>
           </tr>
           <tr>
             <th>W2<span class="wk-date">27 Jul&ndash;2 Aug</span></th>
-            <td>Row 6&times;250 m + strength (load up)</td>
-            <td><b>First brick:</b> 3 rounds w/ 800s (bike for row)</td>
-            <td>Row 6&times;250 m + pull</td>
-            <td>6&times;800, jog 300</td>
+            <td>Row 6&times;250 m + <b>same 20 kg</b> <i>(repeat, no jump)</i></td>
+            <td><b>First brick:</b> 3 rounds w/ 800s @ 4:00&ndash;4:06</td>
+            <td>Row/belt 6&times;250 m @ 15.0 km/h + pull</td>
+            <td>6&times;800 @ 3:56, jog 400 &mdash; rep 5 HR &le;166</td>
           </tr>
           <tr>
             <th>W3<span class="wk-date">3&ndash;9 Aug</span></th>
-            <td>Row 5&times;400 m + strength (RIR 2)</td>
-            <td>4 rounds + incline push (bike for row)</td>
-            <td>Bike 4&times;500 m + pull</td>
-            <td>5&times;800 @ goal, jog 200</td>
+            <td>Row 5&times;400 m + 24 kg <i>(if W2 recovered)</i></td>
+            <td>4 rounds + incline push, 800s @ 4:00&ndash;4:06</td>
+            <td>Belt 4&times;500 m @ 14.0 km/h + pull</td>
+            <td>6&times;800 @ 3:56, jog 300 &mdash; rep 5 HR &le;163</td>
           </tr>
           <tr>
             <th>W4<span class="wk-date">10&ndash;16 Aug</span></th>
-            <td>Row 4&times;500 m + maintain</td>
-            <td>4&ndash;5 rounds @ goal (bike for row)</td>
-            <td>Row intervals, light</td>
-            <td><b>Easy long</b> 50&ndash;60 min <i>(recovery)</i></td>
+            <td>Row 4&times;500 m + 28 kg <i>(top end)</i></td>
+            <td>4&ndash;5 rounds, 800s @ 4:00 (bike for row)</td>
+            <td>Row 4&times;400 m @ 14.0 km/h, light</td>
+            <td><b>Easy long</b> 50&ndash;60 min, HR &lt;136 <i>(recovery)</i></td>
           </tr>
           <tr class="peak">
             <th>W5<span class="wk-date">17&ndash;23 Aug</span></th>
@@ -428,7 +498,7 @@
     <div class="card">
       <h3>Daily targets</h3>
       <ul>
-        <li><b>Protein</b> &mdash; ~150 g/day (1.6&ndash;2.2 g/kg), split into 3&ndash;4 feeds of ~35&ndash;40 g. Your #1 recovery lever.</li>
+        <li><b>Protein</b> &mdash; ~1.6&ndash;2.2 g/kg/day, split into 3&ndash;4 feeds of ~35&ndash;40 g. Your #1 recovery lever.</li>
         <li><b>Carbs</b> &mdash; 300&ndash;450 g on training days; top end on hard days (Wed/Sun), lower on easy/rest.</li>
         <li><b>Fat</b> &mdash; ~60&ndash;90 g; fill the rest of your energy here, don&rsquo;t go too low.</li>
         <li><b>Fluid</b> &mdash; 2.5&ndash;3.5 L+/day, more in the heat; add sodium on sweaty morning runs.</li>
@@ -470,9 +540,10 @@
     </div>
 
     <div class="card warn">
-      <h3>Recovery &amp; DOMS (right now)</h3>
+      <h3>Recovery &amp; DOMS</h3>
+      <p style="margin-top:0"><b>Score your soreness each Tuesday/Wednesday out of 10</b> &mdash; that number is what sets Monday&rsquo;s weights (see the load rule above). 20 Jul was a 7&ndash;8 and cost a session; the aim is to keep it at 4 or under.</p>
       <ul>
-        <li><b>Hit protein every day</b> &mdash; the single best thing for clearing this week&rsquo;s DOMS.</li>
+        <li><b>Hit protein every day</b> &mdash; the single best thing for clearing DOMS.</li>
         <li><b>Don&rsquo;t skimp on calories</b> &mdash; give your body materials to repair.</li>
         <li><b>Omega-3s</b> (oily fish 2&times;/week or a supplement) + colourful whole foods help the inflammatory load.</li>
         <li><b>Go easy on routine NSAIDs</b> (ibuprofen) for DOMS &mdash; regular use can blunt strength adaptation; occasional is fine.</li>
@@ -490,7 +561,7 @@
       </ul>
     </div>
 
-    <p class="tune">Set for ~75 kg holding weight, no dietary restrictions &mdash; tell me your preferences (veg/vegan, halal, allergies) or if you want to lean out, and I&rsquo;ll retune the numbers.</p>
+    <p class="tune">Set for your current holding weight, no dietary restrictions &mdash; tell me your preferences (veg/vegan, halal, allergies) or if you want to lean out, and I&rsquo;ll retune the numbers.</p>
   </section>
 
   <!-- LEGEND -->
@@ -502,8 +573,8 @@
         <span class="chip mod">Moderate</span>
         <span class="chip hard">Hard / Race</span>
       </div>
-      <p><b>Effort</b> &mdash; Easy = conversational (Zone&nbsp;2). Moderate = comfortably hard, could speak in short sentences. Hard = race effort, repeatable but no chatting.</p>
-      <p><b>Load rule (autoregulate)</b> &mdash; pick a weight where the last 2&ndash;3 reps are genuinely hard but clean (<code class="k">RIR 2&ndash;3</code>, "reps in reserve"). Weeks 1&ndash;2 stay conservative &mdash; DOMS will otherwise wreck your Sunday run. When a load feels easy at target reps, add ~2&nbsp;kg.</p>
+      <p><b>Effort is always a number here</b> &mdash; Easy = <code class="k">under 136 bpm</code>. Moderate = <code class="k">147&ndash;158 bpm</code>. Hard = <code class="k">3:56 per 800</code> or <code class="k">15.0 km/h</code> on the belt. Nothing in this plan says just &ldquo;go hard&rdquo;; if a session feels vague, check <b>Your numbers</b> above.</p>
+      <p><b>Load rule</b> &mdash; weights are gated on <b>how sore last Monday left you</b>, not on the week number: under 4/10 and cleared by Wednesday &rarr; add ~2&nbsp;kg; 5&ndash;6/10 &rarr; repeat; 7&ndash;8/10 &rarr; drop ~2&nbsp;kg. Within any load, stop ~3 reps short of failure. Full rule in the <b>Your numbers</b> section.</p>
       <p><b>Substitutions built in</b> &mdash; <b>ski &rarr; cable/DB pulling</b>, <b>sled &rarr; incline-treadmill or ramp/stairs push</b>, <b>wall ball &rarr; DB thrusters</b>. <b>Rower on Mondays + even-week Fridays (W2, W4)</b>, so rowing lives there: Wednesday's brick swaps the row for the <b>seated bike (or burpees)</b>, and odd-week Fridays use seated-bike/hard-run intervals &mdash; same engine hit.</p>
       <p><b>Tap an exercise</b> to check it off (saved on this device, per week). Use the <b>rest timer</b> pinned at the bottom between sets.</p>
     </div>
@@ -542,7 +613,7 @@
         <li><b>Never two hard days back-to-back</b> without a rest day between (that pattern caused the early-July efficiency drift).</li>
         <li><b>Watch HR &amp; EF</b> on easy + interval runs in the tracker &mdash; a creeping HR-at-pace means under-recovered; back off.</li>
         <li><b>Taper is training too.</b> Week 6 volume drops ~50%; you gain freshness and lose nothing. Resist adding "one more" session.</li>
-        <li><b>Being light helps everywhere except the sled</b> &mdash; that's your relative weak point, so the incline-push sub and leg strength-endurance earn their keep.</li>
+        <li><b>A light runner is advantaged everywhere except the sled</b> &mdash; that's your relative weak point, so the incline-push sub and leg strength-endurance earn their keep.</li>
       </ul>
     </div>
   </section>
@@ -574,14 +645,50 @@
 
 <script>
   // ============================================================
+  //  YOUR MEASURED NUMBERS  (update after each key session)
+  // ============================================================
+  //  Every "hard / goal pace / RIR" in this plan resolves to one of these.
+  //  Max HR 170 .......... 5th 800 rep, Sun 26 Jul 2026
+  //  800 split 3:56 ...... track-timed, Sun 26 Jul 2026 (= 4:56/km)
+  //  Belt 15.0 km/h ...... 5x250 m treadmill sprints, Fri 24 Jul 2026
+  //  Easy-run HR 133 ..... outdoor steady runs (Z2)
+  var ME = {
+    hrMax:     170,
+    zRecov:    'under 120',
+    zEasy:     '120&ndash;136',
+    zSteady:   '137&ndash;146',
+    zThresh:   '147&ndash;158',
+    zVo2:      '159&ndash;170',
+    split800:  '3:56',
+    pace800:   '4:56/km',
+    spread800: '6 s',
+    rep5hr:    '166',
+    belt:      '15.0 km/h',
+    ef:        '0.019'
+  };
+
+  // ============================================================
   //  WEEKLY PROGRAMME DATA  (edit loads here as you progress)
   // ============================================================
   // Per-week load table for the Mon strength day + Fri engine piece.
+  // Loads are gated on the DOMS rule, not on the calendar -- see `gate`.
   var LOADS = {
-    1: { row:'6&times;250 m', squat:'20 kg', lunge:'2&times;10 kg', rdl:'30 kg', thr:'2&times;8 kg',  rir:'RIR 3',   fri:'5&times;250 m',        rowFri:false },
-    2: { row:'6&times;250 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg', rir:'RIR 3',   fri:'6&times;250 m',        rowFri:true  },
-    3: { row:'5&times;400 m', squat:'26 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg', rir:'RIR 2',   fri:'4&times;500 m',        rowFri:false },
-    4: { row:'4&times;500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'50 kg', thr:'2&times;14 kg', rir:'maintain',fri:'intervals, light',rowFri:true  }
+    1: { row:'6&times;250 m', squat:'20 kg', lunge:'2&times;10 kg', rdl:'30 kg', thr:'2&times;8 kg',
+         pull:'RIR 2 &middot; last 3 reps burn',
+         gate:'Baseline &mdash; what you actually lifted Mon 20 Jul.',
+         fri:'5&times;250 m', friSpd:ME.belt, rowFri:false },
+    2: { row:'6&times;250 m', squat:'20 kg', lunge:'2&times;10 kg', rdl:'30 kg', thr:'2&times;8 kg',
+         pull:'RIR 2 &middot; last 3 reps burn',
+         gate:'<b>Repeat W1 &mdash; same loads, no jump.</b> These exact numbers cost you 7&ndash;8/10 DOMS and a Wednesday. Second exposure at the same load hurts far less (repeated-bout effect); that is the adaptation to bank before adding kilos.',
+         fri:'6&times;250 m', friSpd:ME.belt, rowFri:true  },
+    3: { row:'5&times;400 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg',
+         pull:'RIR 2 &middot; add load when 4&times;15 is clean',
+         gate:'First real jump (+4 kg squat, +10 kg RDL) &mdash; <b>only if W2&rsquo;s Monday left you under 4/10 sore and the Wed brick happened.</b> If W2 wrecked you again, run W2&rsquo;s loads a third time.',
+         fri:'4&times;500 m', friSpd:'14.0 km/h', rowFri:false },
+    4: { row:'4&times;500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg',
+         pull:'RIR 2 &middot; hold, do not chase',
+         gate:'Last loading week. Same gate: add only what W3 earned. Sunday is an easy long run, so Monday can be the honest top end.',
+         fri:'4&times;400 m', friSpd:'14.0 km/h', rowFri:true  }
   };
   // Per-week brick (Wed) config.
   var WED = {
@@ -590,21 +697,52 @@
     3: { rounds:'4',   runs:true,  push:true,  label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Incline push (sled sub) joins from this week.' },
     4: { rounds:'4&ndash;5', runs:true,  push:true,  label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Runs at goal pace; add the 5th round only if fresh.' }
   };
+  // Per-week Sunday 800s. Pace is FIXED at your measured 3:56 all block --
+  // the progression is one variable per week (reps, then recovery), and the
+  // adaptation you are watching for is last-rep HR falling at the same split.
+  var SUN = {
+    2: { reps:'6 &times; 800 m', jog:'jog 400 m', varLbl:'+1 rep, recovery unchanged',
+         hrGate:'166', hrNote:'Rep 5 should not be worse than 26 Jul&rsquo;s 166. Rep 6 is the new territory &mdash; it is allowed to be ugly.' },
+    3: { reps:'6 &times; 800 m', jog:'jog 300 m', varLbl:'same reps, 100 m less recovery',
+         hrGate:'163', hrNote:'Shorter jog is this week&rsquo;s only new stress. If the split slips past 4:02, take the 400 m jog back.' }
+  };
+
+  // Shared "how much weight today" panel -- replaces the old generic "RIR 3".
+  function loadGate(w) {
+    return [
+      { p:LOADS[w].gate },
+      { h:'The rule that decides the kilos', li:[
+        '<b>Add ~2 kg only if</b> last Monday&rsquo;s soreness peaked <b>at or under 4/10</b> and had cleared by Wednesday morning.',
+        '<b>Repeat the same load</b> if you were 5&ndash;6/10, or still stiff on Wednesday.',
+        '<b>Drop ~2 kg</b> if you were 7&ndash;8/10 again, or if it cost you a session &mdash; that is what happened on <b>Mon 20 Jul</b> (7&ndash;8/10 across quads, glutes and hams, Wed brick lost).',
+        'Never add load in a week where you missed the previous Wednesday.' ] },
+      { h:'Why not just push harder', p:'You have 4 sessions a week and the race is the run, not the gym. A Monday that costs you Wednesday&rsquo;s brick and dulls Sunday&rsquo;s 800s is a net loss even if the lift felt great. The lifting is here to stop your legs folding at the stations &mdash; it is a supporting cast.' },
+      { h:'Still stop ~3 reps short', p:'Within any given load, the last 2&ndash;3 reps should be genuinely hard but clean &mdash; no grinding, no form breakdown. If rep 12 looks like rep 1, the weight is too light and the gate above lets you move up next week.' }
+    ];
+  }
 
   function monStrength(w) {
     var L = LOADS[w];
     var monSub = (w <= 2)
-      ? '<b>Moderate reintroduction</b> &mdash; leave 3 reps in the tank (RIR 3) and <b>don&rsquo;t chase the loads on the card</b>; you&rsquo;re coming off pure Zone 2. Guaranteed row day + full-body strength (your biggest gap). Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.'
-      : 'Guaranteed <b>row day</b> + full-body strength (your biggest gap). Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.';
+      ? '<b>Loads are gated on your DOMS, not the calendar</b> &mdash; tap <i>How to</i> on any lift for the rule. Guaranteed row day + full-body strength (your biggest gap). Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.'
+      : 'Guaranteed <b>row day</b> + full-body strength (your biggest gap). Loads still gated on the DOMS rule. Warm-up: 5 min easy row + leg swings, lunges, arm circles. ~65 min.';
     return { dow:'Mon', title:'Row + Strength', chip:'mod',
       sub:monSub,
       ex:[
         { n:'Row intervals', tag:'rower here every Mon',
-          stats:[{l:'Sets&times;Reps',v:L.row},{l:'Effort',v:'hard &middot; 24&ndash;28 spm'},{l:'Rest',v:'90 s',rest:true}],
-          cue:'Legs-drive first, then hinge, then arms &mdash; your main row-station work.' },
+          stats:[{l:'Sets&times;Reps',v:L.row},{l:'Last 10 strokes',v:'HR ' + ME.zThresh},{l:'Rest',v:'90 s &rarr; HR under 130',rest:true}],
+          cue:'Legs-drive first, then hinge, then arms. <b>Pace it by HR, not by feel:</b> finish each rep in the ' + ME.zThresh + ' band (threshold off your 170 max). On 24 Jul your HR dropped ~45 bpm inside a rest &mdash; so if you are still over 130 when the next rep is due, take another 30 s.',
+          details:[
+            { h:'Your HR bands (max 170, measured 26 Jul)', li:[
+              'Recovery ' + ME.zRecov + ' &middot; Easy ' + ME.zEasy + ' &middot; Steady ' + ME.zSteady,
+              '<b>Threshold ' + ME.zThresh + '</b> &mdash; where these row reps belong',
+              'VO2 / race ' + ME.zVo2 + ' &mdash; Sunday&rsquo;s last 800s live here, Monday should not' ] },
+            { p:'Monday is a <b>moderate</b> day by design. If the row is dragging you into the 160s you are stealing from Wednesday and Sunday &mdash; back the split off, keep the rate at 24&ndash;28 spm.' }
+          ] },
         { n:'Goblet squat (KB/DB)',
           stats:[{l:'Sets&times;Reps',v:'4 &times; 12'},{l:'Load',v:L.squat},{l:'Rest',v:'90 s',rest:true}],
-          cue:'Chest tall, sit between the knees, control the descent.' },
+          cue:'Chest tall, sit between the knees, control the descent. <b>' + (w === 2 ? 'Same 20 kg as W1 &mdash; deliberately.' : 'Load is gated on last Monday&rsquo;s DOMS.') + '</b> Tap below before you pick the weight.',
+          details:loadGate(w) },
         { n:'Walking lunge (DBs / front KB)',
           stats:[{l:'Sets&times;Reps',v:'4 &times; 20 steps'},{l:'Load',v:L.lunge},{l:'Rest',v:'90 s',rest:true}],
           cue:'Long step, vertical front shin &mdash; this <i>is</i> the lunge station.' },
@@ -615,8 +753,8 @@
           stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.thr},{l:'Rest',v:'75 s',rest:true}],
           cue:'One fluid squat-to-press, drive from the legs. Practise <b>unbroken</b> sets.' },
         { n:'Cable pulldown / DB bent row', tag:'ski sub',
-          stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.rir},{l:'Rest',v:'75 s',rest:true}],
-          cue:'Pull with the lats, not the arms &mdash; mimics the ski catch.' },
+          stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.pull},{l:'Rest',v:'75 s',rest:true}],
+          cue:'Pull with the lats, not the arms &mdash; mimics the ski catch. Upper body did <b>not</b> give you DOMS in W1, so this one can climb on the normal &ldquo;clean at 15 reps &rarr; add load&rdquo; rule.' },
         { n:'Core finisher &mdash; plank + mountain climbers',
           stats:[{l:'Sets&times;Reps',v:'3 &times; (40 s + 12)'},{l:'Load',v:'bodyweight'},{l:'Rest',v:'45 s',rest:true}],
           cue:'Ribs down, no sag. Cool down 5 min easy.' }
@@ -630,12 +768,21 @@
         stats:[{l:'Rounds',v:C.rounds},{l:'Between exercises',v:'30&ndash;60 s'},{l:'Between rounds',v:'2&ndash;3 min',rest:true}],
         cue:C.note + ' Reduce round-rest as the weeks progress.' }
     ];
-    if (C.runs) ex.push({ n:'800 m treadmill @ goal pace',
-      stats:[{l:'Distance',v:'800 m'},{l:'Effort',v:'goal race pace'}],
-      cue:'Same target as Sunday&rsquo;s 800s &mdash; hold it on tired legs.' });
+    if (C.runs) ex.push({ n:'800 m treadmill on tired legs',
+      stats:[{l:'Target',v:'4:00&ndash;4:06'},{l:'Belt',v:'12.0&ndash;12.2 km/h'},{l:'Sunday&rsquo;s split',v:ME.split800}],
+      cue:'<b>The win condition is the gap, not the time.</b> Sunday you ran ' + ME.split800 + ' fresh; here, off the stations, losing <b>under 10 s</b> means your compromised running is working. Set the belt and let it hold you honest.',
+      details:[
+        { p:'This one number is the closest thing in the plan to a race predictor. On race day every 800 comes after a station, so the fresh-legs split is not what you will run &mdash; the tired-legs split is.' },
+        { h:'What the belt speeds mean', li:[
+          '<b>12.2 km/h</b> = 3:56 per 800 &mdash; your fresh Sunday split, ambitious here',
+          '<b>12.0 km/h</b> = 4:00 per 800 &mdash; the target on tired legs',
+          '<b>11.6 km/h</b> = 4:08 per 800 &mdash; acceptable early in the block',
+          'Below 11.2 km/h (4:17) means the stations before it were too hard &mdash; lighten them, not the run.' ] },
+        { p:'Track it week to week. W2 might be 4:06; if W4 is 4:00 at the same station loads, that is the adaptation showing up.' }
+      ] });
     ex.push({ n:'Seated bike / burpees', tag:'row sub &mdash; no rower Wed',
-      stats:[{l:'Bike',v:'250&ndash;500 m'},{l:'or Burpees',v:'12'},{l:'Effort',v:'hard'}],
-      cue:'Seated bike hard, or bang out burpees. The row <i>skill</i> is trained Monday.' });
+      stats:[{l:'Bike',v:'250&ndash;500 m'},{l:'or Burpees',v:'12'},{l:'HR by the end',v:ME.zThresh}],
+      cue:'Seated bike hard, or bang out burpees &mdash; push until HR is in the ' + ME.zThresh + ' band, then move. The row <i>skill</i> is trained Monday.' });
     ex.push({ n:'DB thruster', tag:'wall-ball sub',
       stats:[{l:'Reps',v:'15'},{l:'Load',v:'2&times;8&ndash;10 kg'}],
       cue:'Lighter than Monday &mdash; go for speed and unbroken.' });
@@ -648,8 +795,8 @@
       stats:[{l:'Reps',v:'20 steps'},{l:'Load',v:'BW &rarr; 2&times;6 kg'}],
       cue:lungeCue });
     if (C.push) ex.push({ n:'Incline push', tag:'sled sub',
-      stats:[{l:'Time',v:'30 s'},{l:'Incline',v:'10&ndash;12%'},{l:'Effort',v:'hard march/run'}],
-      cue:'Powerful short steps, then <b>straight into the next run</b> &mdash; the jelly-legs rehearsal. No treadmill incline? Car-park ramp or stairwell.' });
+      stats:[{l:'Time',v:'30 s'},{l:'Incline',v:'12%'},{l:'Belt',v:'6.5&ndash;7.5 km/h'},{l:'HR by the end',v:ME.zThresh}],
+      cue:'Powerful short steps at a walk-march you can barely hold for 30 s &mdash; it should push HR into the ' + ME.zThresh + ' band. Then <b>straight into the next run</b>: the jelly-legs rehearsal. No treadmill incline? Car-park ramp or stairwell, same 30 s.' });
     return { dow:'Wed', title:'Brick / Simulation', chip:'hard',
       sub:'The money session &mdash; trains <b>compromised running</b> (fast legs after trashed legs). Warm-up: 8&ndash;10 min easy run + 3 strides. Keep transitions short like the race.',
       ex:ex };
@@ -658,18 +805,30 @@
   function friEngine(w) {
     var L = LOADS[w];
     var engine = L.rowFri
-      ? { n:'Row intervals', tag:'rower available this Fri',
-          cue:'Rower&rsquo;s here &mdash; row it. Legs-drive first, strong but not redlined.' }
-      : { n:'Seated bike / hard-run intervals', tag:'no rower this Fri &mdash; same effort',
-          cue:'No rower today &mdash; same intervals on the seated bike or as hard runs. Identical effort.' };
-    engine.stats = [{l:'Sets',v:L.fri},{l:'Effort',v:'hard'},{l:'Rest',v:'90 s&ndash;2 min',rest:true}];
+      ? { n:'Row / treadmill intervals', tag:'rower available this Fri',
+          cue:'Rower&rsquo;s here &mdash; row it, or run them on the belt at <b>' + L.friSpd + '</b> as you did on 24 Jul. Legs-drive first, strong but not redlined.' }
+      : { n:'Treadmill / seated-bike intervals', tag:'no rower this Fri &mdash; same effort',
+          cue:'On the belt: <b>' + L.friSpd + '</b>, the speed you actually held for 5 even reps on 24 Jul. On the bike instead: no belt to hold you, so drive until HR reaches ' + ME.zSteady + ' by the end of each rep.' };
+    engine.stats = [{l:'Sets',v:L.fri},{l:'Belt speed',v:L.friSpd},{l:'Rest',v:'90 s&ndash;2 min',rest:true}];
+    engine.details = [
+      { p:'<b>Do not judge Friday by heart rate.</b> On 24 Jul your five reps peaked at 139, 141, 142, 143, 144 &mdash; only ~85% of your 170 max. That is not a soft session; on ~60-second reps HR peaks <i>after</i> the effort is over and never catches up. Friday is judged on <b>speed held</b> and <b>evenness</b>.' },
+      { h:'What a good Friday looks like', li:[
+        'Every rep at the same belt speed &mdash; rep 5 identical to rep 1.',
+        'HR peaks climbing gently across the set (139 &rarr; 144 is textbook), not spiking early.',
+        '<b>HR dropping ~40&ndash;50 bpm inside each rest</b> (yours fell to the low 90s/100s) &mdash; that fast recovery is the fitness marker here.',
+        'A big fall-off on the last two reps means you set the belt too fast. Drop 0.5 km/h next time.' ] },
+      { h:'Treadmill notes', li:[
+        'Set <b>1% incline</b> &mdash; a flat belt is slightly easier than the same pace outdoors (no wind).',
+        'Indoor air is cool, so HR reads a touch lower than an equivalent outdoor rep. Expected, not a bonus.',
+        'Belt speed is <b>trusted</b> &mdash; you set it. Ignore the watch&rsquo;s distance/pace on a treadmill, it is footpod guesswork.' ] }
+    ];
     return { dow:'Fri', title:'Engine + Pull', chip:'mod',
-      sub:'Legs kept deliberately light so Sunday runs well. Warm-up: 5 min easy. ~40 min.',
+      sub:'Short, sharp, faster than Sunday &mdash; legs kept deliberately light so Sunday runs well. Warm-up: 5 min easy. ~40 min.',
       ex:[
         engine,
         { n:'Straight-arm pulldown', tag:'ski sub',
-          stats:[{l:'Sets&times;Reps',v:'3 &times; 15'},{l:'Load',v:'RIR 2&ndash;3'},{l:'Rest',v:'60 s',rest:true}],
-          cue:'Superset with the band pull-aparts below.' },
+          stats:[{l:'Sets&times;Reps',v:'3 &times; 15'},{l:'Load',v:'last 3 reps burn, form clean'},{l:'Rest',v:'60 s',rest:true}],
+          cue:'Superset with the band pull-aparts below. Upper body only &mdash; <b>nothing here should touch your legs</b>, that is the whole point of Friday.' },
         { n:'Band pull-apart',
           stats:[{l:'Sets&times;Reps',v:'3 &times; 20'},{l:'Load',v:'light band'},{l:'Rest',v:'60 s',rest:true}],
           cue:'Upper-back endurance for the ski + row catch.' },
@@ -680,26 +839,48 @@
   }
 
   function sunRun(w) {
+    if (w === 1) return { dow:'Sun 26', title:'800s &mdash; Done &middot; Pace Found', chip:'hard',
+      sub:'<b>Ran 26 Jul on the 400 m track.</b> 3:56 / 3:56 / 4:01 / 3:55 / 3:56 &mdash; a ' + ME.spread800 + ' spread across five reps and rep 5 among the fastest. <b>This set defines the goal pace for the rest of the block.</b>',
+      ex:[ { n:'5 &times; 800 m &mdash; result logged',
+        stats:[{l:'Splits',v:'3:56 &middot; 3:56 &middot; 4:01 &middot; 3:55 &middot; 3:56'},{l:'Avg pace',v:ME.pace800},{l:'HR by rep',v:'137 &rarr; 166 (max 170)'}],
+        cue:'Textbook execution: zero fade, goal pace confirmed dead-centre of the target band. HR climbed 137 to 166 at a <b>constant</b> split, so ' + ME.split800 + ' is currently a near-maximal effort by the last rep &mdash; which is exactly right for this kind of session.',
+        details:[
+          { h:'What this session set', li:[
+            '<b>Goal 800 split = ' + ME.split800 + '</b> (' + ME.pace800 + '). Fixed for the whole block &mdash; you will not be asked to run faster.',
+            '<b>New max HR = 170</b>, up from a previous known 160. Every zone in this plan is rebuilt off it.',
+            '<b>Last-rep HR = ' + ME.rep5hr + '</b>. This is the number that should fall.' ] },
+          { h:'The one caveat &mdash; ignore the watch', p:'GPS over-measured about 10% on the track&rsquo;s tight curves (7.6 km logged for ~6.9 km real), so the watch showed 4:25&ndash;4:36/km and an inflated efficiency score. <b>Your stopwatch splits are the truth.</b> Same rule on a treadmill: trust the belt, not the footpod.' }
+        ] } ]};
     if (w === 4) return { dow:'Sun', title:'Easy Long Run', chip:'easy',
       sub:'Recovery week &mdash; deliberately easy. Outdoors, usual route. Cool down / stretch after.',
       ex:[ { n:'Easy long run',
-        stats:[{l:'Duration',v:'50&ndash;60 min'},{l:'Effort',v:'Zone 2, conversational'}],
-        cue:'No 800 s this week. Keep HR low &mdash; this <i>is</i> the session, not a soft version of a hard one.' } ]};
-    var reps = w === 2 ? '6 &times; 800 m' : '5 &times; 800 m';
-    var jog  = w === 1 ? 'jog 400 m' : (w === 2 ? 'jog 300 m' : 'jog 200 m');
-    var cue  = w === 1 ? '"Hard but I could definitely do 5." <b>Find &amp; log your real pace</b> so we can watch it sharpen.'
-                       : 'Same pace as your Wed brick 800s. <b>Log it in the tracker.</b>';
+        stats:[{l:'Duration',v:'50&ndash;60 min'},{l:'HR ceiling',v:'136'},{l:'Your easy HR',v:'~133'}],
+        cue:'No 800 s this week. <b>Cap HR at 136</b> (top of Zone 2 off your 170 max) &mdash; your usual easy runs sit at 133, so that is the feel. This <i>is</i> the session, not a soft version of a hard one; if HR creeps past 140, walk the hills.' } ]};
+    var S = SUN[w];
     return { dow:'Sun', title:'Run Quality &mdash; 800s', chip:'hard',
-      sub:'Your purest running session, outdoors. Warm-up: 10 min easy + 3&ndash;4 strides. Cool down 5&ndash;10 min.',
-      ex:[ { n:'800 m repeats @ goal pace',
-        stats:[{l:'Reps',v:reps},{l:'Pace',v:'~4:45&ndash;5:15/km'},{l:'Recovery',v:jog,rest:true}],
-        cue:cue } ]};
+      sub:'Your purest running session, outdoors. <b>Same ' + ME.split800 + ' split as 26 Jul</b> &mdash; this week&rsquo;s change is ' + S.varLbl + '. Warm-up: 10 min easy + 3&ndash;4 strides. Cool down 5&ndash;10 min.',
+      ex:[ { n:'800 m repeats @ ' + ME.split800,
+        stats:[{l:'Reps',v:S.reps},{l:'Split',v:ME.split800 + ' (' + ME.pace800 + ')'},{l:'Recovery',v:S.jog,rest:true}],
+        cue:'<b>Do not run these faster.</b> Hold ' + ME.split800 + ' and watch what it costs you: last-rep HR around <b>' + S.hrGate + '</b> or below is the win. ' + S.hrNote,
+        details:[
+          { h:'Why the pace stays fixed', p:'On 26 Jul you held ' + ME.split800 + ' five times with a ' + ME.spread800 + ' spread &mdash; the pace is not the problem, the <b>cost</b> is. HR rose 137 to ' + ME.rep5hr + ' across that set, meaning race pace is currently near-maximal by the end. Chasing a faster split now just buys a bigger blow-up; making ' + ME.split800 + ' cheaper is what actually wins the race.' },
+          { h:'The progress marker &mdash; watch this, not the clock', li:[
+            '26 Jul (baseline): rep 5 at <b>' + ME.rep5hr + '</b> avg, 170 max.',
+            'W2 target: rep 5 at <b>166</b> or below.',
+            'W3 target: rep 5 at <b>163</b> or below.',
+            'By W5 you want <b>~158</b> &mdash; same split, a full zone cheaper. That is race pace becoming sustainable.' ] },
+          { h:'How to run them', li:[
+            'Stopwatch on the lap, not the watch&rsquo;s auto-lap &mdash; GPS reads ~10% fast on a 400 m track.',
+            'Two laps = one rep. Target <b>1:58 per lap</b>, even.',
+            'If rep 1 comes in under 3:50 you went out too hot &mdash; that is the classic way to lose reps 4 and 5.',
+            'If two reps in a row drift past 4:05, end the set there. A short good session beats a long broken one.' ] }
+        ] } ]};
   }
 
   // Weeks 1&ndash;4 are built from the tables; 5&ndash;6 are hand-authored (peak + taper).
   var WEEKS = {
-    1: { dates:'20&ndash;26 Jul', phase:'Build', focus:'Reintroduce strength (moderate loads &mdash; expect DOMS) and find your 800 m pace.',
-         note:'<b>Onramp.</b> You&rsquo;re stepping up from pure Zone 2 running, so ease in: <b>only two hard days</b> (Wed brick + Sun 800s), Monday stays moderate. Expect DOMS &mdash; don&rsquo;t chase loads.', rampGuide:true,
+    1: { dates:'20&ndash;26 Jul', phase:'Build &middot; done', focus:'Strength reintroduced (cost a Wednesday to DOMS); 800 m goal pace found and confirmed at 3:56.',
+         note:'<b>Week 1 in the books &mdash; split verdict.</b> The 800s went perfectly (3:56 &times; 5, no fade) so goal pace is now a measured number, not an estimate. The Monday lift over-reached: 7&ndash;8/10 DOMS cost the Wed brick. <b>W2 therefore repeats W1&rsquo;s loads and adds only a running rep.</b>', rampGuide:true,
          sessions:[ monStrength(1),
            { dow:'Wed', title:'Recovery Swap &mdash; DOMS', chip:'easy',
              sub:'Swapped 22 Jul: strong DOMS (7&ndash;8/10 across quads, glutes &amp; hamstrings) from the first gym session &mdash; brick skipped to protect Fri + Sun. Normal brick resumes W2.',
@@ -723,12 +904,13 @@
                       { p:'Drop anything that aggravates the soreness. This is recovery, not a session.' }
                     ] } ]},
            friEngine(1), sunRun(1) ] },
-    2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Load up the lifts; run your first true brick with the 800 s in.',
-         note:'<b>Still ramping.</b> Add a little load <b>only if last week recovered well</b>. Two hard days max; keep the easy parts genuinely easy.', rampGuide:true,
+    2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Repeat W1&rsquo;s loads (bank the repeated-bout effect), run the first true brick, add one 800.',
+         note:'<b>Hold the weights, add a rep.</b> Monday runs the <i>exact same loads</i> as 20 Jul &mdash; the second exposure at a given load hurts far less, and that is the adaptation worth having before adding kilos. The only progression this week is Sunday: <b>6 &times; 800 at the same 3:56, same 400 m jog</b>. One new variable, not three.', rampGuide:true,
          sessions:[ monStrength(2), wedBrick(2), friEngine(2), sunRun(2) ] },
-    3: { dates:'3&ndash;9 Aug', phase:'Specificity', focus:'Race-specific: incline push joins the brick, 800 s at goal pace.',
+    3: { dates:'3&ndash;9 Aug', phase:'Specificity', focus:'Incline push joins the brick; 800s hold 3:56 on 100 m less recovery.',
+         note:'<b>First load increase &mdash; if earned.</b> The gate on Monday&rsquo;s lifts is last week&rsquo;s soreness, not the date on this tab. Sunday keeps 6 &times; 3:56 but cuts the jog to 300 m; target last-rep HR <b>163 or below</b>.',
          sessions:[ monStrength(3), wedBrick(3), friEngine(3), sunRun(3) ] },
-    4: { dates:'10&ndash;16 Aug', phase:'Specificity', focus:'Hold intensity; Sunday drops to an easy long recovery run.',
+    4: { dates:'10&ndash;16 Aug', phase:'Specificity', focus:'Hold intensity; Sunday drops to an easy long recovery run (HR under 136).',
          sessions:[ monStrength(4), wedBrick(4), friEngine(4), sunRun(4) ] },
     5: { dates:'17&ndash;23 Aug', phase:'Peak', focus:'Dress rehearsal Monday (timed, with a real row) &mdash; then easy all week to absorb it.',
          sessions:[
@@ -738,8 +920,8 @@
                { n:'Full simulation &mdash; 5 rounds, timed',
                  stats:[{l:'Rounds',v:'5'},{l:'Transitions',v:'short'},{l:'Total',v:'TIME IT',rest:true}],
                  cue:'Race order &mdash; each 800 m run is followed by one station. This is your benchmark.' },
-               { n:'800 m run &times; 5', stats:[{l:'Distance',v:'5 &times; 800 m'},{l:'Pace',v:'goal'}],
-                 cue:'Run, then straight to the station. Expect the leg tax after each station.' },
+               { n:'800 m run &times; 5', stats:[{l:'Distance',v:'5 &times; 800 m'},{l:'Fresh split',v:'3:56'},{l:'Expect here',v:'4:05&ndash;4:15'}],
+                 cue:'Run, then straight to the station. <b>Write down all five splits.</b> Expect 4:05&ndash;4:15 off the stations &mdash; the number that matters is how much they <i>drift</i>: run 1 to run 5 within ~15 s means your pacing is race-ready; a 30 s+ collapse means go out slower on the day.' },
                { n:'Stations &mdash; ski &rarr; sled &rarr; row &rarr; lunge &rarr; wall ball', stats:[{l:'Per round',v:'1 station'}],
                  cue:'Your kit: cable pulldown &rarr; incline push &rarr; <b>REAL ROW 500 m</b> &rarr; walking lunge &rarr; DB thrusters.' },
                { n:'Record your total time', stats:[{l:'Benchmark',v:'log it',rest:true}],
@@ -747,11 +929,11 @@
              ]},
            { dow:'Wed', title:'Easy Shake-out', chip:'easy',
              sub:'Absorb Monday. Nothing hard this week after the sim.',
-             ex:[ { n:'Easy 30 min + mobility', stats:[{l:'Duration',v:'30 min'},{l:'Effort',v:'Zone 2'}],
+             ex:[ { n:'Easy 30 min + mobility', stats:[{l:'Duration',v:'30 min'},{l:'HR ceiling',v:'136'}],
                    cue:'Loosen up, mobilise hips + ankles. No intervals.' } ]},
            { dow:'Fri', title:'Easy Engine', chip:'easy',
              sub:'Keep the blood moving, stay fresh.',
-             ex:[ { n:'Easy seated bike + mobility', stats:[{l:'Duration',v:'20&ndash;25 min'},{l:'Effort',v:'easy'}],
+             ex:[ { n:'Easy seated bike + mobility', stats:[{l:'Duration',v:'20&ndash;25 min'},{l:'HR ceiling',v:'130'}],
                    cue:'Conversational only (no rower this week). Full-body mobility to finish.' } ]},
            { dow:'Sun', title:'Primer Run', chip:'easy',
              sub:'Legs turning over, not tired.',
@@ -762,20 +944,20 @@
          sessions:[
            { dow:'Mon 24', title:'Rest / Optional Shake-out', chip:'easy',
              sub:'Freshness is the goal now. Rest, or the lightest possible movement.',
-             ex:[ { n:'Rest or 20 min easy + strides', stats:[{l:'Duration',v:'0&ndash;20 min'},{l:'Effort',v:'very easy'}],
+             ex:[ { n:'Rest or 20 min easy + strides', stats:[{l:'Duration',v:'0&ndash;20 min'},{l:'HR ceiling',v:'125'}],
                    cue:'If you move at all, keep it tiny. Sleep and food do the work this week.' } ]},
            { dow:'Wed 26', title:'Race-Pace Sharpener', chip:'hard',
              sub:'A short, sharp reminder of race pace &mdash; <b>not</b> a workout you finish tired.',
-             ex:[ { n:'3 &times; 800 m @ race pace', stats:[{l:'Reps',v:'3 &times; 800 m'},{l:'Pace',v:'goal'},{l:'Recovery',v:'jog 400 m',rest:true}],
-                   cue:'Feel fast and smooth. Stop with plenty left &mdash; quality, not quantity.' } ]},
+             ex:[ { n:'3 &times; 800 m @ 3:56', stats:[{l:'Reps',v:'3 &times; 800 m'},{l:'Split',v:'3:56'},{l:'Recovery',v:'jog 400 m',rest:true}],
+                   cue:'Exactly race split, no faster &mdash; this is a rehearsal, not a test. If 3:56 feels easy now, that is the whole block paying off; <b>bank it, don&rsquo;t spend it</b>. Stop with plenty left.' } ]},
            { dow:'Fri 28', title:'Pre-Race Primer', chip:'easy',
              sub:'The day-before opener. Wake the legs up, nothing more.',
              ex:[ { n:'10&ndash;15 min jog + strides', stats:[{l:'Duration',v:'10&ndash;15 min'},{l:'Strides',v:'3&ndash;4 &times; 15 s'}],
                    cue:'Nothing new. Lay out kit, shoes and breakfast tonight.' } ]},
            { dow:'Sat 29', title:'RACE DAY', chip:'hard', chipLabel:'Race',
              sub:'This is it. Follow the <b>race-day playbook</b> below for pacing, warm-up and fuel.',
-             ex:[ { n:'Race &mdash; 5 &times; 800 m + 5 stations', stats:[{l:'Format',v:'5&times;800 + 5'},{l:'First 800',v:'at goal &mdash; no faster',rest:true}],
-                   cue:'Don&rsquo;t blow the first run. Unbroken on thrusters/wall balls. Negative-split mindset.' } ]}
+             ex:[ { n:'Race &mdash; 5 &times; 800 m + 5 stations', stats:[{l:'Format',v:'5&times;800 + 5'},{l:'First 800',v:'3:56 &mdash; no faster',rest:true},{l:'Red line',v:'never under 3:50'}],
+                   cue:'<b>Run 1 at 3:56 and not a second quicker.</b> Your natural rep-to-rep spread is only 6 s, so if the first one comes in under 3:50 it is adrenaline, and you will pay for it on runs 4 and 5. Unbroken on thrusters/wall balls. Negative-split mindset.' } ]}
          ]}
   };
 
@@ -827,15 +1009,22 @@
     var weeksEl = document.getElementById('weeks');
     var tabsHtml = '', panelsHtml = '';
     var RAMP_GUIDE = [
+      { h:'What week 1 actually taught us', li:[
+        '<b>The running is ahead of schedule.</b> 26 Jul: five 800s at 3:56 with a 6-second spread and no fade. Goal pace is confirmed, not guessed.',
+        '<b>The lifting is what over-reached.</b> Mon 20 Jul (20 kg goblet, 30 kg RDL) gave you 7&ndash;8/10 DOMS and cost the Wednesday brick.',
+        'So the plan now <b>holds the strength loads</b> through W2 and <b>keeps progressing the runs</b>. The ramp was too steep in one place only.' ] },
       { h:'Two hard days, not three', li:[
-        'Hard sessions: Wed brick + Sun 800s.',
-        'Monday strength stays moderate (RIR 3). Friday works the engine hard but <b>spares the legs</b>, so Sunday stays fresh.',
+        'Hard: <b>Wed brick + Sun 800s</b>. Those two carry the block.',
+        'Monday is moderate &mdash; row reps at 147&ndash;158 bpm, lifts gated on the DOMS rule.',
+        'Friday hits the engine hard but <b>spares the legs</b> (250 m reps, no heavy lower body), so Sunday stays fresh.',
         'Never two hard days back-to-back.' ] },
-      { h:'How hard should it feel?', li:[
-        'Strength: stop ~3 reps short of failure. No grinding, no chasing the kg on the card.',
-        '800s in W1: "hard but I could definitely do 5" &mdash; find your pace, not a time trial.',
-        'Easy parts: conversational / nose-breathing. In doubt, go slower.' ] },
-      { p:'You&rsquo;re coming off pure Zone 2, so W1&ndash;2 is a <b>ramp, not a cliff</b>. If DOMS keeps stacking or your HR-at-pace creeps up, turn one hard session easy that week. Consistency beats hero weeks.' }
+      { h:'Every effort word, in numbers', li:[
+        '<b>Strength</b> &rarr; the DOMS gate: add 2 kg only after a Monday that stayed at or under 4/10 sore and cleared by Wednesday.',
+        '<b>800s</b> &rarr; 3:56 per rep (4:56/km). Fixed. The target is a <i>lower last-rep HR</i>, not a faster split.',
+        '<b>Friday sprints</b> &rarr; 15.0 km/h on the belt, all reps identical. HR near 140 is expected and fine.',
+        '<b>Easy</b> &rarr; under 136 bpm. Your natural easy runs sit at 133.',
+        '<b>Brick 800s</b> &rarr; 4:00&ndash;4:06, i.e. within 10 s of the fresh split.' ] },
+      { p:'If DOMS stacks again, or the same 3:56 starts costing <i>more</i> HR instead of less, turn one hard session easy that week. Consistency beats hero weeks &mdash; you have already lost one Wednesday to this.' }
     ];
     for (var w = 1; w <= 6; w++) {
       var meta = TAB_META[w], data = WEEKS[w];
@@ -967,6 +1156,3 @@
     render();
   })();
 </script>
-
-</body>
-</html>
