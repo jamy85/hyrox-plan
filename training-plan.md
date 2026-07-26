@@ -72,19 +72,44 @@ over-reached and cost the Wednesday brick.
 
 ## Week 2 - 27 Jul-2 Aug (Build)
 
-**Hold the weights, add a rep.** Monday repeats W1's exact loads - the second
-exposure at the same load hurts far less, and that is the adaptation to bank
-before adding kilos. The only progression is Sunday's extra 800.
+**Hold the weights, trim the volume, add a rep.** Monday repeats W1's exact
+loads - the second exposure at the same load hurts far less - but lunges and
+RDLs are cut back **this week only**, since those two cause most of the
+soreness and the protective adaptation doesn't need a full dose. Then score
+your soreness Tuesday and pick the Wednesday version.
 
 ### Mon - Row + Strength
 - [ ] Row intervals: 6x250 m, HR 147-158 by the last 10 strokes, rest 90 s
       (next rep only once HR is back under 130)
 - [ ] Goblet squat: 4x12 @ **20 kg (same as W1)**
-- [ ] Walking lunge: 4x20 steps @ **2x10 kg (same)**
-- [ ] Romanian deadlift: 3x12 @ **30 kg (same)**
+- [ ] Walking lunge: **3x16 steps** @ 2x10 kg (TRIMMED from 4x20, same weight)
+      Biggest DOMS source. Do NOT go deeper than usual or slow the lowering -
+      range and tempo drive damage far more than the weight does.
+- [ ] Romanian deadlift: **3x10** @ 30 kg (TRIMMED from 3x12, same weight)
+      Stop the bar at mid-shin, not the floor.
 - [ ] DB thruster: 4x15 @ **2x8 kg (same)**
 - [ ] Cable pulldown / bent row: 4x15 - upper body may climb normally
 - [ ] Core: 3x (40 s plank + 12 climbers)
+
+### TUESDAY MORNING - score it, then pick Wednesday
+You can't tell during Monday how sore you'll be: effort tells you about
+fatigue, not muscle damage. Soreness peaks 24-72 h out, right on Wednesday.
+So decide **Tuesday** (not Wednesday - by then you're at peak and will talk
+yourself out of it).
+
+Test: walk down a flight of stairs + 5 slow bodyweight squats. Score the worse
+of the two out of 10.
+
+| Tuesday score | Wednesday becomes |
+|---|---|
+| 0-4/10 | Full brick as written |
+| 5-6/10 | **Brick Lite** - keep every 800 m run, cut to 2 rounds, drop the lunge |
+| 7+/10 | Recovery swap - easy bike 20-30 min + mobility |
+
+Brick Lite keeps the runs on purpose: running is the least aggravating thing
+for sore legs, and compromised running is the actual race skill. A sore week
+should cost volume, never the whole session. Land on 7+ twice and Monday's
+loads drop 2 kg.
 
 ### Wed - Brick (first real brick, 800s go in)
 - [ ] 3 rounds: 800 m run -> bike -> thruster -> lunge

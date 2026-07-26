@@ -448,6 +448,28 @@
       </ul>
       <p style="margin-bottom:0">Within a given load, still stop ~3 reps short of failure. The gym exists so your legs hold up at the stations &mdash; a Monday that costs you Wednesday is a net loss no matter how good the lift felt.</p>
     </div>
+
+    <div class="card warn">
+      <h3>You can&rsquo;t predict DOMS during the session &mdash; so don&rsquo;t try</h3>
+      <p style="margin-top:0">How hard a session <i>feels</i> tells you about fatigue, not muscle damage. They are separate things, which is why 20 Jul felt manageable and then flattened you two days later. Soreness peaks 24&ndash;72 h out, and your Wednesday brick sits right on the peak.</p>
+      <p>Two things you <b>can</b> control on Monday, because they drive damage far more than the weight does:</p>
+      <ul>
+        <li><b>Range</b> &mdash; don&rsquo;t go deeper than prescribed on lunges; stop the RDL bar at mid-shin.</li>
+        <li><b>Tempo</b> &mdash; don&rsquo;t add slow negatives. Lower under control, not slowly.</li>
+      </ul>
+      <p>Then move the decision to <b>Tuesday morning</b>, when soreness is finally readable and Wednesday is still saveable. Walk down a flight of stairs, do 5 slow bodyweight squats, score the worse of the two:</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Tuesday score</th><th>Wednesday becomes</th></tr></thead>
+          <tbody>
+            <tr><th>0&ndash;4/10</th><td>Full brick as written</td></tr>
+            <tr><th>5&ndash;6/10</th><td><b>Brick Lite</b> &mdash; keep every 800 m run, cut to 2 rounds, drop the lunge</td></tr>
+            <tr><th>7+/10</th><td>Recovery swap &mdash; easy bike 20&ndash;30 min + mobility</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-bottom:0"><b>Decide Tuesday, not Wednesday.</b> By Wednesday you are at peak soreness and will talk yourself out of it. And note Brick Lite keeps the runs: running is the least aggravating thing you can do on sore legs, and compromised running is the actual race skill &mdash; so a sore week should cost you volume, never the whole session.</p>
+    </div>
   </section>
 
   <!-- OVERVIEW -->
@@ -694,6 +716,8 @@
          fri:'5&times;250 m', friSpd:ME.belt, rowFri:false },
     2: { row:'6&times;250 m', squat:'20 kg', lunge:'2&times;10 kg', rdl:'30 kg', thr:'2&times;8 kg',
          pull:'RIR 2 &middot; last 3 reps burn',
+         lungeVol:'3 &times; 16 steps', rdlVol:'3 &times; 10',
+         volCut:'<b>Volume trimmed this week only</b> (48 lunge steps instead of 80, 30 RDL reps instead of 36). Same weight &mdash; the protective adaptation does not need a full dose, and these two lifts cause most of the soreness.',
          gate:'<b>Repeat W1 &mdash; same loads, no jump.</b> These exact numbers cost you 7&ndash;8/10 DOMS and a Wednesday. Second exposure at the same load hurts far less (repeated-bout effect); that is the adaptation to bank before adding kilos.',
          fri:'6&times;250 m', friSpd:ME.belt, rowFri:true  },
     3: { row:'5&times;400 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg',
@@ -758,12 +782,13 @@
           stats:[{l:'Sets&times;Reps',v:'4 &times; 12'},{l:'Load',v:L.squat},{l:'Rest',v:'90 s',rest:true}],
           cue:'Chest tall, sit between the knees, control the descent. <b>' + (w === 2 ? 'Same 20 kg as W1 &mdash; deliberately.' : 'Load is gated on last Monday&rsquo;s DOMS.') + '</b> Tap below before you pick the weight.',
           details:loadGate(w) },
-        { n:'Walking lunge (DBs / front KB)',
-          stats:[{l:'Sets&times;Reps',v:'4 &times; 20 steps'},{l:'Load',v:L.lunge},{l:'Rest',v:'90 s',rest:true}],
-          cue:'Long step, vertical front shin &mdash; this <i>is</i> the lunge station.' },
-        { n:'Romanian deadlift (BB/DB)',
-          stats:[{l:'Sets&times;Reps',v:'3 &times; 12'},{l:'Load',v:L.rdl},{l:'Rest',v:'90 s',rest:true}],
-          cue:'Hinge from the hips, flat back, feel the hamstrings &mdash; protects the run.' },
+        { n:'Walking lunge (DBs / front KB)', tag:L.lungeVol ? 'volume trimmed this week' : '',
+          stats:[{l:'Sets&times;Reps',v:L.lungeVol || '4 &times; 20 steps'},{l:'Load',v:L.lunge},{l:'Rest',v:'90 s',rest:true}],
+          cue:'Long step, vertical front shin &mdash; this <i>is</i> the lunge station. <b>Your single biggest source of DOMS</b>, so the one rule that matters: <b>do not go deeper than prescribed and do not slow the lowering down.</b> Range and tempo drive damage far more than the weight does.',
+          details:L.volCut ? [ { p:L.volCut }, { h:'Why this lift specifically', p:'80 loaded steps through a long range is the most eccentric work in your week by a distance. Trimming it to 48 keeps the training effect and removes most of the soreness risk &mdash; it goes back to 4 &times; 20 in W3 at the same weight.' } ] : null },
+        { n:'Romanian deadlift (BB/DB)', tag:L.rdlVol ? 'volume trimmed this week' : '',
+          stats:[{l:'Sets&times;Reps',v:L.rdlVol || '3 &times; 12'},{l:'Load',v:L.rdl},{l:'Rest',v:'90 s',rest:true}],
+          cue:'Hinge from the hips, flat back, feel the hamstrings &mdash; protects the run. Second-biggest DOMS source (hamstrings loaded at long length), so again: <b>stop the bar at mid-shin, not the floor.</b>' },
         { n:'DB thruster', tag:'wall-ball sub',
           stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.thr},{l:'Rest',v:'75 s',rest:true}],
           cue:'One fluid squat-to-press, drive from the legs. Practise <b>unbroken</b> sets.' },
@@ -776,9 +801,32 @@
       ]};
   }
 
+  // You cannot tell during Monday how sore you will be. So the decision moves to
+  // Tuesday morning, when DOMS IS readable, and Wednesday gets a scaled option
+  // instead of a binary do-it-or-lose-it.
+  var DOMS_CHECK = [
+    { p:'<b>Do not try to judge this on Monday.</b> How hard a session feels tells you about fatigue, not muscle damage &mdash; they are different things, which is why 20 Jul felt fine and then flattened you. Soreness peaks 24&ndash;72 h out, so Wednesday sits right on the worst of it.' },
+    { h:'Tuesday morning &mdash; the 30-second test', li:[
+      'Walk down a flight of stairs.',
+      'Do 5 slow bodyweight squats to parallel.',
+      'Score the worse of the two out of 10, and pick your Wednesday from the table below. <b>Decide on Tuesday, not on Wednesday</b> &mdash; you will be at peak soreness by then and will talk yourself out of it.' ] },
+    { h:'0&ndash;4/10 &mdash; run the full brick', p:'As written on the card. This is what the trimmed Monday is buying you.' },
+    { h:'5&ndash;6/10 &mdash; BRICK LITE (do not skip)', li:[
+      '<b>Keep every 800 m run.</b> Running is the least aggravating thing you can do to sore legs and it is the actual race skill.',
+      'Cut to <b>2 rounds</b>, and drop the walking lunge entirely.',
+      'Keep the bike and thrusters at an easy-moderate effort.',
+      'You still get the compromised-running rehearsal, which is the whole point of Wednesday.' ] },
+    { h:'7+/10 &mdash; recovery swap', p:'Easy bike 20&ndash;30 min + mobility, exactly like 22 Jul. At this level you would move badly enough to risk tweaking something, and Sunday matters more. If you land here twice, Monday&rsquo;s loads drop by 2 kg.' },
+    { p:'<b>The point:</b> Wednesday is your only compromised-running session, so it should almost never be all-or-nothing. Brick Lite exists so that a sore week costs you a bit of volume rather than the whole stimulus.' }
+  ];
+
   function wedBrick(w) {
     var C = WED[w];
     var ex = [
+      { n:'Tuesday check &mdash; which version of today?', tag:'read this before you start',
+        stats:[{l:'0&ndash;4/10',v:'full brick'},{l:'5&ndash;6/10',v:'Brick Lite &middot; 2 rounds, no lunge'},{l:'7+/10',v:'easy bike + mobility'}],
+        cue:'Score your soreness on <b>Tuesday morning</b> (stairs + 5 bodyweight squats) and pick the version then. You cannot judge this during Monday&rsquo;s lift, and by Wednesday you are at peak soreness.',
+        details:DOMS_CHECK },
       { n:C.label,
         stats:[{l:'Rounds',v:C.rounds},{l:'Between exercises',v:'30&ndash;60 s'},{l:'Between rounds',v:'2&ndash;3 min',rest:true}],
         cue:C.note + ' Reduce round-rest as the weeks progress.' }
@@ -920,7 +968,7 @@
                     ] } ]},
            friEngine(1), sunRun(1) ] },
     2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Repeat W1&rsquo;s loads (bank the repeated-bout effect), run the first true brick, add one 800.',
-         note:'<b>Hold the weights, add a rep.</b> Monday runs the <i>exact same loads</i> as 20 Jul &mdash; the second exposure at a given load hurts far less, and that is the adaptation worth having before adding kilos. The only progression this week is Sunday: <b>6 &times; 800 at the same 3:56, same 400 m jog</b>. One new variable, not three.', rampGuide:true,
+         note:'<b>Hold the weights, trim the volume, add a rep.</b> Monday runs the <i>exact same loads</i> as 20 Jul (second exposure at a given load hurts far less) but with <b>lunges and RDLs cut back for this week only</b> &mdash; those two cause most of the soreness, and the protective adaptation does not need a full dose. Then <b>score your soreness on Tuesday morning</b> and pick the Wednesday version from the card: a sore week should cost you volume, not the whole brick. The only running progression is Sunday: <b>6 &times; 800 at the same 3:56, same 400 m jog</b>.', rampGuide:true,
          sessions:[ monStrength(2), wedBrick(2), friEngine(2), sunRun(2) ] },
     3: { dates:'3&ndash;9 Aug', phase:'Specificity', focus:'Incline push joins the brick; 800s hold 3:56 on 100 m less recovery.',
          note:'<b>First load increase &mdash; if earned.</b> The gate on Monday&rsquo;s lifts is last week&rsquo;s soreness, not the date on this tab. Sunday keeps 6 &times; 3:56 but cuts the jog to 300 m; target last-rep HR <b>163 or below</b>.',
