@@ -719,14 +719,17 @@
          lungeVol:'3 &times; 16 steps', rdlVol:'3 &times; 10',
          volCut:'<b>Volume trimmed this week only</b> (48 lunge steps instead of 80, 30 RDL reps instead of 36). Same weight &mdash; the protective adaptation does not need a full dose, and these two lifts cause most of the soreness.',
          gate:'<b>Repeat W1 &mdash; same loads, no jump.</b> These exact numbers cost you 7&ndash;8/10 DOMS and a Wednesday. Second exposure at the same load hurts far less (repeated-bout effect); that is the adaptation to bank before adding kilos.',
+         thrGate:'<b>Target before any load jump: 4 &times; 15 unbroken at 2&times;8 kg.</b> On Mon 27 Jul set 4 broke at 10 reps &mdash; about 55 of the 60, with HR spiking to 159 (94% of max). That is a well-dosed session rather than a failure, but it does mean this weight is not owned yet.',
          fri:'6&times;250 m', friSpd:ME.belt, rowFri:true  },
     3: { row:'5&times;400 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg',
          pull:'RIR 2 &middot; add load when 4&times;15 is clean',
          gate:'First real jump (+4 kg squat, +10 kg RDL) &mdash; <b>only if W2&rsquo;s Monday left you under 4/10 sore and the Wed brick happened.</b> If W2 wrecked you again, run W2&rsquo;s loads a third time.',
+         thrGate:'<b>Take 2&times;10 kg only once 4 &times; 15 is unbroken at 2&times;8 kg.</b> As of Mon 27 Jul the last set broke at 10 reps, so this +25% jump is not earned yet &mdash; and this week puts 5&times;400 m of rowing in front of the thrusters, so they land on more fatigue than they did in W2. Go unbroken at 2&times;8 kg first, then move up.',
          fri:'4&times;500 m', friSpd:'14.0 km/h', rowFri:false },
     4: { row:'4&times;500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg',
          pull:'RIR 2 &middot; hold, do not chase',
          gate:'Last loading week. Same gate: add only what W3 earned. Sunday is an easy long run, so Monday can be the honest top end.',
+         thrGate:'<b>Same gate:</b> 2&times;12 kg only if 4 &times; 15 went unbroken at 2&times;10 kg. Otherwise repeat the weight you have not owned yet &mdash; broken sets with a heavier dumbbell are worth less to you than unbroken sets with a lighter one.',
          fri:'4&times;400 m', friSpd:'14.0 km/h', rowFri:true  }
   };
   // Per-week brick (Wed) config.
@@ -789,9 +792,16 @@
         { n:'Romanian deadlift (BB/DB)', tag:L.rdlVol ? 'volume trimmed this week' : '',
           stats:[{l:'Sets&times;Reps',v:L.rdlVol || '3 &times; 12'},{l:'Load',v:L.rdl},{l:'Rest',v:'90 s',rest:true}],
           cue:'Hinge from the hips, flat back, feel the hamstrings &mdash; protects the run. Second-biggest DOMS source (hamstrings loaded at long length), so again: <b>stop the bar at mid-shin, not the floor.</b>' },
-        { n:'DB thruster', tag:'wall-ball sub',
+        { n:'DB thruster', tag:L.thrGate ? 'wall-ball sub &middot; load gated' : 'wall-ball sub',
           stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.thr},{l:'Rest',v:'75 s',rest:true}],
-          cue:'One fluid squat-to-press, drive from the legs. Practise <b>unbroken</b> sets.' },
+          cue:'One fluid squat-to-press, drive from the legs. Practise <b>unbroken</b> sets.'
+              + (L.thrGate ? ' <b>Do not add load until 4 &times; 15 is unbroken</b> &mdash; tap below.' : ''),
+          details:L.thrGate ? [ { p:L.thrGate },
+            { h:'Why unbroken beats heavier', p:'The wall ball you are substituting for is a <i>lighter</i> implement at <i>high</i> reps, so what transfers to race day is unbroken repeatability, not a heavier 10-rep max. A forced mid-set break is also the expensive version on race day: you have already paid the heart-rate cost, you lose the time, and a run leg is still to come.' },
+            { h:'How to actually get 4 &times; 15', li:[
+              'Break the set in your head before your legs break it &mdash; 8 + 7 with a breath at the top beats 10 and a stall.',
+              'Breathe at the <b>top</b> of the press, not down in the squat.',
+              'If set 4 still fails after two Mondays at the same weight, the weight is wrong &mdash; drop to 2&times;6 kg and earn it there.' ] } ] : null },
         { n:'Cable pulldown / DB bent row', tag:'ski sub',
           stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.pull},{l:'Rest',v:'75 s',rest:true}],
           cue:'Pull with the lats, not the arms &mdash; mimics the ski catch. Upper body did <b>not</b> give you DOMS in W1, so this one can climb on the normal &ldquo;clean at 15 reps &rarr; add load&rdquo; rule.' },

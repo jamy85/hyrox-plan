@@ -88,7 +88,11 @@ your soreness Tuesday and pick the Wednesday version.
 - [ ] Romanian deadlift: **3x10** @ 30 kg (TRIMMED from 3x12, same weight)
       Stop the bar at mid-shin, not the floor.
 - [ ] DB thruster: 4x15 @ **2x8 kg (same)**
+      GATE: no load jump until 4x15 goes UNBROKEN at this weight. 27 Jul, set 4
+      broke at 10 reps (~55 of 60, HR 159 = 94% max) - well dosed, but not owned yet.
 - [ ] Cable pulldown / bent row: 4x15 - upper body may climb normally
+      Make 3 of the 4 sets the STANDING straight-arm pulldown (forward lean, pull to
+      the hips) - that is the ski pattern. Seated machine is a braced vertical pull.
 - [ ] Core: 3x (40 s plank + 12 climbers)
 
 ### TUESDAY MORNING - score it, then pick Wednesday
@@ -141,7 +145,9 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 - [ ] Goblet squat: 4x12 @ 24 kg
 - [ ] Walking lunge: 4x20 steps @ 2x12 kg
 - [ ] Romanian deadlift: 3x12 @ 40 kg
-- [ ] DB thruster: 4x15 @ 2x10 kg
+- [ ] DB thruster: 4x15 @ 2x10 kg **ONLY IF 4x15 was unbroken at 2x8 kg**
+      Otherwise hold 2x8 and earn it. This week rows 5x400 m BEFORE the thrusters,
+      so they land on more fatigue than in W2. Unbroken first, then add load.
 - [ ] Cable pulldown / bent row: 4x15
 - [ ] Core: 3x (40 s plank + 12 climbers)
 
@@ -173,7 +179,9 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 - [ ] Goblet squat: 4x12 @ 28 kg
 - [ ] Walking lunge: 4x20 steps @ 2x14 kg
 - [ ] Romanian deadlift: 3x12 @ 45 kg
-- [ ] DB thruster: 4x15 @ 2x12 kg
+- [ ] DB thruster: 4x15 @ 2x12 kg **ONLY IF 4x15 was unbroken at 2x10 kg**
+      Same gate. Broken sets with a heavier DB are worth less than unbroken sets
+      with a lighter one - the wall ball is light and high-rep.
 - [ ] Cable pulldown / bent row: 4x15 - hold, do not chase
 - [ ] Core: 3x (40 s plank + 12 climbers)
 
