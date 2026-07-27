@@ -126,7 +126,9 @@ loads drop 2 kg.
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 6x250 m: row it, or belt @ 15.0 km/h. Rest 90 s-2 min.
       Judge by evenness, NOT heart rate - ~140 peaks are normal on 60 s reps.
-- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Pallof + hollow
+- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
+      Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
+      Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
       Nothing here should touch the legs.
 
 ### Sun - 800s (outdoor)
@@ -162,7 +164,9 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 
 ### Fri - Engine + Pull (no rower -> belt/bike)
 - [ ] 4x500 m @ 14.0 km/h (~2:09 each), rest 90 s-2 min
-- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Pallof + hollow
+- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
+      Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
+      Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
 
 ### Sun - 800s (outdoor)
 - [ ] **6x800 m @ 3:56**, jog 300 m (same reps, 100 m less recovery)
@@ -195,7 +199,9 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 4x400 m @ 14.0 km/h, light, rest 90 s-2 min
-- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Pallof + hollow
+- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
+      Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
+      Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
 
 ### Sun - Easy Long Run (recovery, NO 800s)
 - [ ] 50-60 min, **cap HR at 136** (your easy runs sit at 133).
