@@ -8,7 +8,7 @@ Rower: every Mon + even-week Fri (W2, W4). Wed brick + odd-week Fri = seated bik
 
 | Anchor | Value | Measured |
 |---|---|---|
-| Max HR | **170 bpm** | rep 5 of the 800s, 26 Jul |
+| Max HR | **173 bpm** | round 2 of the Wed brick, 29 Jul |
 | 800 m goal split | **3:56** (4:56/km) | track-timed, 26 Jul |
 | Rep-to-rep spread | 6 s over 5 reps | 3:55-4:01, no fade |
 | Last-rep HR (beat this) | **166 avg** / 170 max | 26 Jul baseline |
@@ -16,8 +16,8 @@ Rower: every Mon + even-week Fri (W2, W4). Wed brick + odd-week Fri = seated bik
 | Easy-run HR | ~133 bpm | outdoor steady runs |
 | Efficiency factor | ~0.019 | recovering from a 10% dip |
 
-**HR zones off max 170:** recovery <120 | easy 120-136 | steady 137-146 |
-threshold 147-158 | VO2/race 159-170.
+**HR zones off max 173:** recovery <122 | easy 122-138 | steady 139-149 |
+threshold 150-161 | VO2/race 162-173.
 
 **Distrust the watch in two places.** On a 400 m track GPS reads ~10% FAST
 (showed 4:25-4:36/km when you really ran 4:56) - use a stopwatch on the lap.
@@ -66,7 +66,8 @@ over-reached and cost the Wednesday brick.
 ### Sun 26 - 800s (400 m track) - done, PACE FOUND
 - [x] 5x800 m: **3:56 / 3:56 / 4:01 / 3:55 / 3:56**, jog 400 m recovery
       = 4:56/km avg, 6 s spread, rep 5 among the fastest (zero fade).
-      HR by rep: 137 -> 150 -> 155 -> 162 -> **166** (max 170 = new max HR).
+      HR by rep: 137 -> 150 -> 155 -> 162 -> **166** (max 170 here; superseded
+      by 173 on the 29 Jul brick).
 
 ---
 
@@ -79,7 +80,7 @@ soreness and the protective adaptation doesn't need a full dose. Then score
 your soreness Tuesday and pick the Wednesday version.
 
 ### Mon - Row + Strength
-- [ ] Row intervals: 6x250 m, HR 147-158 by the last 10 strokes, rest 90 s
+- [ ] Row intervals: 6x250 m, HR 150-161 by the last 10 strokes, rest 90 s
       (next rep only once HR is back under 130)
 - [ ] Goblet squat: 4x12 @ **20 kg (same as W1)**
 - [ ] Walking lunge: **3x16 steps** @ 2x10 kg (TRIMMED from 4x20, same weight)
@@ -119,7 +120,7 @@ loads drop 2 kg.
 - [ ] 3 rounds: 800 m run -> bike -> thruster -> lunge
 - [ ] 800 m treadmill @ **4:00-4:06** (belt 11.6-12.0 km/h) - within 10 s of
       Sunday's 3:56 is the win condition
-- [ ] Seated bike 250-500 m to HR 147-158 (or 12 burpees)
+- [ ] Seated bike 250-500 m to HR 150-161 (or 12 burpees)
 - [ ] DB thruster: 15 @ 2x8-10 kg
 - [ ] Walking lunge: 20 steps -> straight into next run (jelly-legs)
 
@@ -143,7 +144,7 @@ First load increase - **only if** W2's Monday stayed under 4/10 sore and the Wed
 brick happened. If W2 wrecked you again, run W2's loads a third time.
 
 ### Mon - Row + Strength
-- [ ] Row intervals: 5x400 m, HR 147-158, rest 90 s
+- [ ] Row intervals: 5x400 m, HR 150-161, rest 90 s
 - [ ] Goblet squat: 4x12 @ 24 kg
 - [ ] Walking lunge: 4x20 steps @ 2x12 kg
 - [ ] Romanian deadlift: 3x12 @ 40 kg
@@ -156,10 +157,10 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 ### Wed - Brick (incline push joins)
 - [ ] 4 rounds: 800 m -> bike -> thruster -> lunge -> incline push
 - [ ] 800 m treadmill @ 4:00-4:06 (belt 11.6-12.0 km/h)
-- [ ] Seated bike 250-500 m to HR 147-158 (or 12 burpees)
+- [ ] Seated bike 250-500 m to HR 150-161 (or 12 burpees)
 - [ ] DB thruster: 15 @ 2x8-10 kg
 - [ ] Walking lunge: 20 steps -> straight into incline push
-- [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 147-158
+- [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 150-161
       -> straight into next run
 
 ### Fri - Engine + Pull (no rower -> belt/bike)
@@ -179,7 +180,7 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 Last loading week. Sunday is easy, so Monday can be the honest top end.
 
 ### Mon - Row + Strength
-- [ ] Row intervals: 4x500 m, HR 147-158, rest 90 s
+- [ ] Row intervals: 4x500 m, HR 150-161, rest 90 s
 - [ ] Goblet squat: 4x12 @ 28 kg
 - [ ] Walking lunge: 4x20 steps @ 2x14 kg
 - [ ] Romanian deadlift: 3x12 @ 45 kg
@@ -192,7 +193,7 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 ### Wed - Brick (5th round only if fresh)
 - [ ] 4-5 rounds: 800 m -> bike -> thruster -> lunge -> incline push
 - [ ] 800 m treadmill @ 4:00 (belt 12.0 km/h)
-- [ ] Seated bike 250-500 m to HR 147-158 (or 12 burpees)
+- [ ] Seated bike 250-500 m to HR 150-161 (or 12 burpees)
 - [ ] DB thruster: 15 @ 2x8-10 kg
 - [ ] Walking lunge: 20 steps -> incline push
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
