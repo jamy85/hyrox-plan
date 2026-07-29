@@ -38,6 +38,18 @@ never asked to run faster. What should fall is what it costs: last-rep HR 166
 (26 Jul) -> 166 (W2) -> 163 (W3) -> ~158 by W5. Same split, a full zone cheaper
 = race pace has become sustainable.
 
+**BRICK REST RULE (Wed) - only three numbers, and they never conflict.**
+1. **Station to station, inside a round: 30-60 s.** Just enough to walk over.
+2. **Last station to the next round: the round rest.** Starts the moment the
+   last station ends. It shrinks each week: **W1-W2 2-3 min | W3 90 s-2 min |
+   W4 60-90 s**. Each Wed section below states that week's number.
+3. **Race day: no round rest.** That is the destination, not this week.
+
+"Jelly legs" NEVER means skip the rest. It means take the round rest and
+restart while your legs still feel wrecked rather than fresh - restarting
+half-recovered is the rehearsal. Note the last station changes by week: the
+lunge in W1-W2, the incline push once it joins in W3.
+
 ---
 
 ## Week 1 - 20-26 Jul (Build) - DONE
@@ -124,8 +136,8 @@ loads drop 2 kg.
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
 - [ ] DB thruster: 15 @ 2x8-10 kg
-- [ ] Walking lunge: 20 steps -> last station, so the 2-3 min round rest
-      starts here; restart while legs still feel like jelly, not fresh
+- [ ] Walking lunge: 20 steps - LAST STATION, so the round rest starts here
+      ROUND REST THIS WEEK: 2-3 min. Stations within a round: 30-60 s.
 
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 6x250 m: row it, or belt @ 15.0 km/h. Rest 90 s-2 min.
@@ -164,9 +176,10 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
 - [ ] DB thruster: 15 @ 2x8-10 kg
-- [ ] Walking lunge: 20 steps -> straight into incline push
+- [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 150-161
-      -> round rest 2-3 min, restart on jelly legs (not fresh)
+      LAST STATION, so the round rest starts here.
+      ROUND REST THIS WEEK: 90 s-2 min (down from 2-3 min in W2).
 
 ### Fri - Engine + Pull (no rower -> belt/bike)
 - [ ] 4x500 m @ 14.0 km/h (~2:09 each), rest 90 s-2 min
@@ -202,8 +215,10 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
 - [ ] DB thruster: 15 @ 2x8-10 kg
-- [ ] Walking lunge: 20 steps -> incline push
+- [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
+      LAST STATION, so the round rest starts here.
+      ROUND REST THIS WEEK: 60-90 s (down from 90 s-2 min in W3).
 
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 4x400 m @ 14.0 km/h, light, rest 90 s-2 min

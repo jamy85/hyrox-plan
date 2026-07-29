@@ -733,11 +733,14 @@
          fri:'4&times;400 m', friSpd:'14.0 km/h', rowFri:true  }
   };
   // Per-week brick (Wed) config.
+  //  `rest` = the ROUND rest (last station -> next round). It is the single
+  //  source for every rest statement in wedBrick(); do not hardcode a rest
+  //  figure in any cue. Station-to-station rest is always 30-60 s.
   var WED = {
-    1: { rounds:'4',   runs:false, push:false, label:'Round = bike &rarr; thruster &rarr; lunge',                          note:'Grooving the movements &mdash; no runs yet this week.' },
-    2: { rounds:'3',   runs:true,  push:false, label:'Round = 800 m run &rarr; bike &rarr; thruster &rarr; lunge',              note:'First real brick &mdash; the 800 s go in.' },
-    3: { rounds:'4',   runs:true,  push:true,  label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Incline push (sled sub) joins from this week.' },
-    4: { rounds:'4&ndash;5', runs:true,  push:true,  label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Runs at goal pace; add the 5th round only if fresh.' }
+    1: { rounds:'4',   runs:false, push:false, rest:'2&ndash;3 min', label:'Round = bike &rarr; thruster &rarr; lunge',                          note:'Grooving the movements &mdash; no runs yet this week.' },
+    2: { rounds:'3',   runs:true,  push:false, rest:'2&ndash;3 min', label:'Round = 800 m run &rarr; bike &rarr; thruster &rarr; lunge',              note:'First real brick &mdash; the 800 s go in.' },
+    3: { rounds:'4',   runs:true,  push:true,  rest:'90 s&ndash;2 min', label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Incline push (sled sub) joins from this week.' },
+    4: { rounds:'4&ndash;5', runs:true,  push:true,  rest:'60&ndash;90 s', label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Runs at goal pace; add the 5th round only if fresh.' }
   };
   // Per-week Sunday 800s. Pace is FIXED at your measured 3:56 all block --
   // the progression is one variable per week (reps, then recovery), and the
@@ -838,8 +841,15 @@
         cue:'Score your soreness on <b>Tuesday morning</b> (stairs + 5 bodyweight squats) and pick the version then. You cannot judge this during Monday&rsquo;s lift, and by Wednesday you are at peak soreness.',
         details:DOMS_CHECK },
       { n:C.label,
-        stats:[{l:'Rounds',v:C.rounds},{l:'Between exercises',v:'30&ndash;60 s'},{l:'Between rounds',v:'2&ndash;3 min',rest:true}],
-        cue:C.note + ' Reduce round-rest as the weeks progress.' }
+        stats:[{l:'Rounds',v:C.rounds},{l:'Between stations',v:'30&ndash;60 s'},{l:'Between rounds',v:C.rest,rest:true}],
+        cue:C.note + ' <b>Round rest this week: ' + C.rest + '</b>, taken after the last station.',
+        details:[
+          { h:'How rest works here &mdash; only three numbers, and they never conflict', li:[
+            '<b>Station to station, inside a round: 30&ndash;60 s.</b> Just long enough to walk over and set up.',
+            '<b>Last station to the next round: ' + C.rest + '.</b> That is the round rest, and it starts the moment the last station ends.',
+            '<b>Race day: no round rest at all.</b> That is the destination, not this week&rsquo;s instruction &mdash; which is why the round rest shrinks as the block goes on: <b>W1&ndash;W2 ' + WED[1].rest + ' &middot; W3 ' + WED[3].rest + ' &middot; W4 ' + WED[4].rest + '</b>.' ] },
+          { p:'<b>&ldquo;Jelly legs&rdquo; does not mean skip the rest.</b> It means take the round rest and start the next round while your legs still feel wrecked rather than waiting until they feel fresh. Restarting half-recovered is the compromised-running rehearsal; skipping the rest just turns this into a different session you are more likely to fail.' }
+        ] }
     ];
     if (C.runs) ex.push({ n:'800 m treadmill on tired legs',
       stats:[{l:'Target',v:'4:00&ndash;4:06'},{l:'Belt',v:'12.0&ndash;12.2 km/h'},{l:'Sunday&rsquo;s split',v:ME.split800}],
@@ -872,19 +882,20 @@
     ex.push({ n:'DB thruster', tag:'wall-ball sub',
       stats:[{l:'Reps',v:'15'},{l:'Load',v:'2&times;8&ndash;10 kg'}],
       cue:'Lighter than Monday &mdash; go for speed and unbroken.' });
-    // Walking lunge: cue depends on what follows it this week.
-    var lungeCue = C.push
-        ? 'No rest &mdash; flow straight into the incline push.'
-        : (C.runs ? 'Last station of the round, so the <b>2&ndash;3 min round rest starts here</b> &mdash; but start the next run while your legs still feel like jelly, not once they feel fresh. That half-recovered feeling is the rehearsal. Race day has no round rest; the rest shrinks week by week.'
-                  : 'Controlled reps &mdash; grooving the pattern (no run this week).');
+    // ---- ONE rest model, used by whichever station is last this week. ----
+    // Last station is the lunge in W1-W2 and the incline push in W3-W4, so the
+    // round-rest sentence has to follow it rather than being pinned to one exercise.
+    var roundRest = ' <b>This is the last station, so the ' + C.rest + ' round rest starts here</b> &mdash; then begin the next '
+      + (C.runs ? 'run' : 'round') + ' while your legs still feel like jelly rather than fresh. <b>Take the rest; do not skip it.</b> It shrinks week by week and only reaches zero on race day.';
+    var midRound = ' Then <b>30&ndash;60 s at most</b> and into the incline push &mdash; same round, not a new one.';
     ex.push({ n:'Walking lunge',
-      stats:[{l:'Reps',v:'20 steps'},{l:'Load',v:'BW &rarr; 2&times;6 kg'}],
-      cue:lungeCue });
+      stats:[{l:'Reps',v:'20 steps'},{l:'Load',v:'BW &rarr; 2&times;6 kg'},{l:'Then',v:C.push ? '30&ndash;60 s' : C.rest, rest:true}],
+      cue:(C.runs ? 'Controlled, powerful steps.' : 'Controlled reps &mdash; grooving the pattern (no run this week).') + (C.push ? midRound : roundRest) });
     if (C.push) ex.push({ n:'Incline push', tag:'sled sub',
-      stats:[{l:'Time',v:'30 s'},{l:'Incline',v:'12%'},{l:'Belt',v:'6.5&ndash;7.5 km/h'},{l:'HR by the end',v:ME.zThresh}],
-      cue:'Powerful short steps at a walk-march you can barely hold for 30 s &mdash; it should push HR into the ' + ME.zThresh + ' band. Then <b>straight into the next run</b>: the jelly-legs rehearsal. No treadmill incline? Car-park ramp or stairwell, same 30 s.' });
+      stats:[{l:'Time',v:'30 s'},{l:'Incline',v:'12%'},{l:'Belt',v:'6.5&ndash;7.5 km/h'},{l:'Then',v:C.rest,rest:true}],
+      cue:'Powerful short steps at a walk-march you can barely hold for 30 s &mdash; it should push HR into the ' + ME.zThresh + ' band. No treadmill incline? Car-park ramp or stairwell, same 30 s.' + roundRest });
     return { dow:'Wed', title:'Brick / Simulation', chip:'hard',
-      sub:'The money session &mdash; trains <b>compromised running</b> (fast legs after trashed legs). Warm-up: 8&ndash;10 min easy run + 3 strides. Keep transitions short like the race.',
+      sub:'The money session &mdash; trains <b>compromised running</b> (fast legs after trashed legs). Warm-up: 8&ndash;10 min easy run + 3 strides. Keep the <i>station-to-station</i> transitions short like the race (30&ndash;60 s); the <b>' + C.rest + ' round rest is deliberate</b> and shrinks as the block goes on.',
       ex:ex };
   }
 
