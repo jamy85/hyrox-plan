@@ -130,12 +130,13 @@ loads drop 2 kg.
 
 ### Wed - Brick (first real brick, 800s go in)
 - [ ] 3 rounds: 800 m run -> bike -> thruster -> lunge
-- [ ] 800 m treadmill @ **4:00-4:06** (belt 11.6-12.0 km/h) - within 10 s of
-      Sunday's 3:56 is the win condition
+- [ ] 800 m treadmill @ **4:00-4:06** (belt **11.7-12.0 km/h**) - within 10 s of
+      Sunday's 3:56 is the win condition. Do NOT set the belt to 12.2 (= 3:56):
+      that is the FRESH split you compare against, not the one you run here.
 - [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
-- [ ] DB thruster: 15 @ 2x8-10 kg
+- [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 - never heavier than Monday)
 - [ ] Walking lunge: 20 steps - LAST STATION, so the round rest starts here
       ROUND REST THIS WEEK: 2-3 min. Stations within a round: 30-60 s.
 
@@ -171,11 +172,11 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 
 ### Wed - Brick (incline push joins)
 - [ ] 4 rounds: 800 m -> bike -> thruster -> lunge -> incline push
-- [ ] 800 m treadmill @ 4:00-4:06 (belt 11.6-12.0 km/h)
+- [ ] 800 m treadmill @ 4:00-4:06 (belt 11.7-12.0 km/h)
 - [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
-- [ ] DB thruster: 15 @ 2x8-10 kg
+- [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x10 - go LIGHTER here; speed + unbroken)
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 150-161
       LAST STATION, so the round rest starts here.
@@ -210,11 +211,12 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 
 ### Wed - Brick (5th round only if fresh)
 - [ ] 4-5 rounds: 800 m -> bike -> thruster -> lunge -> incline push
-- [ ] 800 m treadmill @ 4:00 (belt 12.0 km/h)
+- [ ] 800 m treadmill @ 4:00-4:06 (belt 11.7-12.0 km/h) - the TIRED-LEGS
+      target, not Sunday's 3:56. "Goal pace" always means Sunday fresh.
 - [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
-- [ ] DB thruster: 15 @ 2x8-10 kg
+- [ ] DB thruster: 15 @ 2x10 kg (Mon is 2x12 - go LIGHTER here; speed + unbroken)
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
       LAST STATION, so the round rest starts here.
@@ -227,7 +229,7 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
       Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
 
 ### Sun - Easy Long Run (recovery, NO 800s)
-- [ ] 50-60 min, **cap HR at 136** (your easy runs sit at 133).
+- [ ] 50-60 min, **cap HR at 138** (top of Z2 off max 173; your easy runs sit at 133).
       This IS the session, not a soft version of a hard one.
 
 ---
@@ -247,7 +249,7 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
 - [ ] RECORD TOTAL TIME - this is the benchmark the taper protects
 
 ### Wed - Easy Shake-out
-- [ ] Easy 30 min, HR under 136 + hip/ankle mobility. No intervals.
+- [ ] Easy 30 min, HR under 138 + hip/ankle mobility. No intervals.
 
 ### Fri - Easy Engine
 - [ ] Easy seated bike 20-25 min, HR under 130 + full-body mobility.
