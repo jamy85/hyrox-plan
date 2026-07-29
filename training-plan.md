@@ -8,7 +8,7 @@ Rower: every Mon + even-week Fri (W2, W4). Wed brick + odd-week Fri = seated bik
 
 | Anchor | Value | Measured |
 |---|---|---|
-| Max HR | **173 bpm** | round 2 of the Wed brick, 29 Jul |
+| Max HR | **173 bpm** | round 3 burpees/thrusters, 29 Jul (running max 163) |
 | 800 m goal split | **3:56** (4:56/km) | track-timed, 26 Jul |
 | Rep-to-rep spread | 6 s over 5 reps | 3:55-4:01, no fade |
 | Last-rep HR (beat this) | **166 avg** / 170 max | 26 Jul baseline |
@@ -120,9 +120,12 @@ loads drop 2 kg.
 - [ ] 3 rounds: 800 m run -> bike -> thruster -> lunge
 - [ ] 800 m treadmill @ **4:00-4:06** (belt 11.6-12.0 km/h) - within 10 s of
       Sunday's 3:56 is the win condition
-- [ ] Seated bike 250-500 m to HR 150-161 (or 12 burpees)
+- [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
+      are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
+      and raised the HR the NEXT run started from)
 - [ ] DB thruster: 15 @ 2x8-10 kg
-- [ ] Walking lunge: 20 steps -> straight into next run (jelly-legs)
+- [ ] Walking lunge: 20 steps -> last station, so the 2-3 min round rest
+      starts here; restart while legs still feel like jelly, not fresh
 
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 6x250 m: row it, or belt @ 15.0 km/h. Rest 90 s-2 min.
@@ -157,11 +160,13 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 ### Wed - Brick (incline push joins)
 - [ ] 4 rounds: 800 m -> bike -> thruster -> lunge -> incline push
 - [ ] 800 m treadmill @ 4:00-4:06 (belt 11.6-12.0 km/h)
-- [ ] Seated bike 250-500 m to HR 150-161 (or 12 burpees)
+- [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
+      are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
+      and raised the HR the NEXT run started from)
 - [ ] DB thruster: 15 @ 2x8-10 kg
 - [ ] Walking lunge: 20 steps -> straight into incline push
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 150-161
-      -> straight into next run
+      -> round rest 2-3 min, restart on jelly legs (not fresh)
 
 ### Fri - Engine + Pull (no rower -> belt/bike)
 - [ ] 4x500 m @ 14.0 km/h (~2:09 each), rest 90 s-2 min
@@ -193,7 +198,9 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 ### Wed - Brick (5th round only if fresh)
 - [ ] 4-5 rounds: 800 m -> bike -> thruster -> lunge -> incline push
 - [ ] 800 m treadmill @ 4:00 (belt 12.0 km/h)
-- [ ] Seated bike 250-500 m to HR 150-161 (or 12 burpees)
+- [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
+      are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
+      and raised the HR the NEXT run started from)
 - [ ] DB thruster: 15 @ 2x8-10 kg
 - [ ] Walking lunge: 20 steps -> incline push
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
