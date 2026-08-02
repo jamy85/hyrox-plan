@@ -749,9 +749,12 @@
   // Per-week Sunday 800s. Pace is FIXED at your measured 3:56 all block --
   // the progression is one variable per week (reps, then recovery), and the
   // adaptation you are watching for is last-rep HR falling at the same split.
+  // Only weeks still ahead of you live here. Once a Sunday is run it becomes a
+  // done card in sunRun() built from the FIT file (hyrox_plan/make_done_card.py),
+  // and its SUN entry is DELETED -- a stale prescription sitting next to the
+  // result it was superseded by is exactly the kind of contradiction the
+  // consistency checks exist to catch. W1 (26 Jul) and W2 (2 Aug) are done.
   var SUN = {
-    2: { reps:'6 &times; 800 m', jog:'jog 400 m', varLbl:'+1 rep, recovery unchanged',
-         hrGate:'166', hrNote:'Rep 5 should not be worse than 26 Jul&rsquo;s 166. Rep 6 is the new territory &mdash; it is allowed to be ugly.' },
     3: { reps:'6 &times; 800 m', jog:'jog 300 m', varLbl:'same reps, 100 m less recovery',
          hrGate:'163', hrNote:'Shorter jog is this week&rsquo;s only new stress. If the split slips past 4:02, take the 400 m jog back.' }
   };
@@ -964,6 +967,22 @@
             '<b>Last-rep HR = ' + ME.rep5hr + '</b>. This is the number that should fall.' ] },
           { h:'The one caveat &mdash; ignore the watch', p:'GPS over-measured about 10% on the track&rsquo;s tight curves (7.6 km logged for ~6.9 km real), so the watch showed 4:25&ndash;4:36/km and an inflated efficiency score. <b>Your stopwatch splits are the truth.</b> Same rule on a treadmill: trust the belt, not the footpod.' }
         ] } ]};
+    // Generated from data/20260802_800.fit by hyrox_plan/make_done_card.py; the
+    // stats block is transcribed by that script, the reading below is hand-written.
+    if (w === 2) return { dow:'Sun 2', title:'800s &mdash; Done &middot; Gate Held', chip:'hard',
+      sub:'<b>Ran 2 Aug on the 400 m track, lapped rep by rep.</b> Six 800s from 3:55.7 to 3:58.6 &mdash; a ' + ME.spread800 + ' spread, set average 3:57.3, and the extra rep absorbed with no fade. <b>Rep 5 held the ' + ME.rep5hr + ' gate exactly.</b>',
+      ex:[ { n:'6 &times; 800 m &mdash; result logged',
+        stats:[{l:'Splits',v:'3:55.7 &middot; 3:57.5 &middot; 3:58.6 &middot; 3:57.9 &middot; 3:56.0 &middot; 3:57.9'},{l:'Avg pace',v:'4:57/km'},{l:'HR by rep',v:'144 &rarr; 168 (max 173)'}],
+        cue:'<b>The week did not catch up with you.</b> Coming off a brick that hit max HR and a Friday that cost 13% more than the identical Monday session, rep 5 still came in at <b>' + ME.rep5hr + '</b> &mdash; level with 26 Jul &mdash; and rep 6 ran 3:57.9, two seconds off the day&rsquo;s fastest. Reps 4 and 5 were fractionally <i>cheaper</i> than 26 Jul, but by 1&ndash;3 bpm, which is noise on a single session. Call it <b>flat at one rep more volume</b>, which after this week is the right result.',
+        details:[
+          { h:'What this session showed', li:[
+            '<b>Rep 5 = ' + ME.rep5hr + ', so the gate held.</b> Not better, not worse &mdash; the number still to beat is 163 in W3.',
+            '<b>The cost per rep is flat; what climbs is the floor.</b> Every 800 added about +17 bpm from wherever it began, but the HR you <i>started</i> each rep at went 131 to 155 across the set.',
+            '<b>Same signature as the Wednesday brick, with no stations anywhere in the session.</b> So a rising floor is simply what repeated goal-pace work does &mdash; burpees and thrusters amplify it, they do not cause it.',
+            '<b>Running reached ' + ME.hrMax + '.</b> It had never passed 170 before, so the max-HR anchor is no longer a station-only number.' ] },
+          { h:'Lap the reps &mdash; keep doing this', p:'First session lapped one press per rep, and that is the only reason the splits above are exact instead of reconstructed from the HR trace. Two readings had to be retracted on 29 Jul for inferring block boundaries out of an HR-only file. <b>One press per rep and per jog is worth more than any metric the watch computes for you.</b>' },
+          { h:'The one caveat &mdash; ignore the watch', p:'GPS over-measured about 8% on the track&rsquo;s tight curves (854&ndash;878 m logged for each true 800), so the watch pace and its efficiency score are both inflated. <b>Your lap splits are the truth.</b>' }
+        ] } ]};
     if (w === 4) return { dow:'Sun', title:'Easy Long Run', chip:'easy',
       sub:'Recovery week &mdash; deliberately easy. Outdoors, usual route. Cool down / stretch after.',
       ex:[ { n:'Easy long run',
@@ -1017,7 +1036,7 @@
                       { p:'Drop anything that aggravates the soreness. This is recovery, not a session.' }
                     ] } ]},
            friEngine(1), sunRun(1) ] },
-    2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build', focus:'Repeat W1&rsquo;s loads (bank the repeated-bout effect), run the first true brick, add one 800.',
+    2: { dates:'27 Jul &ndash; 2 Aug', phase:'Build &middot; done', focus:'Repeated W1&rsquo;s loads, ran the first true brick, added one 800 &mdash; and the Sunday gate held at ' + ME.rep5hr + ' on six reps.',
          note:'<b>Hold the weights, trim the volume, add a rep.</b> Monday runs the <i>exact same loads</i> as 20 Jul (second exposure at a given load hurts far less) but with <b>lunges and RDLs cut back for this week only</b> &mdash; those two cause most of the soreness, and the protective adaptation does not need a full dose. Then <b>score your soreness on Tuesday morning</b> and pick the Wednesday version from the card: a sore week should cost you volume, not the whole brick. The only running progression is Sunday: <b>6 &times; 800 at the same 3:56, same 400 m jog</b>.', rampGuide:true,
          sessions:[ monStrength(2), wedBrick(2), friEngine(2), sunRun(2) ] },
     3: { dates:'3&ndash;9 Aug', phase:'Specificity', focus:'Incline push joins the brick; 800s hold 3:56 on 100 m less recovery.',

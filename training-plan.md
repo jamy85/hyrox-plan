@@ -83,7 +83,7 @@ over-reached and cost the Wednesday brick.
 
 ---
 
-## Week 2 - 27 Jul-2 Aug (Build)
+## Week 2 - 27 Jul-2 Aug (Build) - DONE
 
 **Hold the weights, trim the volume, add a rep.** Monday repeats W1's exact
 loads - the second exposure at the same load hurts far less - but lunges and
@@ -148,9 +148,15 @@ loads drop 2 kg.
       Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
       Nothing here should touch the legs.
 
-### Sun - 800s (outdoor)
-- [ ] **6x800 m @ 3:56**, jog 400 m recovery (+1 rep, recovery unchanged)
-      Do NOT run faster. Watch rep 5: 166 or below. Rep 6 is allowed to be ugly.
+### Sun 2 - 800s (400 m track) - done, GATE HELD
+- [x] 6x800 m: **3:55.7 / 3:57.5 / 3:58.6 / 3:57.9 / 3:56.0 / 3:57.9**, jog 400 m
+      = 3:57.3 avg (4:57/km), 3 s spread over 6 reps, no fade with the added rep.
+      HR by rep: 144 -> 150 -> 156 -> 160 -> **166** -> 168 (max 173 - the first
+      time RUNNING reached the anchor; it had capped at 170).
+      Rep 5 held the 166 gate exactly, off a max-HR brick and a costlier Friday.
+      Rep-start HR climbed 131 -> 155 across the set while each rep's own cost
+      stayed flat at about +17 bpm: the floor rises, the run does not get dearer.
+      Lapped one press per rep - that is why these splits are exact. Keep doing it.
 
 ---
 
