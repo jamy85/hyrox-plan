@@ -378,7 +378,7 @@
           <tbody>
             <tr><th>Max heart rate</th><td><b>173 bpm</b></td><td>round 3 of the Wed brick, 29 Jul</td></tr>
             <tr><th>800 m goal split</th><td><b>3:56</b> (4:56/km)</td><td>track-timed, 26 Jul</td></tr>
-            <tr><th>Rep-to-rep spread</th><td>6 s over 5 reps</td><td>3:55&ndash;4:01, no fade</td></tr>
+            <tr><th>Rep-to-rep spread</th><td>3 s over 6 reps</td><td>3:55.7&ndash;3:58.6, no fade, 2 Aug</td></tr>
             <tr><th>Last-rep HR <i>(the one to beat)</i></th><td><b>166 avg</b> / 170 max</td><td>26 Jul baseline</td></tr>
             <tr><th>Sprint belt speed</th><td><b>15.0 km/h</b> (4:00/km)</td><td>5&times;250 m treadmill, 24 Jul</td></tr>
             <tr><th>Easy-run HR</th><td>~133 bpm</td><td>outdoor steady runs</td></tr>
@@ -700,7 +700,7 @@
     zEasyTop1: '142',
     split800:  '3:56',
     pace800:   '4:56/km',
-    spread800: '6 s',
+    spread800: '3 s',
     rep5hr:    '166',
     belt:      '15.0 km/h',
     ef:        '0.019'
@@ -953,7 +953,7 @@
 
   function sunRun(w) {
     if (w === 1) return { dow:'Sun 26', title:'800s &mdash; Done &middot; Pace Found', chip:'hard',
-      sub:'<b>Ran 26 Jul on the 400 m track.</b> 3:56 / 3:56 / 4:01 / 3:55 / 3:56 &mdash; a ' + ME.spread800 + ' spread across five reps and rep 5 among the fastest. <b>This set defines the goal pace for the rest of the block.</b>',
+      sub:'<b>Ran 26 Jul on the 400 m track.</b> 3:56 / 3:56 / 4:01 / 3:55 / 3:56 &mdash; a 6 s spread across five reps and rep 5 among the fastest. <b>This set defines the goal pace for the rest of the block.</b>',
       ex:[ { n:'5 &times; 800 m &mdash; result logged',
         stats:[{l:'Splits',v:'3:56 &middot; 3:56 &middot; 4:01 &middot; 3:55 &middot; 3:56'},{l:'Avg pace',v:ME.pace800},{l:'HR by rep',v:'137 &rarr; 166 (max 170)'}],
         cue:'Textbook execution: zero fade, goal pace confirmed dead-centre of the target band. HR climbed 137 to 166 at a <b>constant</b> split, so ' + ME.split800 + ' is currently a near-maximal effort by the last rep &mdash; which is exactly right for this kind of session.',
@@ -976,7 +976,7 @@
         stats:[{l:'Reps',v:S.reps},{l:'Split',v:ME.split800 + ' (' + ME.pace800 + ')'},{l:'Recovery',v:S.jog,rest:true}],
         cue:'<b>Do not run these faster.</b> Hold ' + ME.split800 + ' and watch what it costs you: last-rep HR around <b>' + S.hrGate + '</b> or below is the win. ' + S.hrNote,
         details:[
-          { h:'Why the pace stays fixed', p:'On 26 Jul you held ' + ME.split800 + ' five times with a ' + ME.spread800 + ' spread &mdash; the pace is not the problem, the <b>cost</b> is. HR rose 137 to ' + ME.rep5hr + ' across that set, meaning race pace is currently near-maximal by the end. Chasing a faster split now just buys a bigger blow-up; making ' + ME.split800 + ' cheaper is what actually wins the race.' },
+          { h:'Why the pace stays fixed', p:'On 2 Aug you held ' + ME.split800 + ' <b>six</b> times with a ' + ME.spread800 + ' spread &mdash; the pace is not the problem, the <b>cost</b> is. Rep 5 still cost <b>' + ME.rep5hr + '</b>, the same as the 26 Jul baseline, meaning race pace is currently near-maximal by the end. Chasing a faster split now just buys a bigger blow-up; making ' + ME.split800 + ' cheaper is what actually wins the race.' },
           { h:'The progress marker &mdash; watch this, not the clock', li:[
             '26 Jul (baseline): rep 5 at <b>' + ME.rep5hr + '</b> avg, 170 max.',
             'W2 target: rep 5 at <b>166</b> or below.',
@@ -1070,7 +1070,7 @@
            { dow:'Sat 29', title:'RACE DAY', chip:'hard', chipLabel:'Race',
              sub:'This is it. Follow the <b>race-day playbook</b> below for pacing, warm-up and fuel.',
              ex:[ { n:'Race &mdash; 5 &times; 800 m + 5 stations', stats:[{l:'Format',v:'5&times;800 + 5'},{l:'First 800',v:'3:56 &mdash; no faster',rest:true},{l:'Red line',v:'never under 3:50'}],
-                   cue:'<b>Run 1 at 3:56 and not a second quicker.</b> Your natural rep-to-rep spread is only 6 s, so if the first one comes in under 3:50 it is adrenaline, and you will pay for it on runs 4 and 5. Unbroken on thrusters/wall balls. Negative-split mindset.' } ]}
+                   cue:'<b>Run 1 at ' + ME.split800 + ' and not a second quicker.</b> Your natural rep-to-rep spread is only ' + ME.spread800 + ', so if the first one comes in under 3:50 it is adrenaline, and you will pay for it on runs 4 and 5. Unbroken on thrusters/wall balls. Negative-split mindset.' } ]}
          ]}
   };
 

@@ -8,9 +8,9 @@ Rower: every Mon + even-week Fri (W2, W4). Wed brick + odd-week Fri = seated bik
 
 | Anchor | Value | Measured |
 |---|---|---|
-| Max HR | **173 bpm** | round 3 burpees/thrusters, 29 Jul (running max 163) |
+| Max HR | **173 bpm** | round 3 burpees/thrusters, 29 Jul; running matched it 2 Aug (rep 6) |
 | 800 m goal split | **3:56** (4:56/km) | track-timed, 26 Jul |
-| Rep-to-rep spread | 6 s over 5 reps | 3:55-4:01, no fade |
+| Rep-to-rep spread | 3 s over 6 reps | 3:55.7-3:58.6, no fade, 2 Aug |
 | Last-rep HR (beat this) | **166 avg** / 170 max | 26 Jul baseline |
 | Sprint belt speed | **15.0 km/h** (4:00/km) | 5x250 m treadmill, 24 Jul |
 | Easy-run HR | ~133 bpm | outdoor steady runs |
@@ -77,7 +77,7 @@ over-reached and cost the Wednesday brick.
 
 ### Sun 26 - 800s (400 m track) - done, PACE FOUND
 - [x] 5x800 m: **3:56 / 3:56 / 4:01 / 3:55 / 3:56**, jog 400 m recovery
-      = 4:56/km avg, 6 s spread, rep 5 among the fastest (zero fade).
+      = 4:56/km avg, 6 s spread across five reps, rep 5 among the fastest (zero fade).
       HR by rep: 137 -> 150 -> 155 -> 162 -> **166** (max 170 here; superseded
       by 173 on the 29 Jul brick).
 
@@ -277,7 +277,7 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
 ### Sat 29 - RACE DAY
 - [ ] Race: 5x800 m + 5 stations
       **Run 1 at 3:56, not a second quicker - never under 3:50.** Your natural
-      spread is only 6 s, so a fast first rep is adrenaline and you pay for it
+      spread is only 3 s, so a fast first rep is adrenaline and you pay for it
       on runs 4-5. Unbroken on thrusters. Negative-split mindset.
 
 ---
