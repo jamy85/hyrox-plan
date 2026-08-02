@@ -166,13 +166,17 @@ First load increase - **only if** W2's Monday stayed under 4/10 sore and the Wed
 brick happened. If W2 wrecked you again, run W2's loads a third time.
 
 ### Mon - Row + Strength
-- [ ] Row intervals: 5x400 m, HR 150-161, rest 90 s
+- [ ] Row intervals: 5x400 m - OPEN AT 1:47 /500 m, HR 150-161, rest 90 s
+      1:43 was a 250 m split; a 400 m rep at the same intensity is ~1:47. Do not
+      carry 1:43 over - that is distance AND pace in one week. HR decides the
+      final number: under 150 at the finish take a second off, over 161 add two.
 - [ ] Goblet squat: 4x12 @ 24 kg
 - [ ] Walking lunge: 4x20 steps @ 2x12 kg
 - [ ] Romanian deadlift: 3x12 @ 40 kg
-- [ ] DB thruster: 4x15 @ 2x10 kg **ONLY IF 4x15 was unbroken at 2x8 kg**
-      Otherwise hold 2x8 and earn it. This week rows 5x400 m BEFORE the thrusters,
-      so they land on more fatigue than in W2. Unbroken first, then add load.
+- [ ] DB thruster: 4x15 @ **2x8 kg** - LIFT THIS. The 2x10 kg on the week table is
+      the target, not today's weight: 27 Jul set 4 broke at 10 reps, so 4x15 is not
+      yet unbroken at 2x8 and the jump is unearned. Go unbroken at 2x8 first.
+      This week also rows 5x400 m BEFORE the thrusters, so they land on more fatigue.
 - [ ] Cable pulldown / bent row: 4x15
 - [ ] Core: 3x (40 s plank + 12 climbers)
 
@@ -182,7 +186,8 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 - [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
-- [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x10 - go LIGHTER here; speed + unbroken)
+- [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 too while the gate holds - match it,
+      never heavier; the point here is speed + unbroken on tired legs)
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 150-161
       LAST STATION, so the round rest starts here.
@@ -205,13 +210,16 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 Last loading week. Sunday is easy, so Monday can be the honest top end.
 
 ### Mon - Row + Strength
-- [ ] Row intervals: 4x500 m, HR 150-161, rest 90 s
+- [ ] Row intervals: 4x500 m - OPEN AT 1:48 /500 m, HR 150-161, rest 90 s
 - [ ] Goblet squat: 4x12 @ 28 kg
 - [ ] Walking lunge: 4x20 steps @ 2x14 kg
 - [ ] Romanian deadlift: 3x12 @ 45 kg
-- [ ] DB thruster: 4x15 @ 2x12 kg **ONLY IF 4x15 was unbroken at 2x10 kg**
-      Same gate. Broken sets with a heavier DB are worth less than unbroken sets
-      with a lighter one - the wall ball is light and high-rep.
+- [ ] DB thruster: 4x15 @ **2x10 kg** - LIFT THIS unless 4x15 already went
+      unbroken at 2x10 kg, in which case take the 2x12 kg target. Same gate as W3,
+      and it chains: if you are still holding 2x8 because 4x15 is not unbroken
+      there, 2x8 is the weight - never skip a rung. Broken sets with a heavier DB
+      are worth less than unbroken sets with a lighter one; the wall ball is light
+      and high-rep.
 - [ ] Cable pulldown / bent row: 4x15 - hold, do not chase
 - [ ] Core: 3x (40 s plank + 12 climbers)
 
@@ -222,7 +230,8 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 - [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
       are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
       and raised the HR the NEXT run started from)
-- [ ] DB thruster: 15 @ 2x10 kg (Mon is 2x12 - go LIGHTER here; speed + unbroken)
+- [ ] DB thruster: 15 @ 2x10 kg (Mon is 2x10 while the gate holds - never heavier
+      than Monday; the point here is speed + unbroken on tired legs)
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
       LAST STATION, so the round rest starts here.

@@ -723,12 +723,15 @@
          gate:'<b>Repeat W1 &mdash; same loads, no jump.</b> These exact numbers cost you 7&ndash;8/10 DOMS and a Wednesday. Second exposure at the same load hurts far less (repeated-bout effect); that is the adaptation to bank before adding kilos.',
          thrGate:'<b>Target before any load jump: 4 &times; 15 unbroken at 2&times;8 kg.</b> On Mon 27 Jul set 4 broke at 10 reps &mdash; about 55 of the 60, with HR spiking to 159 (94% of max). That is a well-dosed session rather than a failure, but it does mean this weight is not owned yet.',
          fri:'6&times;250 m', friSpd:ME.belt, rowFri:true  },
-    3: { row:'5&times;400 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg', brickThr:'2&times;8 kg',
+    // rowSplit scales with REP LENGTH, not with fitness: 1:43 is a 250 m number,
+    // and ~5 s per doubling of distance puts the same intensity near 1:47 at 400 m
+    // and 1:48 at 500 m. Asking for 1:43 over a longer rep is two step-ups at once.
+    3: { row:'5&times;400 m', rowSplit:'1:47 /500 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg', thrHold:'2&times;8 kg', brickThr:'2&times;8 kg',
          pull:'RIR 2 &middot; add load when 4&times;15 is clean',
          gate:'First real jump (+4 kg squat, +10 kg RDL) &mdash; <b>only if W2&rsquo;s Monday left you under 4/10 sore and the Wed brick happened.</b> If W2 wrecked you again, run W2&rsquo;s loads a third time.',
          thrGate:'<b>Take 2&times;10 kg only once 4 &times; 15 is unbroken at 2&times;8 kg.</b> As of Mon 27 Jul the last set broke at 10 reps, so this +25% jump is not earned yet &mdash; and this week puts 5&times;400 m of rowing in front of the thrusters, so they land on more fatigue than they did in W2. Go unbroken at 2&times;8 kg first, then move up.',
          fri:'4&times;500 m', friSpd:'14.0 km/h', rowFri:false },
-    4: { row:'4&times;500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg', brickThr:'2&times;10 kg',
+    4: { row:'4&times;500 m', rowSplit:'1:48 /500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg', thrHold:'2&times;10 kg', brickThr:'2&times;10 kg',
          pull:'RIR 2 &middot; hold, do not chase',
          gate:'Last loading week. Same gate: add only what W3 earned. Sunday is an easy long run, so Monday can be the honest top end.',
          thrGate:'<b>Same gate:</b> 2&times;12 kg only if 4 &times; 15 went unbroken at 2&times;10 kg. Otherwise repeat the weight you have not owned yet &mdash; broken sets with a heavier dumbbell are worth less to you than unbroken sets with a lighter one.',
@@ -746,6 +749,16 @@
     3: { rounds:'4',   runs:true,  push:true,  rest:'90 s&ndash;2 min', label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Incline push (sled sub) joins from this week.' },
     4: { rounds:'4&ndash;5', runs:true,  push:true,  rest:'60&ndash;90 s', label:'Round = 800 m &rarr; bike &rarr; thruster &rarr; lunge &rarr; incline push',  note:'Runs at the <b>tired-legs</b> target (4:00&ndash;4:06), not Sunday&rsquo;s ' + ME.split800 + '; add the 5th round only if fresh.' }
   };
+  // THE LOAD YOU SEE IS THE LOAD YOU LIFT.
+  // `thr` is the week's TARGET weight; `thrHold` is what to actually pick up while
+  // the unbroken-4x15 gate is still unmet. Every card renders monThr(w), never
+  // `thr` -- showing an unearned target in a field labelled "Load" is how you end
+  // up lifting the wrong weight (happened 2026-08-02, W3 read as 2x10 kg).
+  // Rule: if the plan already KNOWS the answer, show the answer. Only leave a
+  // number conditional when the condition is genuinely still open -- the Tuesday
+  // DOMS gate on squat/RDL is open; this one was settled on 27 Jul.
+  function monThr(w) { var L = LOADS[w]; return L.thrHold || L.thr; }
+
   // Per-week Sunday 800s. Pace is FIXED at your measured 3:56 all block --
   // the progression is one variable per week (reps, then recovery), and the
   // adaptation you are watching for is last-rep HR falling at the same split.
@@ -782,8 +795,8 @@
       sub:monSub,
       ex:[
         { n:'Row intervals', tag:'rower here every Mon',
-          stats:[{l:'Sets&times;Reps',v:L.row},{l:'Last 10 strokes',v:'HR ' + ME.zThresh},{l:'Rest',v:'90 s &rarr; HR under 130',rest:true}],
-          cue:'Legs-drive first, then hinge, then arms. <b>Pace it by HR, not by feel:</b> finish each rep in the ' + ME.zThresh + ' band (threshold off your 173 max). On 24 Jul your HR dropped ~45 bpm inside a rest &mdash; so if you are still over 130 when the next rep is due, take another 30 s.',
+          stats:[{l:'Sets&times;Reps',v:L.row},{l:'Open at',v:L.rowSplit || '1:43 /500 m'},{l:'Last 10 strokes',v:'HR ' + ME.zThresh},{l:'Rest',v:'90 s &rarr; HR under 130',rest:true}],
+          cue:'Legs-drive first, then hinge, then arms. <b>Open at ' + (L.rowSplit || '1:43 /500 m') + ' and let HR set the rest &mdash; the split is a starting point, the band is the target:</b> finish each rep in the ' + ME.zThresh + ' band (threshold off your 173 max). On 24 Jul your HR dropped ~45 bpm inside a rest &mdash; so if you are still over 130 when the next rep is due, take another 30 s.',
           details:[
             { h:'Your HR bands (max 173, measured 29 Jul)', li:[
               'Recovery ' + ME.zRecov + ' &middot; Easy ' + ME.zEasy + ' &middot; Steady ' + ME.zSteady,
@@ -802,10 +815,11 @@
         { n:'Romanian deadlift (BB/DB)', tag:L.rdlVol ? 'volume trimmed this week' : '',
           stats:[{l:'Sets&times;Reps',v:L.rdlVol || '3 &times; 12'},{l:'Load',v:L.rdl},{l:'Rest',v:'90 s',rest:true}],
           cue:'Hinge from the hips, flat back, feel the hamstrings &mdash; protects the run. Second-biggest DOMS source (hamstrings loaded at long length), so again: <b>stop the bar at mid-shin, not the floor.</b>' },
-        { n:'DB thruster', tag:L.thrGate ? 'wall-ball sub &middot; load gated' : 'wall-ball sub',
-          stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:L.thr},{l:'Rest',v:'75 s',rest:true}],
-          cue:'One fluid squat-to-press, drive from the legs. Practise <b>unbroken</b> sets.'
-              + (L.thrGate ? ' <b>Do not add load until 4 &times; 15 is unbroken</b> &mdash; tap below.' : ''),
+        { n:'DB thruster', tag:L.thrHold ? 'wall-ball sub &middot; holding ' + L.thrHold : 'wall-ball sub',
+          stats:[{l:'Sets&times;Reps',v:'4 &times; 15'},{l:'Load',v:monThr(w)},{l:'Rest',v:'75 s',rest:true}],
+          cue:(L.thrHold ? '<b>Lift ' + L.thrHold + ' today.</b> The ' + L.thr + ' on the plan is the <i>target</i>, and it is not earned yet &mdash; 4 &times; 15 has to go unbroken at ' + L.thrHold + ' first. ' : '')
+              + 'One fluid squat-to-press, drive from the legs. Practise <b>unbroken</b> sets.'
+              + (L.thrGate ? ' Tap below for the gate.' : ''),
           details:L.thrGate ? [ { p:L.thrGate },
             { h:'Why unbroken beats heavier', p:'The wall ball you are substituting for is a <i>lighter</i> implement at <i>high</i> reps, so what transfers to race day is unbroken repeatability, not a heavier 10-rep max. A forced mid-set break is also the expensive version on race day: you have already paid the heart-rate cost, you lose the time, and a run leg is still to come.' },
             { h:'How to actually get 4 &times; 15', li:[
@@ -889,8 +903,8 @@
         { p:'<b>So: bike when the point is a controlled threshold touch</b> (which is most weeks, and especially W3&ndash;W4 at 4 rounds, where the floor compounds). <b>Keep burpees for when you want the top end on purpose</b> &mdash; and then cap or break them, around 8. <b>Judge the round by whether the next run starts under ~130</b>, not by how high this station got: capping station HR is the race skill, maxing it is not.' }
       ] });
     ex.push({ n:'DB thruster', tag:'wall-ball sub',
-      stats:[{l:'Reps',v:'15'},{l:'Load',v:L.brickThr},{l:'Monday is',v:L.thr}],
-      cue:'<b>' + L.brickThr + ' here &mdash; never heavier than Monday&rsquo;s ' + L.thr + '.</b> The point of this one is <b>speed and unbroken</b>, on legs that already ran and pushed; load is Monday&rsquo;s job. On 29 Jul the thrusters tied the session peak at 173, so treat them as a station to <i>control</i>, not to max.' });
+      stats:[{l:'Reps',v:'15'},{l:'Load',v:L.brickThr},{l:'Monday is',v:monThr(w)}],
+      cue:'<b>' + L.brickThr + ' here &mdash; never heavier than Monday&rsquo;s ' + monThr(w) + '.</b> The point of this one is <b>speed and unbroken</b>, on legs that already ran and pushed; load is Monday&rsquo;s job. On 29 Jul the thrusters tied the session peak at 173, so treat them as a station to <i>control</i>, not to max.' });
     // ---- ONE rest model, used by whichever station is last this week. ----
     // Last station is the lunge in W1-W2 and the incline push in W3-W4, so the
     // round-rest sentence has to follow it rather than being pinned to one exercise.
