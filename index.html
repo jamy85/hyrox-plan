@@ -417,7 +417,8 @@
           </tbody>
         </table>
       </div>
-      <p class="note" style="margin-bottom:0">Rebuilt twice now: a previously known high of 160, then 170 on the 26 Jul 800s, then <b>173 in round 3 of the 29 Jul brick</b>. The bands are the same fractions of max each time, so only the labels move &mdash; roughly 2 bpm up from the 170 set. If you ever see above 173 in a session, tell me and they get rebuilt again.</p>
+      <p class="note">Rebuilt twice now: a previously known high of 160, then 170 on the 26 Jul 800s, then <b>173 in round 3 of the 29 Jul brick</b> &mdash; matched by <b>running</b> on rep 6 of the 2 Aug 800s, so 173 is no longer a station-only number. The bands are the same fractions of max each time, so only the labels move &mdash; roughly 2 bpm up from the 170 set. If you ever see above 173 in a session, tell me and they get rebuilt again.</p>
+      <p class="note" style="margin-bottom:0"><b>Read 173 as the highest you have <i>produced</i>, not a ceiling you have hit.</b> You reported both 173 sessions as short of all-out, so your true maximum is probably a beat or two higher &mdash; which makes these bands slightly <i>conservative</i> rather than wrong, and that is the right way round in a build block. Two things follow. <b>No max test</b>: it is a maximal effort costing a hard day, this close to the race, to move the bands 1&ndash;3 bpm. And <b>be sceptical of any &ldquo;you hit 100% of max&rdquo; claim</b> &mdash; including mine on the 29 Jul brick, where touching 173 read as a physiological limit when it really meant &ldquo;equalled the highest number on record&rdquo;. The 4-round bricks and the W5 simulation are where a genuine new high is most likely to turn up on its own.</p>
     </div>
 
     <div class="card race">
@@ -723,15 +724,16 @@
          gate:'<b>Repeat W1 &mdash; same loads, no jump.</b> These exact numbers cost you 7&ndash;8/10 DOMS and a Wednesday. Second exposure at the same load hurts far less (repeated-bout effect); that is the adaptation to bank before adding kilos.',
          thrGate:'<b>Target before any load jump: 4 &times; 15 unbroken at 2&times;8 kg.</b> On Mon 27 Jul set 4 broke at 10 reps &mdash; about 55 of the 60, with HR spiking to 159 (94% of max). That is a well-dosed session rather than a failure, but it does mean this weight is not owned yet.',
          fri:'6&times;250 m', friSpd:ME.belt, rowFri:true  },
-    // rowSplit scales with REP LENGTH, not with fitness: 1:43 is a 250 m number,
-    // and ~5 s per doubling of distance puts the same intensity near 1:47 at 400 m
-    // and 1:48 at 500 m. Asking for 1:43 over a longer rep is two step-ups at once.
-    3: { row:'5&times;400 m', rowSplit:'1:47 /500 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg', thrHold:'2&times;8 kg', brickThr:'2&times;8 kg',
+    // rowSplit scales with REP LENGTH, not with fitness: 1:43 is a 250 m number, so
+    // asking for it over a longer rep is two step-ups at once. MEASURED 3 Aug: he
+    // held 1:45 for 5x400 m, i.e. +2 s for a 1.6x jump = ~3 s per doubling, flatter
+    // than the textbook 5 s -- the diesel profile. Use his curve, not the generic one.
+    3: { row:'5&times;400 m', rowSplit:'1:45 /500 m', squat:'24 kg', lunge:'2&times;12 kg', rdl:'40 kg', thr:'2&times;10 kg', thrHold:'2&times;8 kg', brickThr:'2&times;8 kg',
          pull:'RIR 2 &middot; add load when 4&times;15 is clean',
          gate:'First real jump (+4 kg squat, +10 kg RDL) &mdash; <b>only if W2&rsquo;s Monday left you under 4/10 sore and the Wed brick happened.</b> If W2 wrecked you again, run W2&rsquo;s loads a third time.',
-         thrGate:'<b>Take 2&times;10 kg only once 4 &times; 15 is unbroken at 2&times;8 kg.</b> As of Mon 27 Jul the last set broke at 10 reps, so this +25% jump is not earned yet &mdash; and this week puts 5&times;400 m of rowing in front of the thrusters, so they land on more fatigue than they did in W2. Go unbroken at 2&times;8 kg first, then move up.',
+         thrGate:'<b>Take 2&times;10 kg only once all four sets of 15 go unbroken at 2&times;8 kg.</b> <b>Mon 3 Aug got close but does not count:</b> 4&times;15 all unbroken, but only set 4 was at 2&times;8 kg (sets 1&ndash;3 were 2&times;6 kg, the 8s were in use). That set 4 is still the good news &mdash; the same set at the same weight broke at 10 reps on 27 Jul, and this time it went unbroken at peak HR 144 against 159. <b>So: 2&times;8 kg for all four sets next Monday, and then the jump is yours.</b> Note the rowing now sits in front of the thrusters, so they land on more fatigue than in W2.',
          fri:'4&times;500 m', friSpd:'14.0 km/h', rowFri:false },
-    4: { row:'4&times;500 m', rowSplit:'1:48 /500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg', thrHold:'2&times;10 kg', brickThr:'2&times;10 kg',
+    4: { row:'4&times;500 m', rowSplit:'1:46 /500 m', squat:'28 kg', lunge:'2&times;14 kg', rdl:'45 kg', thr:'2&times;12 kg', thrHold:'2&times;10 kg', brickThr:'2&times;10 kg',
          pull:'RIR 2 &middot; hold, do not chase',
          gate:'Last loading week. Same gate: add only what W3 earned. Sunday is an easy long run, so Monday can be the honest top end.',
          thrGate:'<b>Same gate:</b> 2&times;12 kg only if 4 &times; 15 went unbroken at 2&times;10 kg. Otherwise repeat the weight you have not owned yet &mdash; broken sets with a heavier dumbbell are worth less to you than unbroken sets with a lighter one.',

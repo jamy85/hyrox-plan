@@ -166,17 +166,21 @@ First load increase - **only if** W2's Monday stayed under 4/10 sore and the Wed
 brick happened. If W2 wrecked you again, run W2's loads a third time.
 
 ### Mon - Row + Strength
-- [ ] Row intervals: 5x400 m - OPEN AT 1:47 /500 m, HR 150-161, rest 90 s
-      1:43 was a 250 m split; a 400 m rep at the same intensity is ~1:47. Do not
-      carry 1:43 over - that is distance AND pace in one week. HR decides the
-      final number: under 150 at the finish take a second off, over 161 add two.
+- [x] Row intervals: 5x400 m - OPEN AT 1:45 /500 m, HR 150-161, rest 90 s
+      1:43 is a 250 m split; do not carry it over - that is distance AND pace in
+      one week. MEASURED 3 Aug: 1:44-1:45 on reps 1-3, 1:45-1:46 on 4-5, peaks
+      132/139/141/146/150 on a metronomic 3-min cycle. Rep 5 touched the 150 band
+      floor; reps 1-4 sat below it, which is fine - the band is for the last rep or
+      two. Do NOT drop the split to chase it; Monday must not cost you Wednesday.
 - [ ] Goblet squat: 4x12 @ 24 kg
 - [ ] Walking lunge: 4x20 steps @ 2x12 kg
 - [ ] Romanian deadlift: 3x12 @ 40 kg
 - [ ] DB thruster: 4x15 @ **2x8 kg** - LIFT THIS. The 2x10 kg on the week table is
-      the target, not today's weight: 27 Jul set 4 broke at 10 reps, so 4x15 is not
-      yet unbroken at 2x8 and the jump is unearned. Go unbroken at 2x8 first.
-      This week also rows 5x400 m BEFORE the thrusters, so they land on more fatigue.
+      the target, not today's weight. 3 Aug went 4x15 all unbroken but only set 4 at
+      2x8 (sets 1-3 were 2x6, the 8s were in use), so the gate is still open - it
+      needs all four sets at 2x8. Set 4 is the good news though: unbroken at peak
+      144, where the same set broke at 10 reps at peak 159 on 27 Jul.
+      Rowing sits BEFORE the thrusters now, so they land on more fatigue.
 - [ ] Cable pulldown / bent row: 4x15
 - [ ] Core: 3x (40 s plank + 12 climbers)
 
@@ -210,7 +214,7 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 Last loading week. Sunday is easy, so Monday can be the honest top end.
 
 ### Mon - Row + Strength
-- [ ] Row intervals: 4x500 m - OPEN AT 1:48 /500 m, HR 150-161, rest 90 s
+- [ ] Row intervals: 4x500 m - OPEN AT 1:46 /500 m, HR 150-161, rest 90 s
 - [ ] Goblet squat: 4x12 @ 28 kg
 - [ ] Walking lunge: 4x20 steps @ 2x14 kg
 - [ ] Romanian deadlift: 3x12 @ 45 kg
