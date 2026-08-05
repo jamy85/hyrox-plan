@@ -33,6 +33,16 @@ week's soreness, not by the calendar:
 - missed last Wednesday -> never add load this week
 Within any load, still stop ~3 reps short of failure.
 
+**THRUSTER EXCEPTION (5 Aug).** The DB thruster does NOT follow the load rule and
+is **capped at 2x8 kg for the rest of the block** - the 2x10 / 2x12 ladder is
+retired. Your limiter there is the **triceps lockout**, never the legs, so kilos
+load the weakest link and progress nothing that transfers: 2x8 kg is already 16 kg
+pressed overhead every rep, against a wall ball of ~6-9 kg thrown off the hips with
+the arms only guiding. Progression is **reps, not weight**. The levers that matter:
+drive from the legs with no pause at the shoulder, hold the DBs light, and break on
+purpose (rack 3-5 s) before the lockout stalls instead of grinding into it. Friday
+now carries a lockout finisher; your legs still get progressed by squat/lunge/RDL.
+
 **THE PROGRESS MARKER.** Goal pace stays **fixed at 3:56** all block - you are
 never asked to run faster. What should fall is what it costs: last-rep HR 166
 (26 Jul) -> 166 (W2) -> 163 (W3) -> ~158 by W5. Same split, a full zone cheaper
@@ -175,11 +185,13 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 - [ ] Goblet squat: 4x12 @ 24 kg
 - [ ] Walking lunge: 4x20 steps @ 2x12 kg
 - [ ] Romanian deadlift: 3x12 @ 40 kg
-- [ ] DB thruster: 4x15 @ **2x8 kg** - LIFT THIS. The 2x10 kg on the week table is
-      the target, not today's weight. 3 Aug went 4x15 all unbroken but only set 4 at
-      2x8 (sets 1-3 were 2x6, the 8s were in use), so the gate is still open - it
-      needs all four sets at 2x8. Set 4 is the good news though: unbroken at peak
-      144, where the same set broke at 10 reps at peak 159 on 27 Jul.
+- [ ] DB thruster: 4x15 @ **2x8 kg** - and 2x8 is now the weight for the REST OF THE
+      BLOCK. The 2x10 / 2x12 ladder is retired (5 Aug): your limiter on a thruster is
+      the TRICEPS LOCKOUT, never the legs, so kilos load the weakest link and buy the
+      legs nothing. Drive from the legs, no pause at the shoulder. 3 Aug went 4x15 all
+      unbroken but only set 4 at 2x8 (sets 1-3 were 2x6, the 8s were in use), so all
+      four sets at 2x8 is the unfinished business. Set 4 is the good news though:
+      unbroken at peak 144, where the same set broke at 10 reps at peak 159 on 27 Jul.
       Rowing sits BEFORE the thrusters now, so they land on more fatigue.
 - [ ] Cable pulldown / bent row: 4x15
 - [ ] Core: 3x (40 s plank + 12 climbers)
@@ -192,8 +204,9 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
       peaked 148/158/161/162 across 4 rounds); 29 Jul took them flat out and hit
       173. A bike is just easier to rate-limit if you are unsure.
       Judge the round by whether the NEXT run starts under ~130.
-- [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 too while the gate holds - match it,
-      never heavier; the point here is speed + unbroken on tired legs)
+- [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 too - match it, never heavier; the point
+      here is speed + unbroken on tired legs). If the lockout stalls, rack 3-5 s and
+      go again - the triceps are what fail here and they come back fast.
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 150-161
       LAST STATION, so the round rest starts here.
@@ -204,6 +217,12 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 - [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
       Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
       Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
+- [ ] LOCKOUT FINISHER (new 5 Aug): 3x (push press 12 @ 2x8 kg + overhead DB
+      extension 15), rest 60 s. Superset, strictly upper body, 2 reps in hand.
+      Here because the triceps lockout is what ends your thruster sets, and Friday is
+      the only day it can be trained without touching Sunday. Two useful Fridays left
+      (7 + 14 Aug), so it is a small bet - the leg-drive cue and a planned break do
+      more for the wall-ball station than any triceps you can build in three weeks.
 
 ### Sun - 800s (outdoor)
 - [ ] **6x800 m @ 3:56**, jog 300 m (same reps, 100 m less recovery)
@@ -220,12 +239,12 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 - [ ] Goblet squat: 4x12 @ 28 kg
 - [ ] Walking lunge: 4x20 steps @ 2x14 kg
 - [ ] Romanian deadlift: 3x12 @ 45 kg
-- [ ] DB thruster: 4x15 @ **2x10 kg** - LIFT THIS unless 4x15 already went
-      unbroken at 2x10 kg, in which case take the 2x12 kg target. Same gate as W3,
-      and it chains: if you are still holding 2x8 because 4x15 is not unbroken
-      there, 2x8 is the weight - never skip a rung. Broken sets with a heavier DB
-      are worth less than unbroken sets with a lighter one; the wall ball is light
-      and high-rep.
+- [ ] DB thruster: 4x15 @ **2x8 kg** - same weight, and this is the LAST strength
+      Monday of the block (W5 Mon is the timed 5x sim, W6 is taper). So take the four
+      unbroken sets at 2x8 that 3 Aug left unfinished. If they go unbroken with
+      something in hand, progress REPS not kilos - 4x18-20 at the same weight. A
+      heavier DB only moves the triceps stall earlier, and unbroken repeatability is
+      what the wall ball actually asks for.
 - [ ] Cable pulldown / bent row: 4x15 - hold, do not chase
 - [ ] Core: 3x (40 s plank + 12 climbers)
 
@@ -239,8 +258,9 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
       run starts under ~130.
       If a dumbbell is not free, take the nearest LIGHTER pair - on the brick,
       speed and unbroken beat load. Never go heavier, never skip the station.
-- [ ] DB thruster: 15 @ 2x10 kg (Mon is 2x10 while the gate holds - never heavier
-      than Monday; the point here is speed + unbroken on tired legs)
+- [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 too - never heavier than Monday; the point
+      here is speed + unbroken on tired legs). If the lockout stalls, rack 3-5 s and
+      go again - the triceps are what fail here and they come back fast.
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
       LAST STATION, so the round rest starts here.
@@ -251,6 +271,9 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 - [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
       Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
       Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
+- [ ] LOCKOUT FINISHER: 3x (push press 12 @ 2x8 kg + overhead DB extension 15),
+      rest 60 s. Superset, strictly upper body, 2 reps in hand. Last one that can
+      still do anything before the 17 Aug sim.
 
 ### Sun - Easy Long Run (recovery, NO 800s)
 - [ ] 50-60 min, **cap HR at 138** (top of Z2 off max 173; your easy runs sit at 133).
@@ -269,7 +292,9 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
       a 30 s+ collapse means go out slower on the day.
       Target last-rep HR ~158 at 3:56 pace by now.
 - [ ] Stations per round: cable pulldown -> incline push -> REAL ROW 500 m ->
-      walking lunge -> DB thrusters
+      walking lunge -> DB thrusters (2x8 kg)
+      REHEARSE THE WALL-BALL BREAK HERE: planned sub-sets, racked 3-5 s, before the
+      lockout stalls. Race day is not where you find out what that costs.
 - [ ] RECORD TOTAL TIME - this is the benchmark the taper protects
 
 ### Wed - Easy Shake-out
@@ -302,7 +327,9 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
 - [ ] Race: 5x800 m + 5 stations
       **Run 1 at 3:56, not a second quicker - never under 3:50.** Your natural
       spread is only 3 s, so a fast first rep is adrenaline and you pay for it
-      on runs 4-5. Unbroken on thrusters. Negative-split mindset.
+      on runs 4-5. WALL BALLS IN PLANNED SUB-SETS - break before the lockout
+      stalls, rack 3-5 s, go again; the triceps are what fail there, not the legs.
+      Negative-split mindset.
 
 ---
 
