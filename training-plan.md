@@ -187,9 +187,11 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 ### Wed - Brick (incline push joins)
 - [ ] 4 rounds: 800 m -> bike -> thruster -> lunge -> incline push
 - [ ] 800 m treadmill @ 4:00-4:06 (belt 11.7-12.0 km/h)
-- [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
-      are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
-      and raised the HR the NEXT run started from)
+- [ ] Seated bike 250-500 m OR 12 burpees, to HR 150-161. Either is fine - what
+      matters is where you leave it. 5 Aug held burpees IN band (station block
+      peaked 148/158/161/162 across 4 rounds); 29 Jul took them flat out and hit
+      173. A bike is just easier to rate-limit if you are unsure.
+      Judge the round by whether the NEXT run starts under ~130.
 - [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 too while the gate holds - match it,
       never heavier; the point here is speed + unbroken on tired legs)
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
@@ -231,9 +233,12 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 - [ ] 4-5 rounds: 800 m -> bike -> thruster -> lunge -> incline push
 - [ ] 800 m treadmill @ 4:00-4:06 (belt 11.7-12.0 km/h) - the TIRED-LEGS
       target, not Sunday's 3:56. "Goal pace" always means Sunday fresh.
-- [ ] Seated bike 250-500 m to HR 150-161 (bike is the default; 12 burpees
-      are the top-end option -- on 29 Jul they hit 173 = max, far past this band,
-      and raised the HR the NEXT run started from)
+- [ ] Seated bike 250-500 m OR 12 burpees, to HR 150-161. Either is fine - what
+      matters is where you leave it. 5 Aug held burpees IN band across 4 rounds;
+      29 Jul took them flat out and hit 173. Judge the round by whether the NEXT
+      run starts under ~130.
+      If a dumbbell is not free, take the nearest LIGHTER pair - on the brick,
+      speed and unbroken beat load. Never go heavier, never skip the station.
 - [ ] DB thruster: 15 @ 2x10 kg (Mon is 2x10 while the gate holds - never heavier
       than Monday; the point here is speed + unbroken on tired legs)
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
