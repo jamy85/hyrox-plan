@@ -265,6 +265,16 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
       LAST STATION, so the round rest starts here.
       ROUND REST THIS WEEK: 60-90 s (down from 90 s-2 min in W3).
+- [ ] BONUS (optional) - THE FINISH: after the last round, 800 m at the same belt
+      speed then 15 thrusters @ 2x8 kg off a 20-30 s transition (a roxzone, not a
+      recovery). Skip it without a second thought if the brick took what you had,
+      and never cut a round to make room for it.
+      Why: April's race ended lunges -> run -> wall balls, and those were the two
+      weakest segments of the race (final run top 45%, wall balls top 47%, against
+      3-26% for everything before). The brick ends on the incline push, so a
+      wall-ball set on emptied legs has never been rehearsed. Note where the set
+      breaks and at which rep - that is the lockout, and it is what to plan
+      sub-sets around. Mon 17 Aug sim is the real test of this sequence.
 
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 4x400 m @ 14.0 km/h, light, rest 90 s-2 min

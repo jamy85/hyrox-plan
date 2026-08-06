@@ -936,6 +936,21 @@
     if (C.push) ex.push({ n:'Incline push', tag:'sled sub',
       stats:[{l:'Time',v:'30 s'},{l:'Incline',v:'12%'},{l:'Belt',v:'6.5&ndash;7.5 km/h'},{l:'Then',v:C.rest,rest:true}],
       cue:'Powerful short steps at a walk-march you can barely hold for 30 s &mdash; it should push HR into the ' + ME.zThresh + ' band. No treadmill incline? Car-park ramp or stairwell, same 30 s.' + roundRest });
+    // BONUS finish rehearsal, W4 only (added 2026-08-06). The brick ends on the
+    // incline push, so nothing in it rehearses a wall-ball set on emptied legs --
+    // which is exactly the race sequence (lunge -> run -> wall balls) where the
+    // April result was weakest. Explicitly optional at the user's request.
+    if (w === 4) ex.push({ n:'BONUS &mdash; the finish', tag:'optional &middot; only if you still have it',
+      stats:[{l:'Run',v:'800 m'},{l:'Then',v:'15 thrusters'},{l:'Load',v:L.brickThr},{l:'Transition',v:'20&ndash;30 s'}],
+      cue:'<b>After the last round is done:</b> one more 800 m at the same belt speed, then into 15 thrusters off a <b>20&ndash;30 s transition</b> &mdash; a roxzone, not a recovery. <b>This is a bonus &mdash; skip it without a second thought if the brick took what you had.</b> Never cut a round to make room for it.',
+      details:[
+        { p:'<b>Why it exists.</b> April&rsquo;s race ended <b>lunges &rarr; run &rarr; wall balls</b>, and those last two segments were the weakest things you did all race &mdash; the final run ranked in the top 45% of the field and the wall balls top 47%, against 3&ndash;26% for everything before them. The brick ends on the incline push, so you have never rehearsed a wall-ball set on genuinely emptied legs.' },
+        { h:'What to notice', li:[
+          '<b>Where the set breaks, and at which rep.</b> That is your triceps lockout, and it is the thing to plan sub-sets around on race day.',
+          '<b>Whether you can hold the belt speed for that last 800.</b> If not, the brick itself was the right dose and the bonus was correctly skipped.',
+          '<b>Break on purpose before the lockout stalls</b> &mdash; rack the dumbbells 3&ndash;5 s. Legs and lungs are not the limiter here.' ] },
+        { p:'The <b>Mon 17 Aug simulation</b> is the real test of this sequence, since it runs the actual lunge &rarr; run &rarr; wall-ball order. This is just one exposure beforehand.' }
+      ] });
     return { dow:'Wed', title:'Brick / Simulation', chip:'hard',
       sub:'The money session &mdash; trains <b>compromised running</b> (fast legs after trashed legs). Warm-up: 8&ndash;10 min easy run + 3 strides. Keep the <i>station-to-station</i> transitions short like the race (30&ndash;60 s); the <b>' + C.rest + ' round rest is deliberate</b> and shrinks as the block goes on.',
       ex:ex };
