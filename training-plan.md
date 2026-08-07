@@ -244,7 +244,8 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
          and STAYING there, bend the elbows to lower it behind your head, straighten
          them to push it back up. Elbows only. NOT a second press from the shoulders,
          and much lighter - pick a weight you could do 20 with.
-      Here because the triceps lockout is what ends your thruster sets, and Friday is
+      Here because your triceps - the last few inches where your arms straighten
+      overhead - are what end your thruster sets, and Friday is
       the only day it can be trained without touching Sunday. Two useful Fridays left
       (7 + 14 Aug), so it is a small bet - the leg-drive cue and a planned break do
       more for the wall-ball station than any triceps you can build in three weeks.
