@@ -24,9 +24,9 @@ threshold 150-161 | VO2/race 162-173.
 On a treadmill the footpod distance is guesswork - trust the belt speed you set.
 Heart rate is reliable everywhere; that is why this plan steers by it.
 
-**LOAD RULE (replaces "RIR 3").** Mon 20 Jul at 20 kg goblet / 2x10 kg lunge /
-30 kg RDL gave 7-8/10 DOMS and cost the Wed brick. So kilos are decided by last
-week's soreness, not by the calendar:
+**LOAD RULE - how the kilos get decided.** Mon 20 Jul at a 20 kg chest-held squat /
+2x10 kg lunge / 30 kg straight-leg deadlift gave 7-8/10 DOMS and cost the Wed brick.
+So kilos are decided by last week's soreness, not by the calendar:
 - 0-4/10 and gone by Wednesday -> add ~2 kg lower body
 - 5-6/10, or still stiff Wednesday -> repeat the same load
 - 7-8/10, or it cost you a session -> drop ~2 kg
@@ -35,13 +35,15 @@ Within any load, still stop ~3 reps short of failure.
 
 **THRUSTER EXCEPTION (5 Aug).** The DB thruster does NOT follow the load rule and
 is **capped at 2x8 kg for the rest of the block** - the 2x10 / 2x12 ladder is
-retired. Your limiter there is the **triceps lockout**, never the legs, so kilos
-load the weakest link and progress nothing that transfers: 2x8 kg is already 16 kg
-pressed overhead every rep, against a wall ball of ~6-9 kg thrown off the hips with
-the arms only guiding. Progression is **reps, not weight**. The levers that matter:
-drive from the legs with no pause at the shoulder, hold the DBs light, and break on
-purpose (rack 3-5 s) before the lockout stalls instead of grinding into it. Friday
-now carries a lockout finisher; your legs still get progressed by squat/lunge/RDL.
+retired. What fails you there is your **triceps, in the last few inches where your
+arms straighten overhead** - never the legs. So kilos load the weakest link and
+progress nothing that transfers: 2x8 kg is already 16 kg pressed overhead every rep,
+against a wall ball of ~6-9 kg thrown off the hips with the arms only guiding.
+Progression is **reps, not weight**. The levers that matter: drive from the legs with
+no pause at the shoulder, hold the dumbbells light, and break on purpose (rest them on
+your shoulders 3-5 s) before your arms stall at the top instead of grinding into it.
+Friday now carries a triceps finisher; your legs still get progressed by the squat,
+lunge and straight-leg deadlift.
 
 **THE PROGRESS MARKER.** Goal pace stays **fixed at 3:56** all block - you are
 never asked to run faster. What should fall is what it costs: last-rep HR 166
@@ -69,9 +71,9 @@ over-reached and cost the Wednesday brick.
 
 ### Mon 20 - Row + Strength (~65 min) - done
 - [x] Row intervals: 6x250 m, rest 90 s
-- [x] Goblet squat: 4x12 @ 20 kg
-- [x] Walking lunge: 4x20 steps @ 2x10 kg
-- [x] Romanian deadlift: 3x12 @ 30 kg
+- [x] Squat, one weight held at your chest: 4x12 @ 20 kg
+- [x] Walking lunge, a dumbbell in each hand: 4x20 steps @ 2x10 kg
+- [x] Straight-leg deadlift: 3x12 @ 30 kg
 - [x] DB thruster: 4x15 @ 2x8 kg
 - [x] Cable pulldown / bent row: 4x15
 - [x] Core: 3x (40 s plank + 12 mountain climbers)
@@ -83,7 +85,7 @@ over-reached and cost the Wednesday brick.
 ### Fri 24 - Engine + Pull - done (treadmill)
 - [x] 5x250 m @ 15.0 km/h (4:00/km, ~60 s each), rest 90 s-2 min
       HR peaks 139/141/142/143/144, max 145. Even set, recovery ~45 bpm per rest.
-- [x] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Pallof + hollow
+- [x] Cable pull-down with straight arms 3x15 | Band pull-apart 3x20 | the old core pair
 
 ### Sun 26 - 800s (400 m track) - done, PACE FOUND
 - [x] 5x800 m: **3:56 / 3:56 / 4:01 / 3:55 / 3:56**, jog 400 m recovery
@@ -104,11 +106,11 @@ your soreness Tuesday and pick the Wednesday version.
 ### Mon - Row + Strength
 - [ ] Row intervals: 6x250 m, HR 150-161 by the last 10 strokes, rest 90 s
       (next rep only once HR is back under 130)
-- [ ] Goblet squat: 4x12 @ **20 kg (same as W1)**
+- [ ] Squat, one weight held at your chest: 4x12 @ **20 kg (same as W1)**
 - [ ] Walking lunge: **3x16 steps** @ 2x10 kg (TRIMMED from 4x20, same weight)
       Biggest DOMS source. Do NOT go deeper than usual or slow the lowering -
       range and tempo drive damage far more than the weight does.
-- [ ] Romanian deadlift: **3x10** @ 30 kg (TRIMMED from 3x12, same weight)
+- [ ] Straight-leg deadlift: **3x10** @ 30 kg (TRIMMED from 3x12, same weight)
       Stop the bar at mid-shin, not the floor.
 - [ ] DB thruster: 4x15 @ **2x8 kg (same)**
       GATE: no load jump until 4x15 goes UNBROKEN at this weight. 27 Jul, set 4
@@ -153,9 +155,13 @@ loads drop 2 kg.
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 6x250 m: row it, or belt @ 15.0 km/h. Rest 90 s-2 min.
       Judge by evenness, NOT heart rate - ~140 peaks are normal on 60 s reps.
-- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
-      Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
-      Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
+- [ ] Cable pull-down with straight arms 3x15 (arms stay straight, pull the bar to your
+      hips - that is the ski-machine pull) | Band pull-apart 3x20 (band out in front at
+      chest height, arms straight, pull your hands apart to your chest) | One-arm carry
+      + dead bug
+      Carry: 3x 40 s/side, one dumbbell 20-24 kg, stand tall and do NOT lean away.
+      Dead bug: on your back, lower back pressed flat, slowly straighten one arm and the
+      opposite leg, 3x 8/side. (Replaced the old core pair 27 Jul.)
       Nothing here should touch the legs.
 
 ### Sun 2 - 800s (400 m track) - done, GATE HELD
@@ -182,19 +188,22 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
       132/139/141/146/150 on a metronomic 3-min cycle. Rep 5 touched the 150 band
       floor; reps 1-4 sat below it, which is fine - the band is for the last rep or
       two. Do NOT drop the split to chase it; Monday must not cost you Wednesday.
-- [ ] Goblet squat: 4x12 @ 24 kg
-- [ ] Walking lunge: 4x20 steps @ 2x12 kg
-- [ ] Romanian deadlift: 3x12 @ 40 kg
+- [ ] Squat, one weight held at your chest: 4x12 @ 24 kg
+- [ ] Walking lunge, a dumbbell in each hand: 4x20 steps @ 2x12 kg
+- [ ] Straight-leg deadlift (hips back, back flat, knees almost straight - you should
+      feel it down the back of your thighs): 3x12 @ 40 kg
 - [ ] DB thruster: 4x15 @ **2x8 kg** - and 2x8 is now the weight for the REST OF THE
-      BLOCK. The 2x10 / 2x12 ladder is retired (5 Aug): your limiter on a thruster is
-      the TRICEPS LOCKOUT, never the legs, so kilos load the weakest link and buy the
-      legs nothing. Drive from the legs, no pause at the shoulder. 3 Aug went 4x15 all
+      BLOCK. The 2x10 / 2x12 ladder is retired (5 Aug): what fails on a thruster is
+      your TRICEPS, in the last few inches where your arms straighten overhead - never
+      the legs. So kilos load the weakest link and buy the legs nothing. Drive from the
+      legs, no pause at the shoulder. 3 Aug went 4x15 all
       unbroken but only set 4 at 2x8 (sets 1-3 were 2x6, the 8s were in use), so all
       four sets at 2x8 is the unfinished business. Set 4 is the good news though:
       unbroken at peak 144, where the same set broke at 10 reps at peak 159 on 27 Jul.
       Rowing sits BEFORE the thrusters now, so they land on more fatigue.
-- [ ] Cable pulldown / bent row: 4x15
-- [ ] Core: 3x (40 s plank + 12 climbers)
+- [ ] Cable pull-down, or bent-over row with dumbbells - pull with your back, not your
+      arms: 4x15
+- [ ] Core: 3x (40 s plank + 12 mountain climbers)
 
 ### Wed - Brick (incline push joins)
 - [ ] 4 rounds: 800 m -> bike -> thruster -> lunge -> incline push
@@ -202,11 +211,12 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 - [ ] Seated bike 250-500 m OR 12 burpees, to HR 150-161. Either is fine - what
       matters is where you leave it. 5 Aug held burpees IN band (station block
       peaked 148/158/161/162 across 4 rounds); 29 Jul took them flat out and hit
-      173. A bike is just easier to rate-limit if you are unsure.
+      173. A bike is just easier to hold at a steady effort if you are unsure.
       Judge the round by whether the NEXT run starts under ~130.
 - [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 too - match it, never heavier; the point
-      here is speed + unbroken on tired legs). If the lockout stalls, rack 3-5 s and
-      go again - the triceps are what fail here and they come back fast.
+      here is speed + unbroken on tired legs). If your arms start stalling at the top,
+      rest the dumbbells on your shoulders 3-5 s and go again - the triceps are what
+      fail here and they come back fast.
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h, HR into 150-161
       LAST STATION, so the round rest starts here.
@@ -214,11 +224,26 @@ brick happened. If W2 wrecked you again, run W2's loads a third time.
 
 ### Fri - Engine + Pull (no rower -> belt/bike)
 - [ ] 4x500 m @ 14.0 km/h (~2:09 each), rest 90 s-2 min
-- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
-      Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
-      Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
-- [ ] LOCKOUT FINISHER (new 5 Aug): 3x (push press 12 @ 2x8 kg + overhead DB
-      extension 15), rest 60 s. Superset, strictly upper body, 2 reps in hand.
+- [ ] Cable pull-down with straight arms 3x15 (arms stay straight, pull the bar to your
+      hips - that is the ski-machine pull) | Band pull-apart 3x20 (band out in front at
+      chest height, arms straight, pull your hands apart to your chest) | One-arm carry
+      + dead bug
+      Carry: 3x 40 s/side, one dumbbell 20-24 kg, stand tall and do NOT lean away.
+      Dead bug: on your back, lower back pressed flat, slowly straighten one arm and the
+      opposite leg, 3x 8/side. (Replaced the old core pair 27 Jul.)
+- [ ] TRICEPS FINISHER (new 5 Aug): 3x (dip and press overhead 12 @ 2x8 kg +
+      behind-the-head press-out 15 @ one dumbbell 8-12 kg), rest 60 s. Do the two back
+      to back, strictly upper body, stop each set 2 reps short.
+      TWO DIFFERENT EXERCISES, both ending with straight arms overhead (reworded 7 Aug -
+      the first go at it was read as "12 legs only, then 15 arm presses"):
+      1. DIP AND PRESS OVERHEAD x12 (a "push press") - a dumbbell on each shoulder,
+         dip the knees a few inches, drive up and press to straight arms overhead.
+         One whole movement; the legs only launch it.
+      2. BEHIND-THE-HEAD PRESS-OUT x15 (an "overhead triceps extension") - one dumbbell
+         in both hands above your head, upper arms pointing straight up beside your ears
+         and STAYING there, bend the elbows to lower it behind your head, straighten
+         them to push it back up. Elbows only. NOT a second press from the shoulders,
+         and much lighter - pick a weight you could do 20 with.
       Here because the triceps lockout is what ends your thruster sets, and Friday is
       the only day it can be trained without touching Sunday. Two useful Fridays left
       (7 + 14 Aug), so it is a small bet - the leg-drive cue and a planned break do
@@ -236,17 +261,17 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
 
 ### Mon - Row + Strength
 - [ ] Row intervals: 4x500 m - OPEN AT 1:46 /500 m, HR 150-161, rest 90 s
-- [ ] Goblet squat: 4x12 @ 28 kg
-- [ ] Walking lunge: 4x20 steps @ 2x14 kg
-- [ ] Romanian deadlift: 3x12 @ 45 kg
+- [ ] Squat, one weight held at your chest: 4x12 @ 28 kg
+- [ ] Walking lunge, a dumbbell in each hand: 4x20 steps @ 2x14 kg
+- [ ] Straight-leg deadlift (hips back, back flat, knees almost straight): 3x12 @ 45 kg
 - [ ] DB thruster: 4x15 @ **2x8 kg** - same weight, and this is the LAST strength
       Monday of the block (W5 Mon is the timed 5x sim, W6 is taper). So take the four
       unbroken sets at 2x8 that 3 Aug left unfinished. If they go unbroken with
       something in hand, progress REPS not kilos - 4x18-20 at the same weight. A
       heavier DB only moves the triceps stall earlier, and unbroken repeatability is
       what the wall ball actually asks for.
-- [ ] Cable pulldown / bent row: 4x15 - hold, do not chase
-- [ ] Core: 3x (40 s plank + 12 climbers)
+- [ ] Cable pull-down, or bent-over row with dumbbells: 4x15 - hold, do not chase
+- [ ] Core: 3x (40 s plank + 12 mountain climbers)
 
 ### Wed - Brick (5th round only if fresh)
 - [ ] 4-5 rounds: 800 m -> bike -> thruster -> lunge -> incline push
@@ -259,8 +284,9 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
       If a dumbbell is not free, take the nearest LIGHTER pair - on the brick,
       speed and unbroken beat load. Never go heavier, never skip the station.
 - [ ] DB thruster: 15 @ 2x8 kg (Mon is 2x8 too - never heavier than Monday; the point
-      here is speed + unbroken on tired legs). If the lockout stalls, rack 3-5 s and
-      go again - the triceps are what fail here and they come back fast.
+      here is speed + unbroken on tired legs). If your arms start stalling at the top,
+      rest the dumbbells on your shoulders 3-5 s and go again - the triceps are what
+      fail here and they come back fast.
 - [ ] Walking lunge: 20 steps -> 30-60 s -> incline push (same round)
 - [ ] Incline push: 30 s @ 12%, belt 6.5-7.5 km/h
       LAST STATION, so the round rest starts here.
@@ -273,17 +299,29 @@ Last loading week. Sunday is easy, so Monday can be the honest top end.
       weakest segments of the race (final run top 45%, wall balls top 47%, against
       3-26% for everything before). The brick ends on the incline push, so a
       wall-ball set on emptied legs has never been rehearsed. Note where the set
-      breaks and at which rep - that is the lockout, and it is what to plan
-      sub-sets around. Mon 17 Aug sim is the real test of this sequence.
+      breaks and at which rep - that is your triceps giving out at the top, and it is
+      what to plan your breaks around. Mon 17 Aug sim is the real test of this sequence.
 
 ### Fri - Engine + Pull (ROWER available)
 - [ ] 4x400 m @ 14.0 km/h, light, rest 90 s-2 min
-- [ ] Straight-arm pulldown 3x15 | Band pull-apart 3x20 | Suitcase carry + dead bug
-      Carry: 3x 40 s/side, one DB 20-24 kg, stand tall and do NOT lean away.
-      Dead bug: 3x 8/side slow, low back flat. (Replaced Pallof + hollow 27 Jul.)
-- [ ] LOCKOUT FINISHER: 3x (push press 12 @ 2x8 kg + overhead DB extension 15),
-      rest 60 s. Superset, strictly upper body, 2 reps in hand. Last one that can
-      still do anything before the 17 Aug sim.
+- [ ] Cable pull-down with straight arms 3x15 (arms stay straight, pull the bar to your
+      hips - that is the ski-machine pull) | Band pull-apart 3x20 (band out in front at
+      chest height, arms straight, pull your hands apart to your chest) | One-arm carry
+      + dead bug
+      Carry: 3x 40 s/side, one dumbbell 20-24 kg, stand tall and do NOT lean away.
+      Dead bug: on your back, lower back pressed flat, slowly straighten one arm and the
+      opposite leg, 3x 8/side. (Replaced the old core pair 27 Jul.)
+- [ ] TRICEPS FINISHER: 3x (dip and press overhead 12 @ 2x8 kg + behind-the-head
+      press-out 15 @ one dumbbell 8-12 kg), rest 60 s. Two exercises back to back,
+      strictly upper body, stop each set 2 reps short. Last one that can still do
+      anything before the 17 Aug sim.
+      1. Dip and press overhead ("push press") = a dumbbell on each shoulder, dip the
+         knees, drive up and press to straight arms overhead. One movement; the legs
+         only launch it.
+      2. Behind-the-head press-out ("overhead triceps extension") = one dumbbell in both
+         hands above your head, upper arms pointing straight up and staying there, bend
+         the elbows to lower it behind your head, straighten them to push it back up.
+         Elbows only, NOT a press from the shoulders, and much lighter.
 
 ### Sun - Easy Long Run (recovery, NO 800s)
 - [ ] 50-60 min, **cap HR at 138** (top of Z2 off max 173; your easy runs sit at 133).
@@ -301,10 +339,11 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
       Write down all five. Drift of ~15 s run1->run5 = race-ready;
       a 30 s+ collapse means go out slower on the day.
       Target last-rep HR ~158 at 3:56 pace by now.
-- [ ] Stations per round: cable pulldown -> incline push -> REAL ROW 500 m ->
-      walking lunge -> DB thrusters (2x8 kg)
-      REHEARSE THE WALL-BALL BREAK HERE: planned sub-sets, racked 3-5 s, before the
-      lockout stalls. Race day is not where you find out what that costs.
+- [ ] Stations per round: cable pull-down -> incline push -> REAL ROW 500 m ->
+      walking lunge -> dumbbell thrusters (2x8 kg)
+      REHEARSE THE WALL-BALL BREAK HERE: decide the split before you start, rest the
+      dumbbells on your shoulders 3-5 s, and go again BEFORE your arms stall at the top.
+      Race day is not where you find out what that costs.
 - [ ] RECORD TOTAL TIME - this is the benchmark the taper protects
 
 ### Wed - Easy Shake-out
@@ -314,7 +353,8 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
 - [ ] Easy seated bike 20-25 min, HR under 130 + full-body mobility.
 
 ### Sun - Primer Run
-- [ ] Easy 30-40 min + 4-6 x 20 s strides. Springy, bank nothing.
+- [ ] Easy 30-40 min + 4-6 x 20 s fast bursts (about 800 m pace, full recovery
+      between). Springy, bank nothing.
 
 ---
 
@@ -323,7 +363,7 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
 ~50% volume, stay sharp. Sleep + food do the work.
 
 ### Mon 24 - Rest / Optional Shake-out
-- [ ] Rest, or 0-20 min, HR under 125 + strides. Keep it tiny.
+- [ ] Rest, or 0-20 min, HR under 125 + a few fast bursts. Keep it tiny.
 
 ### Wed 26 - Race-Pace Sharpener (NOT to fatigue)
 - [ ] 3x800 m @ **3:56 exactly**, jog 400 m recovery.
@@ -331,15 +371,15 @@ Dress rehearsal Monday (timed, real row), then easy all week to absorb it.
       spend it. Stop with plenty left.
 
 ### Fri 28 - Pre-Race Primer
-- [ ] 10-15 min jog + 3-4 x 15 s strides. Nothing new. Lay out kit tonight.
+- [ ] 10-15 min jog + 3-4 x 15 s fast bursts. Nothing new. Lay out kit tonight.
 
 ### Sat 29 - RACE DAY
 - [ ] Race: 5x800 m + 5 stations
       **Run 1 at 3:56, not a second quicker - never under 3:50.** Your natural
       spread is only 3 s, so a fast first rep is adrenaline and you pay for it
-      on runs 4-5. WALL BALLS IN PLANNED SUB-SETS - break before the lockout
-      stalls, rack 3-5 s, go again; the triceps are what fail there, not the legs.
-      Negative-split mindset.
+      on runs 4-5. WALL BALLS: DECIDE YOUR BREAK BEFORE YOU START - stop for 3-5 s
+      while your arms can still finish a rep, then go again; your triceps are what
+      fail there, not the legs. Finish the back half no slower than the front.
 
 ---
 
